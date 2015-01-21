@@ -36,6 +36,7 @@
 		41B1D2561A6991A600962647 /* MW_clientSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW_clientSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B1D25B1A6991A600962647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41B1D25C1A6991A700962647 /* MW_clientSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW_clientSwiftTests.swift; sourceTree = "<group>"; };
+		41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BlackBytePlayGround.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		41B1D2381A6991A600962647 = {
 			isa = PBXGroup;
 			children = (
+				41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */,
 				41B1D2431A6991A600962647 /* MW_clientSwift */,
 				41B1D2591A6991A600962647 /* MW_clientSwiftTests */,
 				41B1D2421A6991A600962647 /* Products */,
@@ -407,6 +409,7 @@
 				41B1D2621A6991A700962647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41B1D2631A6991A700962647 /* Build configuration list for PBXNativeTarget "MW_clientSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +418,7 @@
 				41B1D2651A6991A700962647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
