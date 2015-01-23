@@ -13,6 +13,7 @@
 		41B1D24E1A6991A600962647 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D24D1A6991A600962647 /* Images.xcassets */; };
 		41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D24F1A6991A600962647 /* LaunchScreen.xib */; };
 		41B1D25D1A6991A700962647 /* MW_clientSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1D25C1A6991A700962647 /* MW_clientSwiftTests.swift */; };
+		41CA1CA01A7156F7005B7817 /* clientSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1C9F1A7156F7005B7817 /* clientSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		41B1D2561A6991A600962647 /* MW_clientSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MW_clientSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B1D25B1A6991A600962647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41B1D25C1A6991A700962647 /* MW_clientSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW_clientSwiftTests.swift; sourceTree = "<group>"; };
+		41CA1C9F1A7156F7005B7817 /* clientSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clientSwift.swift; sourceTree = "<group>"; };
 		41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BlackBytePlayGround.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				41B1D24D1A6991A600962647 /* Images.xcassets */,
 				41B1D24F1A6991A600962647 /* LaunchScreen.xib */,
 				41B1D2441A6991A600962647 /* Supporting Files */,
+				41CA1C9F1A7156F7005B7817 /* clientSwift.swift */,
 			);
 			path = MW_clientSwift;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				41B1D2491A6991A600962647 /* ViewController.swift in Sources */,
 				41B1D2471A6991A600962647 /* AppDelegate.swift in Sources */,
+				41CA1CA01A7156F7005B7817 /* clientSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
