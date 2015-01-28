@@ -1,6 +1,9 @@
 // Playground - noun: a place where people can play
 
 import Cocoa
+import Foundation
+
+//var area = Double(5) * Double(5) * pi
 
 // create some data to read
 var data: NSData = "Hello Regor".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion:

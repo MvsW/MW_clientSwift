@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import Foundation;
-import CFNetwork;
+import Foundation
+import CFNetwork
+import CoreLocation
 
 
 
-class ViewController: UIViewController, NSStreamDelegate {
+class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var btn_send: UIButton!
     @IBOutlet weak var tv_xivato: UILabel!
@@ -25,6 +26,8 @@ class ViewController: UIViewController, NSStreamDelegate {
     let serverPort: UInt32 = 4444
     var inputStream: NSInputStream!
     var outputStream: NSOutputStream!
+    
+    var manager:CLLocationManager!
     
     var readStream:  Unmanaged<CFReadStream>?
     var writeStream: Unmanaged<CFWriteStream>?
@@ -39,6 +42,7 @@ class ViewController: UIViewController, NSStreamDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         btn_send.enabled = false
+        setUpGsp()
 
     }
 
@@ -48,6 +52,7 @@ class ViewController: UIViewController, NSStreamDelegate {
         btn_send.enabled = true
         btn_connect.enabled = false
         
+        
     }
     
     @IBAction func btnSendClick(sender: AnyObject){
@@ -56,6 +61,12 @@ class ViewController: UIViewController, NSStreamDelegate {
         et_message.text = ""
         
         
+    }
+    func setUpGsp(){
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
     }
 
     func connect(){
@@ -193,6 +204,11 @@ class ViewController: UIViewController, NSStreamDelegate {
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1));
             NSThread.sleepForTimeInterval(0.1)
         }
+    }
+    
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:AnyObject) {
+        println("locations = \(locations)")
+        tv_xivato.text = "success ocations = \(locations)"
     }
     
     

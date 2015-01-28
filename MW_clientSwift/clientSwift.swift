@@ -13,13 +13,5 @@ import CFNetwork;
 
 
 
-let addr = "127.0.0.1"
-let port = 2000
-
-var buffer = [UInt8](count: 255, repeatedValue: 0)
-
-var inp : NSInputStream?
-var out : NSOutputStream?
-
 
 
