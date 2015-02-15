@@ -14,6 +14,13 @@
 		41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D24F1A6991A600962647 /* LaunchScreen.xib */; };
 		41B1D25D1A6991A700962647 /* MW_clientSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1D25C1A6991A700962647 /* MW_clientSwiftTests.swift */; };
 		41CA1CA01A7156F7005B7817 /* clientSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1C9F1A7156F7005B7817 /* clientSwift.swift */; };
+		41EDC0871A8BD97C00394712 /* CApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC07F1A8BD97C00394712 /* CApp.swift */; };
+		41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0811A8BD97C00394712 /* CConstants.swift */; };
+		41EDC08D1A8BDBA400394712 /* VCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC08C1A8BDBA400394712 /* VCLogin.swift */; };
+		41EDC08F1A8BDBB200394712 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC08E1A8BDBB200394712 /* VCRegister.swift */; };
+		41EDC0911A8BDBDA00394712 /* VCMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0901A8BDBDA00394712 /* VCMenu.swift */; };
+		41EDC0931A8BDC2E00394712 /* VCSearchBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0921A8BDC2E00394712 /* VCSearchBattle.swift */; };
+		41EDC0951A8BDC4200394712 /* VCBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0941A8BDC4200394712 /* VCBattle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,13 @@
 		41B1D25C1A6991A700962647 /* MW_clientSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MW_clientSwiftTests.swift; sourceTree = "<group>"; };
 		41CA1C9F1A7156F7005B7817 /* clientSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clientSwift.swift; sourceTree = "<group>"; };
 		41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BlackBytePlayGround.playground; sourceTree = "<group>"; };
+		41EDC07F1A8BD97C00394712 /* CApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CApp.swift; sourceTree = "<group>"; };
+		41EDC0811A8BD97C00394712 /* CConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
+		41EDC08C1A8BDBA400394712 /* VCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
+		41EDC08E1A8BDBB200394712 /* VCRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
+		41EDC0901A8BDBDA00394712 /* VCMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMenu.swift; sourceTree = "<group>"; };
+		41EDC0921A8BDC2E00394712 /* VCSearchBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSearchBattle.swift; sourceTree = "<group>"; };
+		41EDC0941A8BDC4200394712 /* VCBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCBattle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,10 @@
 		41B1D2381A6991A600962647 = {
 			isa = PBXGroup;
 			children = (
+				41EDC07E1A8BD97C00394712 /* Classes.ControlCenter */,
+				41EDC0841A8BD97C00394712 /* Classes.Official */,
+				41EDC0851A8BD97C00394712 /* Controllers */,
+				41EDC0861A8BD97C00394712 /* dam.mw.clientSwift */,
 				41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */,
 				41B1D2431A6991A600962647 /* MW_clientSwift */,
 				41B1D2591A6991A600962647 /* MW_clientSwiftTests */,
@@ -115,6 +133,45 @@
 				41B1D25B1A6991A600962647 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41EDC07E1A8BD97C00394712 /* Classes.ControlCenter */ = {
+			isa = PBXGroup;
+			children = (
+				41EDC07F1A8BD97C00394712 /* CApp.swift */,
+				41EDC0811A8BD97C00394712 /* CConstants.swift */,
+			);
+			name = Classes.ControlCenter;
+			path = MW_clientSwift/Classes.ControlCenter;
+			sourceTree = "<group>";
+		};
+		41EDC0841A8BD97C00394712 /* Classes.Official */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes.Official;
+			path = MW_clientSwift/Classes.Official;
+			sourceTree = "<group>";
+		};
+		41EDC0851A8BD97C00394712 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41EDC08C1A8BDBA400394712 /* VCLogin.swift */,
+				41EDC08E1A8BDBB200394712 /* VCRegister.swift */,
+				41EDC0901A8BDBDA00394712 /* VCMenu.swift */,
+				41EDC0921A8BDC2E00394712 /* VCSearchBattle.swift */,
+				41EDC0941A8BDC4200394712 /* VCBattle.swift */,
+			);
+			name = Controllers;
+			path = MW_clientSwift/Controllers;
+			sourceTree = "<group>";
+		};
+		41EDC0861A8BD97C00394712 /* dam.mw.clientSwift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = dam.mw.clientSwift;
+			path = MW_clientSwift/dam.mw.clientSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +274,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EDC0931A8BDC2E00394712 /* VCSearchBattle.swift in Sources */,
 				41B1D2491A6991A600962647 /* ViewController.swift in Sources */,
+				41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */,
+				41EDC08F1A8BDBB200394712 /* VCRegister.swift in Sources */,
+				41EDC0871A8BD97C00394712 /* CApp.swift in Sources */,
 				41B1D2471A6991A600962647 /* AppDelegate.swift in Sources */,
+				41EDC0951A8BDC4200394712 /* VCBattle.swift in Sources */,
+				41EDC0911A8BDBDA00394712 /* VCMenu.swift in Sources */,
+				41EDC08D1A8BDBA400394712 /* VCLogin.swift in Sources */,
 				41CA1CA01A7156F7005B7817 /* clientSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

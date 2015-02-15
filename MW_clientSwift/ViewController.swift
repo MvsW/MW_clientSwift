@@ -13,7 +13,7 @@ import CoreLocation
 
 
 
-class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, NSStreamDelegate , CLLocationManagerDelegate {
 
     @IBOutlet weak var btn_send: UIButton!
     @IBOutlet weak var tv_xivato: UILabel!
@@ -22,8 +22,9 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
     @IBOutlet weak var et_ip: UITextField!
     @IBOutlet weak var et_message: UITextField!
     
-    var serverAddress: CFString = "192.168.1.13"
-    let serverPort: UInt32 = 4444
+    //var serverAddress: CFString = "192.168.1.13"
+    //let serverPort: UInt32 = 4444
+    
     var inputStream: NSInputStream!
     var outputStream: NSOutputStream!
     
@@ -31,9 +32,6 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
     
     var readStream:  Unmanaged<CFReadStream>?
     var writeStream: Unmanaged<CFWriteStream>?
-    
-    //var inp : NSInputStream?
-   // var out : NSOutputStream?
     
     var messagesToBeSent:[String] = []
     var lastSentMessageID = 0
@@ -57,7 +55,8 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
     
     @IBAction func btnSendClick(sender: AnyObject){
         tv_log.text! += "-->"+et_message.text+"\n"
-        sendMessage(et_message.text)
+        //sendMessage(et_message.text)
+        
         et_message.text = ""
         
         
@@ -118,7 +117,7 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
                 }
                 
             }
-                break
+            break
         case NSStreamEvent.HasSpaceAvailable: //Accept write
             println(s+"Has Space Available")
             if let outputStream = stream as? NSOutputStream{
@@ -181,6 +180,7 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
         println(bytesWritten) //int count (-1)
         checkDisconnect(bytesWritten)
     }
+    
     func checkDisconnect(val :Int){
         if val == -1{
             self.outputStream.close()
@@ -195,16 +195,17 @@ class ViewController: UIViewController, NSStreamDelegate, CLLocationManagerDeleg
     
     func wait() {
         while true {
-           // println("waiting \(lastSentMessageID)  = \(lastReceivedMessageID)")
+            // println("waiting \(lastSentMessageID)  = \(lastReceivedMessageID)")
             if lastSentMessageID == lastReceivedMessageID && lastReceivedMessageID > 0  {
                 println("here")
                 break
-           }
+            }
             
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1));
             NSThread.sleepForTimeInterval(0.1)
         }
     }
+
     
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:AnyObject) {
         println("locations = \(locations)")
