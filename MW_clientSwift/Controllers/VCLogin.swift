@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Foundation
+import CFNetwork
+import CoreLocation
 
 class VCLogin: UIViewController {
     @IBOutlet weak var btn_login: UIButton!
     @IBOutlet weak var btn_register: UIButton!
     @IBOutlet weak var txtUserOrMail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    var application = CApp()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        application.myController.connect()
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,17 +32,24 @@ class VCLogin: UIViewController {
    
     
     @IBAction func loginTapped(sender: UIButton) {
-        //Checkejar els camps, si son correctes enviar al servidor i espera resposta
-        //Si el server diu OK pasem a menu
-        if(!txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
-            self.performSegueWithIdentifier("goto_menu", sender: self)
+        // Checkejar els camps, si son correctes enviar al servidor i espera resposta
+        if (!txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
+            application.myController.sendMessage("ro,User1994,0,0")
+            // Si el server diu OK pasem a menu
+            if (application.myController.readMessage() == "99"){
+                self.performSegueWithIdentifier("goto_menu", sender: self)
+            }
         }
         
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 
     @IBAction func registerTapped(sender: UIButton) {
         //Enviar al servidor que volem registrarnos.
-        if(true){
+        if (true){
             self.performSegueWithIdentifier("goto_register", sender: self)
         }
         

@@ -30,17 +30,19 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
     var lastSentMessageID = 0
     var lastReceivedMessageID = 0
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startClien() //per cada controller??
+        startClient()
+        //per cada controller??
         // Do any additional setup after loading the view.
     }
     
     //METHODS 
     
     //start client
-    func startClien(){
+    func startClient(){
         setUpGsp()
         connect()
     }
@@ -76,9 +78,31 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         lastSentMessageID++
         
         //println(thisMessage)
-        println("Message sent to server and response is")
+        println("Bytes send to server: ")
         println(bytesWritten) //int count (-1) si es -1 no es pot enviar al servidor
         checkDisconnect(bytesWritten) //bucle infinit? "NOOOO!! PUEDES!! PASAAAAAR!!" by Gandalf el Gris
+    }
+    
+    func readMessage() -> NSString{
+        var output:NSString!
+        let bufferSize = 1024
+        var buffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
+        var bytesRead: Int = inputStream.read(&buffer, maxLength: bufferSize)
+        
+        //println(bytesRead)
+        if bytesRead >= 0 {
+            lastReceivedMessageID++
+            output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
+            //println("output is")
+            println("Server say: \(output)")
+            var text = "Server say:  \(output) \n" //farem alguna cosa amb la variable?? es possible
+            
+        } else {
+            println("error")
+            // Handle error -> falta implementar...
+        }
+        return output
+        
     }
     
     //Conectem a cada viewController? es pot mantenir?
@@ -119,36 +143,19 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
     
     //HANDLE STREAMS
     func stream(stream: NSStream, handleEvent eventCode: NSStreamEvent) {
-        var s = "stream event:"
+        var s = "stream event: "
         switch(eventCode) {
         case NSStreamEvent.HasBytesAvailable: //Handling a bytes-available event
-            println(s+"Has bytes available")
+            println(s + "Has bytes available")
             if let inputStream = stream as? NSInputStream {
                 if inputStream.hasBytesAvailable {
                     
-                    let bufferSize = 1024
-                    var buffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
-                    var bytesRead: Int = inputStream.read(&buffer, maxLength: bufferSize)
-                    
-                    //println(bytesRead)
-                    if bytesRead >= 0 {
-                        lastReceivedMessageID++
-                        var output: NSString! = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-                        //println("output is")
-                        println("Server say: \(output)")
-                        var text = "Server say:  \(output) \n" //farem alguna cosa amb la variable?? es possible
-                        
-                        break
-                    } else {
-                        println("error")
-                        // Handle error -> falta implementar...
-                    }
-                }
+                                    }
                 
             }
             break
         case NSStreamEvent.HasSpaceAvailable: //Accept write
-            println(s+"Has Space Available")
+            println(s + "Has space available")
             if let outputStream = stream as? NSOutputStream{
                 if outputStream.hasSpaceAvailable { //stream ready for input
                     //println("true hasSpaceAvailable")
@@ -184,9 +191,10 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         while true {
             // println("waiting \(lastSentMessageID)  = \(lastReceivedMessageID)")
             if lastSentMessageID == lastReceivedMessageID && lastReceivedMessageID > 0  {
-                println("wait F*")
+//                println("wait F*")
                 break
-            }
+            } 
+            
             
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1));
             NSThread.sleepForTimeInterval(0.1)

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+public class CApp {
+    var myController = MyViewController()
+    
+    
+}
