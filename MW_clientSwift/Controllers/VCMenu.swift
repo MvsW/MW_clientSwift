@@ -20,18 +20,16 @@ class VCMenu: UIViewController {
     }
     
     @IBAction func battleTapped(sender: UIButton) {
-        //Checkejar els camps, si son correctes enviar al servidor i espera resposta
-        //Si el server diu OK pasem a menu
         if(false){
+            application.myController.sendMessage(START_BATTLE)
             self.performSegueWithIdentifier("got_searching", sender: self)
         }
         
     }
     
     @IBAction func myDataTapped(sender: UIButton) {
-        //Checkejar els camps, si son correctes enviar al servidor i espera resposta
-        //Si el server diu OK pasem a menu
         if(true){
+            application.myController.sendMessage(SHOW_DATA)
             self.performSegueWithIdentifier("goto_my_data", sender: self)
         }
         

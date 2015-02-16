@@ -16,7 +16,7 @@ class VCLogin: UIViewController {
     @IBOutlet weak var btn_register: UIButton!
     @IBOutlet weak var txtUserOrMail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    var application = CApp()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class VCLogin: UIViewController {
         if (!txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
             application.myController.sendMessage("ro,User1994,0,0")
             // Si el server diu OK pasem a menu
-            if (application.myController.readMessage() == "99"){
+            if (application.myController.readMessage() == SUCCES){
                 self.performSegueWithIdentifier("goto_menu", sender: self)
             }
         }
