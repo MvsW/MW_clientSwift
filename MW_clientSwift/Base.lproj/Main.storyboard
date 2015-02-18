@@ -12,24 +12,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RBY-oX-KeO">
-                                <rect key="frame" x="106" y="20" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name or Email" textAlignment="center" minimumFontSize="17" id="Ega-aw-ReO">
-                                <rect key="frame" x="63" y="217" width="195" height="30"/>
+                                <rect key="frame" x="63" y="154" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" id="OxY-Vt-Au0">
-                                <rect key="frame" x="63" y="305" width="195" height="30"/>
+                                <rect key="frame" x="63" y="242" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFJ-Bz-Cgy">
                                 <rect key="frame" x="63" y="494" width="71" height="30"/>
@@ -53,6 +46,13 @@
                                     <action selector="loginTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pac-rQ-6Fp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RBY-oX-KeO">
+                                <rect key="frame" x="106" y="86" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -452,10 +452,10 @@
             </objects>
             <point key="canvasLocation" x="301" y="739"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Battle-->
         <scene sceneID="sHX-ES-ukG">
             <objects>
-                <viewController storyboardIdentifier="VSearchingBattle" id="J1J-0k-67x" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSearchingBattle" id="J1J-0k-67x" customClass="VCSearchBattle" customModule="MW_clientSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JYD-f4-Upk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,10 +502,10 @@
             </objects>
             <point key="canvasLocation" x="301" y="1491"/>
         </scene>
-        <!--View Controller-->
+        <!--Battle-->
         <scene sceneID="3xd-Yv-Gsd">
             <objects>
-                <viewController storyboardIdentifier="VBattle" id="xgh-lA-6PP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VBattle" id="xgh-lA-6PP" customClass="VCBattle" customModule="MW_clientSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4C-hV-SHA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,10 +577,10 @@
             </objects>
             <point key="canvasLocation" x="791" y="1491"/>
         </scene>
-        <!--View Controller-->
+        <!--My data-->
         <scene sceneID="Mg3-nN-b7m">
             <objects>
-                <viewController storyboardIdentifier="VMyData" id="BzW-0a-fCC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VMyData" id="BzW-0a-fCC" customClass="VCMy_data" customModule="MW_clientSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OSF-LZ-EZE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -706,6 +706,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HMF-wu-8va"/>
+        <segue reference="oM4-i9-W4f"/>
     </inferredMetricsTieBreakers>
 </document>

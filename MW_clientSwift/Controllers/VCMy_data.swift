@@ -12,7 +12,8 @@ class VCMy_data: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Llegim la informació del servidor
+        println(application.myController.readMessage())
         // Do any additional setup after loading the view.
     }
 
