@@ -33,13 +33,33 @@ class VCLogin: UIViewController {
     
     @IBAction func loginTapped(sender: UIButton) {
         // Checkejar els camps, si son correctes enviar al servidor i espera resposta
-        if (!txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
+        
+        let validarMail: Bool = application.isValidEmail(txtUserOrMail.text)
+        let validarPassword: Bool = application.isValidPassword(txtPassword.text)
+        let validarUsuari: Bool = application.validateUserName(txtUserOrMail.text)
+        
+        println("Mail: " + validarMail.description)
+        println("Password: " + validarPassword.description)
+        println("Usuari: " + validarUsuari.description)
+        
+        if (validarUsuari == true && validarPassword == true && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
+            println("Usuari correcte")
             application.myController.sendMessage("ro,User1994,0,0")
             // Si el server diu OK pasem a menu
             if (application.myController.readMessage() == SUCCES){
                 self.performSegueWithIdentifier("goto_menu", sender: self)
             }
+        }else{
+            if (validarMail == true && validarPassword == true && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
+                println("Mail correcte")
+                application.myController.sendMessage("ro,User1994,0,0")
+                // Si el server diu OK pasem a menu
+                if (application.myController.readMessage() == SUCCES){
+                    self.performSegueWithIdentifier("goto_menu", sender: self)
+                }
+            }
         }
+        
         
     }
     
