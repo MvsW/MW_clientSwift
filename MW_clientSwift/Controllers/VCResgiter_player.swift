@@ -21,6 +21,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var tfLife: UITextField!
     @IBOutlet weak var tfEnergy: UITextField!
     @IBOutlet weak var tfEnergyRegeneration: UITextField!
+    @IBOutlet weak var tfCharacterName: UITextField!
     
 
     // DECLARACIO VARIABLES
@@ -74,7 +75,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
 
 //TODO cambiar el nom de la variable a comprobar
         //Validar camps i enviar al servidor
-        let validarUsuari: Bool = application.validatePlayerName("NombreDeLaVariable")
+        let validarUsuari: Bool = application.validatePlayerName(tfCharacterName.text)
         println(validarUsuari)
         if(validarUsuari){
             self.performSegueWithIdentifier("goto_menu", sender: self)

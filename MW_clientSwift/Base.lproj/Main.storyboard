@@ -389,6 +389,7 @@
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
                         <outlet property="sumaInteligence" destination="Fb8-1F-CC2" id="xpn-DG-Hlu"/>
                         <outlet property="sumaStrenght" destination="teq-PF-b1x" id="kgf-V6-kWJ"/>
+                        <outlet property="tfCharacterName" destination="GRU-dV-Hj6" id="lxD-lW-gk4"/>
                         <outlet property="tfEnergy" destination="khh-Wl-KPq" id="zhf-5c-hHl"/>
                         <outlet property="tfEnergyRegeneration" destination="Cgl-Nt-Z6s" id="m8j-Sv-2wg"/>
                         <outlet property="tfInteligence" destination="vf0-FC-XNv" id="n1v-si-JYS"/>
