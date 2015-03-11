@@ -19,6 +19,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         if(true){
             self.performSegueWithIdentifier("goto_menu", sender: self)
         }
+//TODO cambiar el nom de la variable a comprobar
+        //Validar camps i enviar al servidor
+        let validarUsuari: Bool = application.validateUserName("NombreDeLaVariable")
         
     }
     

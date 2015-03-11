@@ -46,4 +46,28 @@ public class CApp {
         return false
     }
     
+    //Comprovar que los campos no esten vacios
+    //Comprovar que el nombre del jugador sea correcto
+    
+    func validatePlayerName(text:String) ->Bool{
+        let maxValue = 12;
+        
+        for character in text {
+            if(character == "@" || character == " " ){
+                return false
+            }
+            if(character.hashValue >= maxValue){
+                return false
+            }
+        }
+        //Pasarlo todo a misusculas para asegurar errores
+        for chr in text{
+            var str = String(chr)
+            if str.lowercaseString == str{
+                return true
+            }
+        }
+        return false
+    }
+    
 }
