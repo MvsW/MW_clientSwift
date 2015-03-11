@@ -266,7 +266,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="create:" destination="0J5-T5-yBG" eventType="touchUpInside" id="78X-Nf-aQy"/>
                                             <action selector="createTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="z3l-dj-X3F"/>
                                         </connections>
                                     </button>
@@ -713,6 +712,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MCF-eK-elW"/>
+        <segue reference="HMF-wu-8va"/>
     </inferredMetricsTieBreakers>
 </document>

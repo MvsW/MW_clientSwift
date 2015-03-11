@@ -66,23 +66,19 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
             tfInteligence.text = pointsInteligence.description
         }
     }
-    @IBAction func create(sender: UIButton) {
-        println("create OK")
-    }
-    
-    
     
     // METODES CONTROLLER-VIEW
     @IBAction func createTapped(sender: UIButton) {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu
-        if(true){
-            self.performSegueWithIdentifier("goto_menu", sender: self)
-        }
+
 //TODO cambiar el nom de la variable a comprobar
         //Validar camps i enviar al servidor
-        let validarUsuari: Bool = application.validateUserName("NombreDeLaVariable")
-        
+        let validarUsuari: Bool = application.validatePlayerName("NombreDeLaVariable")
+        println(validarUsuari)
+        if(validarUsuari){
+            self.performSegueWithIdentifier("goto_menu", sender: self)
+        }
     }
     
     override func viewDidLoad() {
