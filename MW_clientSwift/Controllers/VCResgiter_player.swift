@@ -9,10 +9,70 @@ import UIKit
 
 class VCRegister_player: UIViewController, UIScrollViewDelegate {
     
+    // DECLARACIO BOTONS
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var sumaStrenght: UIButton!
+    @IBOutlet weak var restaStrenght: UIButton!
+    @IBOutlet weak var sumaInteligence: UIButton!
+    @IBOutlet weak var restaInteligence: UIButton!
+    @IBOutlet weak var tfStrenght: UITextField!
+    @IBOutlet weak var tfInteligence: UITextField!
+    @IBOutlet weak var tfPoints: UITextField!
+    @IBOutlet weak var tfLife: UITextField!
+    @IBOutlet weak var tfEnergy: UITextField!
+    @IBOutlet weak var tfEnergyRegeneration: UITextField!
     
+
+    // DECLARACIO VARIABLES
     var containerView: UIView!
+    var pointsLife = 0
+    var pointsEnergy = 0
+    var pointsEnergyRegeneration = 0
+    var pointsStrenght = 0
+    var pointsInteligence = 0
+    var pointsPoints = 0
+    let MAXPOINTS_STRENGHT = 5
+    let MINPOINTS_STRENGHT = 1
+    let MAXPOINTS_INTELIGENCE = 5
+    let MINPOINTS_INTELIGENCE = 1
+
+    // METODES BOTONS
+    @IBAction func sumaStrenght(sender: UIButton) {
+        println("sumaStrength")
+        if(tfStrenght.text.toInt() <= MAXPOINTS_STRENGHT){
+            pointsStrenght = pointsStrenght + 1
+            tfStrenght.text = pointsStrenght.description
+        }
+    }
+    @IBAction func restaStrenght(sender: UIButton) {
+        println("restaStrength")
+        if(tfStrenght.text.toInt() >= MINPOINTS_STRENGHT){
+            pointsStrenght = pointsStrenght - 1
+            tfStrenght.text = pointsStrenght.description
+        }
+    }
+
+    @IBAction func sumaInteligence(sender: UIButton) {
+        println("sumaInteligence")
+        if(tfInteligence.text.toInt() <= MAXPOINTS_INTELIGENCE){
+            pointsInteligence = pointsInteligence + 1
+            tfInteligence.text = pointsInteligence.description
+        }
+    }
+    @IBAction func restaInteligence(sender: UIButton) {
+        println("restaInteligence")
+        if(tfInteligence.text.toInt() >= MINPOINTS_INTELIGENCE){
+            pointsInteligence = pointsInteligence - 1
+            tfInteligence.text = pointsInteligence.description
+        }
+    }
+    @IBAction func create(sender: UIButton) {
+        println("create OK")
+    }
     
+    
+    
+    // METODES CONTROLLER-VIEW
     @IBAction func createTapped(sender: UIButton) {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu

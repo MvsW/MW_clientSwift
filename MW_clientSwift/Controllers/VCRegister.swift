@@ -30,8 +30,11 @@ class VCRegister: UIViewController {
         let validarMail: Bool = application.isValidEmail(txtMail.text)
         let validarPassword: Bool = application.isValidPassword(txtPassword.text)
         let validarUsuari: Bool = application.validateUserName(txtUserName.text)
-        
-        if(validarMail && validarPassword && validarUsuari && txtPassword == txtConfirmPassword){
+        println("Mail: " + validarMail.description)
+        println("Password: " + validarPassword.description)
+        println("Usuari: " + validarUsuari.description)
+        println("-------------")
+        if(validarMail && validarPassword && validarUsuari && txtPassword.text == txtConfirmPassword.text){
             self.performSegueWithIdentifier("goto_register_player", sender: self)
         }
     }

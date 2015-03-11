@@ -18,12 +18,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" id="OxY-Vt-Au0">
-                                <rect key="frame" x="63" y="242" width="195" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFJ-Bz-Cgy">
                                 <rect key="frame" x="63" y="494" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,6 +47,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" id="OxY-Vt-Au0">
+                                <rect key="frame" x="63" y="242" width="195" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -128,13 +128,13 @@
                                 <rect key="frame" x="63" y="339" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" id="fTa-57-fgB">
                                 <rect key="frame" x="63" y="444" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mKj-Ye-jZD">
                                 <rect key="frame" x="63" y="421" width="147" height="21"/>
@@ -266,6 +266,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="create:" destination="0J5-T5-yBG" eventType="touchUpInside" id="78X-Nf-aQy"/>
                                             <action selector="createTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="z3l-dj-X3F"/>
                                         </connections>
                                     </button>
@@ -332,14 +333,9 @@
                                             <color key="titleColor" red="0.12787755914295873" green="1" blue="0.10830487249057075" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gyB-M0-JBc">
-                                        <rect key="frame" x="180" y="520" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="-">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="sumaStrenght:" destination="0J5-T5-yBG" eventType="touchUpInside" id="HGD-Zi-7oq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aFk-dF-ihp">
                                         <rect key="frame" x="180" y="567" width="30" height="30"/>
@@ -348,14 +344,9 @@
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T3B-aN-Nkf">
-                                        <rect key="frame" x="180" y="614" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="-">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="restaInteligence:" destination="0J5-T5-yBG" eventType="touchUpInside" id="ln9-BY-SrC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fb8-1F-CC2">
                                         <rect key="frame" x="247" y="567" width="30" height="30"/>
@@ -364,14 +355,9 @@
                                             <color key="titleColor" red="0.12787755910000001" green="1" blue="0.1083048725" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pGr-XJ-LgX">
-                                        <rect key="frame" x="247" y="614" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.12787755910000001" green="1" blue="0.1083048725" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="sumaInteligence:" destination="0J5-T5-yBG" eventType="touchUpInside" id="5JH-Vx-ntg"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pjh-Kd-VQG">
                                         <rect key="frame" x="58" y="634" width="49" height="21"/>
@@ -380,6 +366,17 @@
                                         <color key="textColor" red="1" green="0.18160931899999999" blue="0.1607830764" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gyB-M0-JBc">
+                                        <rect key="frame" x="180" y="520" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restaStrenght:" destination="0J5-T5-yBG" eventType="touchUpInside" id="Kc5-4C-rSi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -388,7 +385,17 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="restaInteligence" destination="aFk-dF-ihp" id="csS-wa-ndD"/>
+                        <outlet property="restaStrenght" destination="gyB-M0-JBc" id="wsd-dB-r2w"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
+                        <outlet property="sumaInteligence" destination="Fb8-1F-CC2" id="xpn-DG-Hlu"/>
+                        <outlet property="sumaStrenght" destination="teq-PF-b1x" id="kgf-V6-kWJ"/>
+                        <outlet property="tfEnergy" destination="khh-Wl-KPq" id="zhf-5c-hHl"/>
+                        <outlet property="tfEnergyRegeneration" destination="Cgl-Nt-Z6s" id="m8j-Sv-2wg"/>
+                        <outlet property="tfInteligence" destination="vf0-FC-XNv" id="n1v-si-JYS"/>
+                        <outlet property="tfLife" destination="5BG-rV-qso" id="rQK-NN-OGJ"/>
+                        <outlet property="tfPoints" destination="36W-cb-Ycs" id="L35-zH-ZAC"/>
+                        <outlet property="tfStrenght" destination="Dmh-7x-HZs" id="6Lc-RZ-DSF"/>
                         <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="HMF-wu-8va"/>
                     </connections>
                 </viewController>

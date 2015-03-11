@@ -20,7 +20,7 @@ public class CApp {
     }
     
     func isValidPassword(testStr:String) -> Bool{
-        if(countElements(testStr) <= 6){
+        if(countElements(testStr) >= 6){
             for chr in testStr{
                 var str = String(chr)
                 if(str.uppercaseString == str){

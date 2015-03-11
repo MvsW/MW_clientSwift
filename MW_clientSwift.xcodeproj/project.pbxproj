@@ -30,6 +30,7 @@
 		41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0811A8BD97C00394712 /* CConstants.swift */; };
 		41F497E91A90EC390085DD7F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E71A90EC390085DD7F /* MyViewController.swift */; };
 		41F497EA1A90EC390085DD7F /* ViewControllerPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */; };
+		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		41EDC0811A8BD97C00394712 /* CConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
 		41F497E71A90EC390085DD7F /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPrototype.swift; sourceTree = "<group>"; };
+		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 		41B1D2381A6991A600962647 = {
 			isa = PBXGroup;
 			children = (
+				C0BF54051AB09F9D0066E027 /* CoreLocation.framework */,
 				41E58D861A90BBA1009A2D0F /* Imatges */,
 				41EDC07E1A8BD97C00394712 /* Classes.ControlCenter */,
 				41F497E41A90EC0B0085DD7F /* Controllers */,
