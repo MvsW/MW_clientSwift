@@ -36,6 +36,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     let MINPOINTS_STRENGHT = 1
     let MAXPOINTS_INTELIGENCE = 5
     let MINPOINTS_INTELIGENCE = 1
+    
+    // VARIABLES DE VCRegister.swift
+    var userName = ""
+    var userMail = ""
+    var userPassword = ""
 
     // METODES BOTONS
     @IBAction func sumaStrenght(sender: UIButton) {
@@ -78,8 +83,10 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         let validarUsuari: Bool = application.validatePlayerName(tfCharacterName.text)
         println(validarUsuari)
         if(validarUsuari){
+            application.myController.sendMessage(userName + "," + userMail + "," + userPassword + "," + tfCharacterName.text + "," + MAGE.description)
             self.performSegueWithIdentifier("goto_menu", sender: self)
         }
+        
     }
     
     override func viewDidLoad() {

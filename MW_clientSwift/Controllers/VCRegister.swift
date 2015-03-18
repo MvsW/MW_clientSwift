@@ -35,7 +35,14 @@ class VCRegister: UIViewController {
         println("Usuari: " + validarUsuari.description)
         println("-------------")
         if(validarMail && validarPassword && validarUsuari && txtPassword.text == txtConfirmPassword.text){
-            self.performSegueWithIdentifier("goto_register_player", sender: self)
+            
+            var register_player: VCRegister_player = self.storyboard?.instantiateViewControllerWithIdentifier("VRegisterCharacter") as VCRegister_player
+            register_player.userName = txtUserName.text
+            register_player.userMail = txtMail.text
+            register_player.userPassword = txtUserName.text
+            self.presentViewController(register_player, animated: true, completion: nil)
+
+            //self.performSegueWithIdentifier("goto_register_player", sender: self)
         }
     }
 }
