@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class CApp {
     var myController = MyViewController()
@@ -70,4 +71,23 @@ public class CApp {
         return false
     }
     
+    // COMPROVAR CONEXIO
+    let reachability = Reachability.reachabilityForInternetConnection()
+
+    func comprovarConexion()->Bool{
+        println("Rechability said: " + reachability.currentReachabilityString)
+        
+        if(reachability.isReachable()){
+            if(reachability.isReachableViaWiFi()){
+            println("Via WIFI")
+            }
+            if(reachability.isReachableViaWWAN()){
+            println("Via WWAN")
+            }
+            return true
+        }else{
+            println("NO INTERNET")
+            return false
+        }
+    }
 }

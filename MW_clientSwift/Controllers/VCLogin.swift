@@ -11,8 +11,8 @@ import Foundation
 import CFNetwork
 import CoreLocation
 
-class VCLogin: UIViewController, CLLocationManagerDelegate {
-    
+class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate {
+
     // DECLARACIO BOTONS
     @IBOutlet weak var btn_login: UIButton!
     @IBOutlet weak var btn_register: UIButton!
@@ -85,9 +85,25 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     // METODES CONTROLLER-VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        application.myController.connect()
-        findMyLocation()
+        
+        if(application.comprovarConexion()){
+            application.myController.connect()
+            findMyLocation()
+        }else{
+            var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
+            alert.show()
+        }
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        println(buttonIndex.description)
+        if(buttonIndex == 1){
+            self.settings()
+        }
+    }
+    
+    func settings(){
+        UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
     
     override func didReceiveMemoryWarning() {

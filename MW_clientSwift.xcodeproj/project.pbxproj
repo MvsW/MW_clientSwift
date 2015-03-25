@@ -31,6 +31,7 @@
 		41F497E91A90EC390085DD7F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E71A90EC390085DD7F /* MyViewController.swift */; };
 		41F497EA1A90EC390085DD7F /* ViewControllerPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
+		C0F619B71AC300660007B511 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F619B61AC300660007B511 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		41F497E71A90EC390085DD7F /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPrototype.swift; sourceTree = "<group>"; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C0F619B61AC300660007B511 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				41F497E71A90EC390085DD7F /* MyViewController.swift */,
+				C0F619B61AC300660007B511 /* Reachability.swift */,
 				41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */,
 				41EDC07F1A8BD97C00394712 /* CApp.swift */,
 				41EDC0811A8BD97C00394712 /* CConstants.swift */,
@@ -322,6 +325,7 @@
 				41B1D2471A6991A600962647 /* AppDelegate.swift in Sources */,
 				41C82B0B1A91054B00235D61 /* VCSearchBattle.swift in Sources */,
 				41F497EA1A90EC390085DD7F /* ViewControllerPrototype.swift in Sources */,
+				C0F619B71AC300660007B511 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
