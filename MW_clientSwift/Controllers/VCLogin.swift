@@ -49,6 +49,16 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         })
     }
+    @IBAction func entraPassword(sender: UITextField) {
+        println("Password")
+        txtPassword.background = UIImage(named: "focus.png")
+        txtUserOrMail.background = UIImage(named: "no_focus.png")
+    }
+    @IBAction func entraUserName(sender: UITextField) {
+        println("UserName")
+        txtPassword.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.background = UIImage(named: "focus.png")
+    }
     
     func displayLocationInfo(placemark: CLPlacemark?) {
         var latitud:CLLocationDegrees = locationManager.location.coordinate.latitude
@@ -85,6 +95,25 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     // METODES CONTROLLER-VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
+
+        // POSAR IMATGE FONS EDIT TEXT
+        txtPassword.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.layer.cornerRadius = 14
+        txtPassword.layer.cornerRadius = 14
+        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
+        txtUserOrMail.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
+        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributesDictionary)
+
+        // ASSIGNAR TIPUS DE LLETRA
+        /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
+        btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         if(application.comprovarConexion()){
             application.myController.connect()

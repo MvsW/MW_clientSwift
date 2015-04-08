@@ -92,6 +92,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
         // Set up the container view to hold your custom view hierarchy
         //let containerSize = CGSizeMake(640.0, 640.0)
         let containerSize = CGSizeMake(0, self.view.frame.height * 1.7)
