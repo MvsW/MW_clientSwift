@@ -45,15 +45,40 @@ class VCRegister: UIViewController {
         println("Password: " + validarPassword.description)
         println("Usuari: " + validarUsuari.description)
         println("-------------")
+        //Modificar per varis if on si hi ha un error el bolean pasara a true/false i refrescar pantalla
         if(validarMail && validarPassword && validarUsuari && txtPassword.text == txtConfirmPassword.text){
             
+            
+            /*
+            //Deprecated
             var register_player: VCRegister_player = self.storyboard?.instantiateViewControllerWithIdentifier("VRegisterCharacter") as VCRegister_player
             register_player.userName = txtUserName.text
             register_player.userMail = txtMail.text
             register_player.userPassword = txtUserName.text
             self.presentViewController(register_player, animated: true, completion: nil)
+            //No cal enviar les dades a la següent View Controler
+            */
+            
+            /*
+            Que enviar al servidor?? per saber si el nom de usuari o mail ja existeixen???
+            String username, String email, String password, int status
+            
+            */
+            application.myController.sendMessage(txtMail.text + "," + txtUserName.text + "," + txtPassword.text)
+            // Si el server diu OK pasem a menu
+            if (application.myController.readMessage() == SUCCES){
+                self.performSegueWithIdentifier("goto_register_player", sender: self)
+            }
+            else{
+                println("Camps no validats")
+                //notificar el resultat del server
+                //Cal implementar metodes per fer com els setErrors de android i mostra el error que toca
+                //ERRORS via servidor
+            }
 
-            //self.performSegueWithIdentifier("goto_register_player", sender: self)
+        }
+        else{
+            //Implementar mostrar per pantalla errors de control LOCAL
         }
     }
     @IBAction func clicUserName(sender: UITextField) {

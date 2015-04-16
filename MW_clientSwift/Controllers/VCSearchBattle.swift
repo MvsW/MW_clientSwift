@@ -12,6 +12,17 @@ class VCSearchBattle: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        setUp()
+        
+    }
+    
+    func setUp(){
+        dispatch_async(dispatch_get_main_queue(), {
+            if(application.myController.readMessage() == SUCCES){
+                self.performSegueWithIdentifier("goto_battle", sender: self)
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {

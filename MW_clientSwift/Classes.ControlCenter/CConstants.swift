@@ -9,8 +9,8 @@
 import Foundation
 
 
-//var serverAddress: CFString = "192.168.1.13"
-var serverAddress: CFString = "172.16.253.134"
+var serverAddress: CFString = "192.168.1.11"
+//var serverAddress: CFString = "172.16.253.134"
 //var serverAddress: CFString = "172.16.253.63"
 let serverPort: UInt32 = 4444
 

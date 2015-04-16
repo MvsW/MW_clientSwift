@@ -8,6 +8,9 @@
 import UIKit
 
 class VCRegister_player: UIViewController, UIScrollViewDelegate {
+    /*
+        TODO: IMPLEMENTAR LA RECULLIDA DE DADES PER ENVIARLES AL SERVIDOR!!!!
+    */
     
     // DECLARACIO BOTONS
     @IBOutlet var scrollView: UIScrollView!
@@ -21,7 +24,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var tfLife: UITextField!
     @IBOutlet weak var tfEnergy: UITextField!
     @IBOutlet weak var tfEnergyRegeneration: UITextField!
-    @IBOutlet weak var tfCharacterName: UITextField!
+    @IBOutlet weak var tfCharacterName: UITextField!        //0
     
 
     // DECLARACIO VARIABLES

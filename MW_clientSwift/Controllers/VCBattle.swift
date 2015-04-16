@@ -10,9 +10,16 @@ import UIKit
 
 class VCBattle: UIViewController {
     
+    /*
+        TODO: implementar tots els tappeds de buttons
+    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        println("Welcome to fisrt battle protocol by RO")
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -179,8 +179,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     @IBAction func registerTapped(sender: UIButton) {
         //Enviar al servidor que volem registrarnos.
         if (true){
-            application.myController.sendMessage(REGISTER + "," + REGISTER)
-            self.performSegueWithIdentifier("goto_register", sender: self)
+            application.myController.sendMessage(REGISTER + "," + REGISTER + "," + REGISTER + "," + REGISTER )
+            if (application.myController.readMessage() == SUCCES){
+                self.performSegueWithIdentifier("goto_register", sender: self)
+            }
         }
         
     }
