@@ -22,8 +22,6 @@ class VCSearchBattle: UIViewController {
         
         dispatch_async(dispatch_get_global_queue(
             Int(QOS_CLASS_UTILITY.value), 0)) {
-                
-                NSLog("First Log")
                 if(application.myController.readMessage() == SUCCES){
                     self.performSegueWithIdentifier("goto_battle", sender: self)
                 }
