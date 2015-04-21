@@ -26,5 +26,20 @@ class VCBattle: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    
+    @IBAction func actionButtonTapped(sender: UIButton) {
+        
+        //var title: String = sender.titleLabel!.text!
+        var tag: Int = sender.tag
+        
+        // ATTENTION! Be sure that this method only receives battle action buttons
+        if (tag >= 0 && tag <= battleAction.count) {
+            // TODO Make a method that check if have the energy required
+            application.myController.sendMessage(battleAction[tag])
+            println("Action battle sent: \(battleAction[tag])")
+        }
+        
+    }
 }

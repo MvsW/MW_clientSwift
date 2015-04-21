@@ -22,9 +22,13 @@ let ERROR = "100"
 let REGISTER = "register" // valor per enviar al servidor i entrar en el fil de registre
 
 // Op menu TYPES aqui o a CMenu??
-let SHOW_DATA = "showData";
-let START_BATTLE = "startBattle";
+let SHOW_DATA = "showData"
+let START_BATTLE = "startBattle"
 
 // CONSTANTS CLASS TYPES
 let MAGE = 1
 let WARLOCK = 2
+
+// BATTLE ACTIONS ARRAY
+let battleAction = ["BA", "S1", "S2", "US", "DG", "SH"]
+
