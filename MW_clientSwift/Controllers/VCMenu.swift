@@ -20,8 +20,8 @@ class VCMenu: UIViewController {
     }
     
     @IBAction func battleTapped(sender: UIButton) {
-        if(false){
-            application.myController.sendMessage(START_BATTLE)
+        if(true){
+            
             self.performSegueWithIdentifier("got_searching", sender: self)
         }
         

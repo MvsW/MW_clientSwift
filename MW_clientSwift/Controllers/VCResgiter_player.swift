@@ -8,15 +8,85 @@
 import UIKit
 
 class VCRegister_player: UIViewController, UIScrollViewDelegate {
+    /*
+        TODO: IMPLEMENTAR LA RECULLIDA DE DADES PER ENVIARLES AL SERVIDOR!!!!
+    */
     
+    // DECLARACIO BOTONS
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var sumaStrenght: UIButton!
+    @IBOutlet weak var restaStrenght: UIButton!
+    @IBOutlet weak var sumaInteligence: UIButton!
+    @IBOutlet weak var restaInteligence: UIButton!
+    @IBOutlet weak var tfStrenght: UITextField!
+    @IBOutlet weak var tfInteligence: UITextField!
+    @IBOutlet weak var tfPoints: UITextField!
+    @IBOutlet weak var tfLife: UITextField!
+    @IBOutlet weak var tfEnergy: UITextField!
+    @IBOutlet weak var tfEnergyRegeneration: UITextField!
+    @IBOutlet weak var tfCharacterName: UITextField!        //0
     
+
+    // DECLARACIO VARIABLES
     var containerView: UIView!
+    var pointsLife = 0
+    var pointsEnergy = 0
+    var pointsEnergyRegeneration = 0
+    var pointsStrenght = 0
+    var pointsInteligence = 0
+    var pointsPoints = 0
+    let MAXPOINTS_STRENGHT = 5
+    let MINPOINTS_STRENGHT = 1
+    let MAXPOINTS_INTELIGENCE = 5
+    let MINPOINTS_INTELIGENCE = 1
     
+    // VARIABLES DE VCRegister.swift
+    var userName = ""
+    var userMail = ""
+    var userPassword = ""
+
+    // METODES BOTONS
+    @IBAction func sumaStrenght(sender: UIButton) {
+        println("sumaStrength")
+        if(tfStrenght.text.toInt() <= MAXPOINTS_STRENGHT){
+            pointsStrenght = pointsStrenght + 1
+            tfStrenght.text = pointsStrenght.description
+        }
+    }
+    @IBAction func restaStrenght(sender: UIButton) {
+        println("restaStrength")
+        if(tfStrenght.text.toInt() >= MINPOINTS_STRENGHT){
+            pointsStrenght = pointsStrenght - 1
+            tfStrenght.text = pointsStrenght.description
+        }
+    }
+
+    @IBAction func sumaInteligence(sender: UIButton) {
+        println("sumaInteligence")
+        if(tfInteligence.text.toInt() <= MAXPOINTS_INTELIGENCE){
+            pointsInteligence = pointsInteligence + 1
+            tfInteligence.text = pointsInteligence.description
+        }
+    }
+    @IBAction func restaInteligence(sender: UIButton) {
+        println("restaInteligence")
+        if(tfInteligence.text.toInt() >= MINPOINTS_INTELIGENCE){
+            pointsInteligence = pointsInteligence - 1
+            tfInteligence.text = pointsInteligence.description
+        }
+    }
+    
+    // METODES CONTROLLER-VIEW
     @IBAction func createTapped(sender: UIButton) {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu
-        if(true){
+
+//TODO cambiar el nom de la variable a comprobar
+        //Validar camps i enviar al servidor
+        let validarUsuari: Bool = application.validatePlayerName(tfCharacterName.text)
+        println(validarUsuari)
+        if(validarUsuari){
+            application.myController.sendMessage(userName + "," + userMail + "," + userPassword + "," + tfCharacterName.text + "," + MAGE.description)
             self.performSegueWithIdentifier("goto_menu", sender: self)
         }
         
@@ -24,6 +94,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         // Set up the container view to hold your custom view hierarchy
         //let containerSize = CGSizeMake(640.0, 640.0)
