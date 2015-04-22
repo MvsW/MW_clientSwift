@@ -64,7 +64,7 @@ class VCRegister: UIViewController {
             String username, String email, String password, int status
             
             */
-            application.myController.sendMessage(txtMail.text + "," + txtUserName.text + "," + txtPassword.text)
+            application.myController.sendMessage(txtUserName.text + "," + txtMail.text + "," + txtPassword.text)
             // Si el server diu OK pasem a menu
             if (application.myController.readMessage() == SUCCES){
                 self.performSegueWithIdentifier("goto_register_player", sender: self)
