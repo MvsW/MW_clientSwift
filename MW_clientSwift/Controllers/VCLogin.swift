@@ -42,7 +42,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
             
             if placemarks.count > 0 {
-                let pm = placemarks[0] as CLPlacemark
+                let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
             } else {
                 println("Problem with the data received from geocoder")
@@ -172,7 +172,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 

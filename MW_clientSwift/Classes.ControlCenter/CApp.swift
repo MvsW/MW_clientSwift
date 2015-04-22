@@ -13,15 +13,19 @@ public class CApp {
     var myController = MyViewController()
     
     func isValidEmail(testStr:String) -> Bool {
+        println("validate emilId: \(testStr)")
+        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        if let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx) {
-            return emailTest.evaluateWithObject(testStr)
-        }
-        return false
+        
+        var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        var result = emailTest.evaluateWithObject(testStr)
+        
+        return result
     }
     
     func isValidPassword(testStr:String) -> Bool{
-        if(countElements(testStr) >= 6){
+        if(count(testStr) >= 6){
             for chr in testStr{
                 var str = String(chr)
                 if(str.uppercaseString == str){

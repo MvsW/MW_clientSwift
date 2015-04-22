@@ -63,7 +63,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         
         if message == nil{
             message = ""
-            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)?
+            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         }
         else{
             thisMessage = message!
@@ -202,7 +202,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
     }
     
     //Handle location (Experimental)
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:AnyObject) {
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         println("locations = \(locations)")
         //tv_xivato.text = "success locations = \(locations)"
     }
