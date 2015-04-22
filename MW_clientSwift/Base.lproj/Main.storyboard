@@ -246,18 +246,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mage.png" id="kVc-DU-IXF">
-                                        <rect key="frame" x="77" y="92" width="166" height="154"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siguiente.png" id="j6p-7f-KFx">
-                                        <rect key="frame" x="226" y="266" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anterior.png" id="cz4-HG-it5">
-                                        <rect key="frame" x="63" y="266" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warlock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9P-7L-wkY">
                                         <rect key="frame" x="129" y="271" width="62" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -426,6 +414,16 @@
                                             <action selector="restaStrenght:" destination="0J5-T5-yBG" eventType="touchUpInside" id="Kc5-4C-rSi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c1k-Ft-ng6">
+                                        <rect key="frame" x="92" y="93" width="142" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="mage.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnImage:" destination="0J5-T5-yBG" eventType="touchUpInside" id="hCN-Tg-55k"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -434,6 +432,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnImage" destination="c1k-Ft-ng6" id="UWC-39-Iu2"/>
                         <outlet property="restaInteligence" destination="aFk-dF-ihp" id="csS-wa-ndD"/>
                         <outlet property="restaStrenght" destination="gyB-M0-JBc" id="wsd-dB-r2w"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
@@ -768,7 +767,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="anterior.png" width="286" height="286"/>
         <image name="fondo.png" width="510" height="422"/>
         <image name="iconLogin.png" width="235" height="274"/>
         <image name="iconRegister.png" width="244" height="325"/>
@@ -777,7 +775,6 @@
         <image name="no_focus.png" width="693" height="114"/>
         <image name="pergamino.png" width="544" height="800"/>
         <image name="rayitaSeparadora.png" width="350" height="50"/>
-        <image name="siguiente.png" width="286" height="286"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -785,6 +782,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="MCF-eK-elW"/>
+        <segue reference="HMF-wu-8va"/>
     </inferredMetricsTieBreakers>
 </document>

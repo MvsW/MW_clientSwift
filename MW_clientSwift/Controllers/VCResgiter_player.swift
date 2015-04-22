@@ -18,6 +18,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var restaStrenght: UIButton!
     @IBOutlet weak var sumaInteligence: UIButton!
     @IBOutlet weak var restaInteligence: UIButton!
+    
     @IBOutlet weak var tfStrenght: UITextField!
     @IBOutlet weak var tfInteligence: UITextField!
     @IBOutlet weak var tfPoints: UITextField!
@@ -26,6 +27,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var tfEnergyRegeneration: UITextField!
     @IBOutlet weak var tfCharacterName: UITextField!        //0
     
+    @IBOutlet weak var btnImage: UIButton!
 
     // DECLARACIO VARIABLES
     var containerView: UIView!
@@ -44,8 +46,20 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     var userName = ""
     var userMail = ""
     var userPassword = ""
+    var typeCharacter = MAGE
 
     // METODES BOTONS
+    @IBAction func btnImage(sender: UIButton) {
+        if(typeCharacter == MAGE){
+            btnImage.setImage(UIImage(named:"logo.png"),forState:UIControlState.Highlighted)
+            typeCharacter = WARLOCK
+        }else{
+            btnImage.setImage(UIImage(named:"mage.png"),forState:UIControlState.Highlighted)
+            typeCharacter = MAGE
+        }
+    }
+    
+    
     @IBAction func sumaStrenght(sender: UIButton) {
         println("sumaStrength")
         if(tfStrenght.text.toInt() <= MAXPOINTS_STRENGHT){
@@ -81,13 +95,30 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu
 
-//TODO cambiar el nom de la variable a comprobar
         //Validar camps i enviar al servidor
         let validarUsuari: Bool = application.validatePlayerName(tfCharacterName.text)
         println(validarUsuari)
         if(validarUsuari){
-            application.myController.sendMessage(userName + "," + userMail + "," + userPassword + "," + tfCharacterName.text + "," + MAGE.description)
-            self.performSegueWithIdentifier("goto_menu", sender: self)
+            
+            /*
+            @IBOutlet weak var tfStrenght: UITextField!
+            @IBOutlet weak var tfInteligence: UITextField!
+            @IBOutlet weak var tfPoints: UITextField!
+            @IBOutlet weak var tfLife: UITextField!
+            @IBOutlet weak var tfEnergy: UITextField!
+            @IBOutlet weak var tfEnergyRegeneration: UITextField!
+            @IBOutlet weak var tfCharacterName: UITextField!
+            */
+            
+            // playerName typePlayer life energy regeneration strenght intelligent
+            println(tfCharacterName.text + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            
+            application.myController.sendMessage(tfCharacterName.text + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            if(application.myController.readMessage() == SUCCES){
+                self.performSegueWithIdentifier("goto_menu", sender: self)
+            }else{
+                println("ERROR -> unseccfull")
+            }
         }
         
     }
