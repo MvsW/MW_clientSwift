@@ -80,6 +80,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pac-rQ-6Fp"/>
+                                    <segue destination="uaD-jh-2tf" kind="modal" identifier="goto_menu" id="EnL-PS-pPJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLogin.png" id="Tv4-XN-SDJ">
@@ -89,14 +90,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vbX-06-8Sh"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btn_login" destination="7eW-co-nFt" id="MbD-Kf-pTa"/>
                         <outlet property="btn_register" destination="RFJ-Bz-Cgy" id="LVD-5g-jAf"/>
                         <outlet property="txtPassword" destination="OxY-Vt-Au0" id="9iy-iD-At5"/>
                         <outlet property="txtUserOrMail" destination="Ega-aw-ReO" id="qEG-jq-vZu"/>
-                        <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="MCF-eK-elW"/>
                         <segue destination="MhL-eL-g1l" kind="modal" identifier="goto_register" id="WaJ-8b-7nV"/>
                     </connections>
                 </viewController>
@@ -107,7 +109,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-214" y="298"/>
+            <point key="canvasLocation" x="-554" y="269"/>
         </scene>
         <!--Register-->
         <scene sceneID="hX6-Br-5cr">
@@ -207,8 +209,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="fTa-57-fgB" id="uZf-RN-5cT"/>
                         <outlet property="txtMail" destination="pj3-Wd-R59" id="3YR-Xg-yfO"/>
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y2-YJ-VuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-101"/>
+            <point key="canvasLocation" x="-88" y="-101"/>
         </scene>
         <!--Register player-->
         <scene sceneID="hP8-mv-Ifh">
@@ -450,7 +450,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5D-6J-odj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-101"/>
+            <point key="canvasLocation" x="366" y="-101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gyd-8j-IS6">
+            <objects>
+                <navigationController id="uaD-jh-2tf" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fw-oH-tNC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YwS-vd-cY9" kind="relationship" relationship="rootViewController" id="5gK-xs-hAW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="669"/>
         </scene>
         <!--Menu-->
         <scene sceneID="HDV-NQ-uZC">
@@ -500,13 +518,13 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="BzW-0a-fCC" kind="modal" identifier="goto_my_data" id="Bp2-A2-CnU"/>
-                        <segue destination="J1J-0k-67x" kind="modal" identifier="got_searching" id="TIx-aK-Pgf"/>
+                        <segue destination="BzW-0a-fCC" kind="push" identifier="goto_my_data" id="Bp2-A2-CnU"/>
+                        <segue destination="J1J-0k-67x" kind="push" identifier="got_searching" id="TIx-aK-Pgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugW-S8-bYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="739"/>
+            <point key="canvasLocation" x="366" y="663"/>
         </scene>
         <!--Search Battle-->
         <scene sceneID="sHX-ES-ukG">
@@ -548,15 +566,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2RW-yb-Exe"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="xgh-lA-6PP" kind="modal" identifier="goto_battle" id="Cjy-ng-Xgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRE-IO-10K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="1491"/>
+            <point key="canvasLocation" x="296" y="1571"/>
         </scene>
         <!--Battle-->
         <scene sceneID="3xd-Yv-Gsd">
@@ -649,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXp-PT-fLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="1491"/>
+            <point key="canvasLocation" x="825" y="1571"/>
         </scene>
         <!--My data-->
         <scene sceneID="Mg3-nN-b7m">
@@ -758,12 +776,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="efk-7g-9hu"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j5-XL-MzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="739"/>
+            <point key="canvasLocation" x="825" y="663"/>
         </scene>
     </scenes>
     <resources>

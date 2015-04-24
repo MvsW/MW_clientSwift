@@ -105,4 +105,8 @@ class VCRegister: UIViewController {
         txtPassword.background = UIImage(named: "no_focus.png")
         txtConfirmPassword.background = UIImage(named: "focus.png")
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 }

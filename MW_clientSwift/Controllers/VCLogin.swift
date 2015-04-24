@@ -115,6 +115,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
+        // Speed testing. Omplint els camps
+        txtUserOrMail.text = "user1"
+        txtPassword.text = "User1994"
+        
         if(application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
