@@ -25,11 +25,13 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var tfLife: UITextField!
     @IBOutlet weak var tfEnergy: UITextField!
     @IBOutlet weak var tfEnergyRegeneration: UITextField!
-    @IBOutlet weak var tfCharacterName: UITextField!        //0
+    @IBOutlet weak var tfCharacterName: UITextField!
     
-    @IBOutlet weak var btnImage: UIButton!
+    @IBOutlet weak var lbl_classSelected: UILabel!
+    
+    @IBOutlet weak var classImage: UIImageView!
 
-    // DECLARACIO VARIABLES
+    // VARIABLES
     var containerView: UIView!
     var pointsLife = 0
     var pointsEnergy = 0
@@ -37,28 +39,31 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     var pointsStrenght = 0
     var pointsInteligence = 0
     var pointsPoints = 0
+    
+    // CONSTANTS
     let MAXPOINTS_STRENGHT = 5
     let MINPOINTS_STRENGHT = 1
     let MAXPOINTS_INTELIGENCE = 5
     let MINPOINTS_INTELIGENCE = 1
     
-    // VARIABLES DE VCRegister.swift
+    
+    
+    // SPECIFIC VARIABLES FROM VCRegister.swift
     var userName = ""
     var userMail = ""
     var userPassword = ""
     var typeCharacter = MAGE
 
-    // METODES BOTONS
-    @IBAction func btnImage(sender: UIButton) {
-        if(typeCharacter == MAGE){
-            btnImage.setImage(UIImage(named:"logo.png"),forState:UIControlState.Highlighted)
-            typeCharacter = WARLOCK
-        }else{
-            btnImage.setImage(UIImage(named:"mage.png"),forState:UIControlState.Highlighted)
-            typeCharacter = MAGE
-        }
-    }
-    
+    // BUTTON METHODS
+//    @IBAction func btnImage(sender: UIButton) {
+//        if(typeCharacter == MAGE){
+//            btnImage.setImage(UIImage(named:"logo.png"),forState:UIControlState.Highlighted)
+//            typeCharacter = WARLOCK
+//        }else{
+//            btnImage.setImage(UIImage(named:"mage.png"),forState:UIControlState.Highlighted)
+//            typeCharacter = MAGE
+//        }
+//    }
     
     @IBAction func sumaStrenght(sender: UIButton) {
         println("sumaStrength")
@@ -74,7 +79,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
             tfStrenght.text = pointsStrenght.description
         }
     }
-
     @IBAction func sumaInteligence(sender: UIButton) {
         println("sumaInteligence")
         if(tfInteligence.text.toInt() <= MAXPOINTS_INTELIGENCE){
@@ -90,7 +94,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    // METODES CONTROLLER-VIEW
+    // CONTROLLER VIEW METHODS
     @IBAction func createTapped(sender: UIButton) {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu
@@ -126,10 +130,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        // Setup image background
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
+        // Setup switcher
+        
+        
         
         // Set up the container view to hold your custom view hierarchy
         //let containerSize = CGSizeMake(640.0, 640.0)
@@ -173,14 +181,13 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         containerView.frame = contentsFrame
     }
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return containerView
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView!) {
+    func scrollViewDidZoom(scrollView: UIScrollView) {
         centerScrollViewContents()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

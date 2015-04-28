@@ -167,16 +167,6 @@
                                     <action selector="clicPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="KPZ-Xx-E8A"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="fTa-57-fgB">
-                                <rect key="frame" x="44" y="399" width="229" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="clicConfirmPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="VBz-5N-kJg"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mKj-Ye-jZD">
                                 <rect key="frame" x="69" y="371" width="194" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,6 +194,26 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="clicUserName:" destination="MhL-eL-g1l" eventType="touchDown" id="t7U-mr-Kg6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EEw-50-bdc">
+                                <rect key="frame" x="133" y="518" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Free pass">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0J5-T5-yBG" kind="modal" id="4HL-p1-cgQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="fTa-57-fgB">
+                                <rect key="frame" x="44" y="400" width="229" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="clicConfirmPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="VBz-5N-kJg"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -247,7 +257,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warlock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9P-7L-wkY">
-                                        <rect key="frame" x="129" y="271" width="62" height="21"/>
+                                        <rect key="frame" x="129" y="277" width="62" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -414,25 +424,21 @@
                                             <action selector="restaStrenght:" destination="0J5-T5-yBG" eventType="touchUpInside" id="Kc5-4C-rSi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c1k-Ft-ng6">
-                                        <rect key="frame" x="92" y="93" width="142" height="170"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SXn-S8-yPL">
+                                        <rect key="frame" x="72" y="93" width="176" height="176"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="mage.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnImage:" destination="0J5-T5-yBG" eventType="touchUpInside" id="hCN-Tg-55k"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X6y-57-ZiN"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnImage" destination="c1k-Ft-ng6" id="UWC-39-Iu2"/>
+                        <outlet property="classImage" destination="SXn-S8-yPL" id="Lql-GO-jE3"/>
+                        <outlet property="lbl_classSelected" destination="t9P-7L-wkY" id="pV8-N1-2uR"/>
                         <outlet property="restaInteligence" destination="aFk-dF-ihp" id="csS-wa-ndD"/>
                         <outlet property="restaStrenght" destination="gyB-M0-JBc" id="wsd-dB-r2w"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
@@ -802,5 +808,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="HMF-wu-8va"/>
+        <segue reference="4HL-p1-cgQ"/>
     </inferredMetricsTieBreakers>
 </document>
