@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VCRegister_player: UIViewController, UIScrollViewDelegate {
+class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     /*
         TODO: IMPLEMENTAR LA RECULLIDA DE DADES PER ENVIARLES AL SERVIDOR!!!!
     */
@@ -45,6 +45,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     let MINPOINTS_STRENGHT = 1
     let MAXPOINTS_INTELIGENCE = 5
     let MINPOINTS_INTELIGENCE = 1
+    
+    let mageClass = UIImage(named: "mage.png")
+    let warlockClass = UIImage(named: "warlock.png")
     
     
     

@@ -26,7 +26,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     
     // METODES PER LOGALITZACIO
    func findMyLocation() {
-        println("entra findMyLocation")
+        println("Inside of VCLogin > findMyLocation")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
@@ -49,13 +49,12 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         })
     }
+    
     @IBAction func entraPassword(sender: UITextField) {
-        println("Password")
         txtPassword.background = UIImage(named: "focus.png")
         txtUserOrMail.background = UIImage(named: "no_focus.png")
     }
     @IBAction func entraUserName(sender: UITextField) {
-        println("UserName")
         txtPassword.background = UIImage(named: "no_focus.png")
         txtUserOrMail.background = UIImage(named: "focus.png")
     }
@@ -92,7 +91,8 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         
     }
 
-    // METODES CONTROLLER-VIEW
+    
+    // CONTROLLER VIEW METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -144,44 +144,62 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     
-    // METODES BOTONS
+
+    // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
-        // Checkejar els camps, si son correctes enviar al servidor i espera resposta
         
-        let validarMail: Bool = application.isValidEmail(txtUserOrMail.text)
-        let validarPassword: Bool = application.isValidPassword(txtPassword.text)
-        let validarUsuari: Bool = application.validateUserName(txtUserOrMail.text)
         
-        println("Mail: " + validarMail.description)
-        println("Password: " + validarPassword.description)
-        println("Usuari: " + validarUsuari.description)
+        let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
+        let validatePassword: Bool = application.isValidPassword(txtPassword.text)
+        let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
+        var readyForSend: Bool = false
+        
+        println("Mail: " + validateMail.description)
+        println("Password: " + validatePassword.description)
+        println("Usuari: " + validateUser.description)
         println("-----------------")
         
-        if (validarUsuari && validarPassword && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
-            println("Usuari correcte")
-            application.myController.sendMessage(txtUserOrMail.text + "," + txtPassword.text + "," + latitud.description + "," + longitud.description)
-            // Si el server diu OK pasem a menu
-            if (application.myController.readMessage() == SUCCES){
-                self.performSegueWithIdentifier("goto_menu", sender: self)
+        // Checks if the two fields are empty or not
+        if (!requiredFieldsAreEmpty()) {
+            var userOrMail = txtUserOrMail.text
+            
+            // First check if is an email or not. And check in all case the criterias
+            if (userOrMail.rangeOfString("@") == nil && validateUser && validatePassword) {
+                println("Fields filled. Username and password form valid")
+                readyForSend = true
+                
+            } else if (validateMail && validatePassword) {
+                println("Fields filled. Mail and password form are not valids")
+                readyForSend = true
+                
+            } else {
+                println("The fields are not empty but the user has not been found")
             }
-        }else{
-            if (validarMail == true && validarPassword == true && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
-                println("Mail correcte")
+            
+            if (readyForSend) {
+                // Sending user data to the server
                 application.myController.sendMessage(txtUserOrMail.text + "," + txtPassword.text + "," + latitud.description + "," + longitud.description)
-                // Si el server diu OK pasem a menu
-                if (application.myController.readMessage() == SUCCES){
+                
+                // Catching response
+                var serverResponse = application.myController.readMessage()
+                if (serverResponse == SUCCES) {
+                    // Everything is correct. Go to menu view
                     self.performSegueWithIdentifier("goto_menu", sender: self)
+                } else {
+                    // NOT SUCCES response
+                    println("Server response = \(serverResponse)")
                 }
             }
         }
     }
+    
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
     @IBAction func registerTapped(sender: UIButton) {
-        //Enviar al servidor que volem registrarnos.
+        // Sending to server that we want to REGISTER and segue to Register view
         if (true){
             application.myController.sendMessage(REGISTER + "," + REGISTER + "," + REGISTER + "," + REGISTER )
             if (application.myController.readMessage() == SUCCES){
@@ -189,6 +207,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         }
         
+    }
+    
+    func requiredFieldsAreEmpty()-> Bool {
+        return txtPassword.text.isEmpty && txtUserOrMail.text.isEmpty
     }
     
 }

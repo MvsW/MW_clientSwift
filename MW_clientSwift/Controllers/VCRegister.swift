@@ -18,6 +18,7 @@ class VCRegister: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO Mirar d'enviar la password xifrada (md5)
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))

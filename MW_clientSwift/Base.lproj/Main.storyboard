@@ -80,7 +80,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pac-rQ-6Fp"/>
-                                    <segue destination="uaD-jh-2tf" kind="modal" identifier="goto_menu" id="EnL-PS-pPJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLogin.png" id="Tv4-XN-SDJ">
@@ -99,7 +98,8 @@
                         <outlet property="btn_register" destination="RFJ-Bz-Cgy" id="LVD-5g-jAf"/>
                         <outlet property="txtPassword" destination="OxY-Vt-Au0" id="9iy-iD-At5"/>
                         <outlet property="txtUserOrMail" destination="Ega-aw-ReO" id="qEG-jq-vZu"/>
-                        <segue destination="MhL-eL-g1l" kind="modal" identifier="goto_register" id="WaJ-8b-7nV"/>
+                        <segue destination="MhL-eL-g1l" kind="push" identifier="goto_register" id="WaJ-8b-7nV"/>
+                        <segue destination="uaD-jh-2tf" kind="modal" identifier="goto_menu" id="ERN-yZ-chc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -219,6 +219,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Lxm-Dr-Pe0"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="fTa-57-fgB" id="uZf-RN-5cT"/>
                         <outlet property="txtMail" destination="pj3-Wd-R59" id="3YR-Xg-yfO"/>
@@ -461,7 +462,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Gyd-8j-IS6">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="uaD-jh-2tf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XfA-Y3-odp"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fw-oH-tNC">
@@ -472,7 +475,6 @@
                         <segue destination="YwS-vd-cY9" kind="relationship" relationship="rootViewController" id="5gK-xs-hAW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-88" y="669"/>
         </scene>
