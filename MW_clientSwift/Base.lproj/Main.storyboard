@@ -429,6 +429,10 @@
                                         <rect key="frame" x="72" y="93" width="176" height="176"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rayitaSeparadora.png" id="cxA-GR-yyw">
+                                        <rect key="frame" x="23" y="466" width="274" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -780,7 +784,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rayitaSeparadora.png" id="C8m-Ye-rlH">
-                                <rect key="frame" x="54" y="318" width="217" height="135"/>
+                                <rect key="frame" x="24" y="380" width="274" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -803,7 +807,7 @@
         <image name="mage.png" width="654" height="744"/>
         <image name="no_focus.png" width="693" height="114"/>
         <image name="pergamino.png" width="544" height="800"/>
-        <image name="rayitaSeparadora.png" width="350" height="50"/>
+        <image name="rayitaSeparadora.png" width="2845" height="272"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

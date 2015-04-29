@@ -13,7 +13,11 @@ class VCMy_data: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Llegim la informació del servidor
-        println(application.myController.readMessage())
+        //println(application.myController.readMessage())
+        var info:String = application.myController.readMessage() as String
+        
+        println("Dades rebudes: " + info)
+        
         // Do any additional setup after loading the view.
     }
 
