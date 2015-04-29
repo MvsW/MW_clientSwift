@@ -49,15 +49,27 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         })
     }
+
     
-    @IBAction func entraPassword(sender: UITextField) {
-        txtPassword.background = UIImage(named: "focus.png")
-        txtUserOrMail.background = UIImage(named: "no_focus.png")
+    @IBAction func fieldSelected(sender: UITextField) {
+        
+        switch sender.tag {
+            case 0:
+                txtPassword.background = UIImage(named: "no_focus.png")
+                txtUserOrMail.background = UIImage(named: "focus.png")
+            break
+            
+            case 1:
+                txtPassword.background = UIImage(named: "focus.png")
+                txtUserOrMail.background = UIImage(named: "no_focus.png")
+            break
+            
+            default:
+                println("Tag: \(sender.tag) from textfield received is not")
+            break
+        }
     }
-    @IBAction func entraUserName(sender: UITextField) {
-        txtPassword.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.background = UIImage(named: "focus.png")
-    }
+    
     
     func displayLocationInfo(placemark: CLPlacemark?) {
         var latitud:CLLocationDegrees = locationManager.location.coordinate.latitude

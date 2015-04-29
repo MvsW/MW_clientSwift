@@ -41,17 +41,17 @@
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="entraUserName:" destination="vXZ-lx-hvc" eventType="touchDown" id="iNH-B5-foH"/>
+                                    <action selector="fieldSelected:" destination="vXZ-lx-hvc" eventType="touchDown" id="LhM-RU-9yE"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="OxY-Vt-Au0">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="OxY-Vt-Au0">
                                 <rect key="frame" x="63" y="364" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.90980398654937744" green="0.27843138575553894" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="entraPassword:" destination="vXZ-lx-hvc" eventType="touchDown" id="8E3-VQ-Ibv"/>
+                                    <action selector="fieldSelected:" destination="vXZ-lx-hvc" eventType="touchDown" id="cS7-ab-XKc"/>
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="HBT-YJ-Fht">
@@ -98,7 +98,7 @@
                         <outlet property="btn_register" destination="RFJ-Bz-Cgy" id="LVD-5g-jAf"/>
                         <outlet property="txtPassword" destination="OxY-Vt-Au0" id="9iy-iD-At5"/>
                         <outlet property="txtUserOrMail" destination="Ega-aw-ReO" id="qEG-jq-vZu"/>
-                        <segue destination="MhL-eL-g1l" kind="push" identifier="goto_register" id="WaJ-8b-7nV"/>
+                        <segue destination="MhL-eL-g1l" kind="modal" identifier="goto_register" id="WaJ-8b-7nV"/>
                         <segue destination="uaD-jh-2tf" kind="modal" identifier="goto_menu" id="ERN-yZ-chc"/>
                     </connections>
                 </viewController>
@@ -462,7 +462,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Gyd-8j-IS6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="uaD-jh-2tf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XfA-Y3-odp"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -475,6 +474,7 @@
                         <segue destination="YwS-vd-cY9" kind="relationship" relationship="rootViewController" id="5gK-xs-hAW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-88" y="669"/>
         </scene>
