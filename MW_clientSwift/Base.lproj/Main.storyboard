@@ -54,10 +54,6 @@
                                     <action selector="entraPassword:" destination="vXZ-lx-hvc" eventType="touchDown" id="8E3-VQ-Ibv"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="HBT-YJ-Fht">
-                                <rect key="frame" x="40" y="33" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFJ-Bz-Cgy">
                                 <rect key="frame" x="56" y="466" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,10 +67,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7eW-co-nFt">
-                                <rect key="frame" x="176" y="466" width="87" height="30"/>
+                                <rect key="frame" x="176" y="461" width="87" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="25"/>
-                                <state key="normal" title="Log In">
+                                <state key="normal" title="Log in">
                                     <color key="titleColor" white="0.61379523026315785" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -84,6 +80,10 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLogin.png" id="Tv4-XN-SDJ">
                                 <rect key="frame" x="211" y="429" width="108" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="HBT-YJ-Fht">
+                                <rect key="frame" x="53" y="20" width="240" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -462,7 +462,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Gyd-8j-IS6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="uaD-jh-2tf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XfA-Y3-odp"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -475,6 +474,7 @@
                         <segue destination="YwS-vd-cY9" kind="relationship" relationship="rootViewController" id="5gK-xs-hAW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-88" y="669"/>
         </scene>
@@ -556,10 +556,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="VTd-K9-7yz">
-                                <rect key="frame" x="150" y="334" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mage.png" id="k4z-MB-87V">
                                 <rect key="frame" x="81" y="74" width="159" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -571,12 +567,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="vlj-93-hBS">
+                                <rect key="frame" x="142" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2RW-yb-Exe"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="loader" destination="vlj-93-hBS" id="T7b-s3-r7L"/>
                         <segue destination="xgh-lA-6PP" kind="modal" identifier="goto_battle" id="Cjy-ng-Xgh"/>
                     </connections>
                 </viewController>
@@ -797,7 +799,7 @@
         <image name="fondo.png" width="510" height="422"/>
         <image name="iconLogin.png" width="235" height="274"/>
         <image name="iconRegister.png" width="244" height="325"/>
-        <image name="logo.png" width="1249" height="1561"/>
+        <image name="logo.png" width="1133" height="1520"/>
         <image name="mage.png" width="654" height="744"/>
         <image name="no_focus.png" width="693" height="114"/>
         <image name="pergamino.png" width="544" height="800"/>

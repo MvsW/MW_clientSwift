@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class CApp {
+public class CApp{
     var myController = MyViewController()
     
     func isValidEmail(testStr:String) -> Bool {
@@ -23,6 +23,50 @@ public class CApp {
         
         return result
     }
+    
+    func startLoading(uiView:UIView, text:String, size2:CGFloat)->[UIView] {
+        var container: UIView = UIView()
+        container.frame = uiView.frame
+        container.center = uiView.center
+        container.backgroundColor = UIColor(red: 75, green: 75, blue: 75, alpha: 0.5)
+        
+        var loadingView: UIView = UIView()
+        loadingView.frame = CGRectMake(0, 0, 150, 100)
+        loadingView.center = uiView.center
+        loadingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        loadingView.clipsToBounds = true
+        loadingView.layer.cornerRadius = 10
+        
+        var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+        label.center = CGPointMake(loadingView.frame.size.width / 2,
+            loadingView.frame.size.height / 1.3);
+        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.whiteColor()
+        label.text = text
+        label.font = UIFont(name: "Helvetica", size: size2)
+        
+        var actInd: UIActivityIndicatorView = UIActivityIndicatorView()
+        actInd.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.WhiteLarge
+        actInd.center = CGPointMake(loadingView.frame.size.width / 2,
+            loadingView.frame.size.height / 2.5);
+        actInd.color = UIColor.redColor()
+        
+        loadingView.addSubview(actInd)
+        loadingView.addSubview(label)
+        container.addSubview(loadingView)
+        uiView.addSubview(container)
+        actInd.startAnimating()
+        
+        var views:[UIView] = [loadingView,container]
+        return views
+    }
+    
+    func stopLoading(views:[UIView]){
+        views[0].removeFromSuperview()
+        views[1].removeFromSuperview()
+    }
+    
     
     func isValidPassword(testStr:String) -> Bool{
         if(count(testStr) >= 6){

@@ -9,12 +9,13 @@
 import UIKit
 
 class VCSearchBattle: UIViewController {
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         application.myController.sendMessage(START_BATTLE)
         setUp()
-        
+        loader.startAnimating()
     }
     
     func setUp(){

@@ -96,6 +96,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //START LOADING AND STOP THESE
+        /*var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        application.stopLoading(views)*/
+
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -126,6 +130,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
             alert.show()
         }
+        
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
