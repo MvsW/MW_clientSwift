@@ -118,11 +118,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             */
             
             // playerName typePlayer life energy regeneration strenght intelligent
-            println(tfCharacterName.text + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            println(tfCharacterName.text.lowercaseString + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
             
-            application.myController.sendMessage(tfCharacterName.text + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            application.myController.sendMessage(tfCharacterName.text.lowercaseString + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
             if(application.myController.readMessage() == SUCCES){
-                self.performSegueWithIdentifier("goto_menu", sender: self)
+                self.performSegueWithIdentifier("goto_login", sender: self)
             }else{
                 println("ERROR -> unseccfull")
             }
