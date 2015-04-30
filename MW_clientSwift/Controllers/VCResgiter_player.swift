@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VCRegister_player: UIViewController, UIScrollViewDelegate {
+class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     /*
         TODO: IMPLEMENTAR LA RECULLIDA DE DADES PER ENVIARLES AL SERVIDOR!!!!
     */
@@ -18,16 +18,20 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var restaStrenght: UIButton!
     @IBOutlet weak var sumaInteligence: UIButton!
     @IBOutlet weak var restaInteligence: UIButton!
+    
     @IBOutlet weak var tfStrenght: UITextField!
     @IBOutlet weak var tfInteligence: UITextField!
     @IBOutlet weak var tfPoints: UITextField!
     @IBOutlet weak var tfLife: UITextField!
     @IBOutlet weak var tfEnergy: UITextField!
     @IBOutlet weak var tfEnergyRegeneration: UITextField!
-    @IBOutlet weak var tfCharacterName: UITextField!        //0
+    @IBOutlet weak var tfCharacterName: UITextField!
     
+    @IBOutlet weak var lbl_classSelected: UILabel!
+    
+    @IBOutlet weak var classImage: UIImageView!
 
-    // DECLARACIO VARIABLES
+    // VARIABLES
     var containerView: UIView!
     var pointsLife = 0
     var pointsEnergy = 0
@@ -35,17 +39,35 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     var pointsStrenght = 0
     var pointsInteligence = 0
     var pointsPoints = 0
+    
+    // CONSTANTS
     let MAXPOINTS_STRENGHT = 5
     let MINPOINTS_STRENGHT = 1
     let MAXPOINTS_INTELIGENCE = 5
     let MINPOINTS_INTELIGENCE = 1
     
-    // VARIABLES DE VCRegister.swift
+    let mageClass = UIImage(named: "mage.png")
+    let warlockClass = UIImage(named: "warlock.png")
+    
+    
+    
+    // SPECIFIC VARIABLES FROM VCRegister.swift
     var userName = ""
     var userMail = ""
     var userPassword = ""
+    var typeCharacter = MAGE
 
-    // METODES BOTONS
+    // BUTTON METHODS
+//    @IBAction func btnImage(sender: UIButton) {
+//        if(typeCharacter == MAGE){
+//            btnImage.setImage(UIImage(named:"logo.png"),forState:UIControlState.Highlighted)
+//            typeCharacter = WARLOCK
+//        }else{
+//            btnImage.setImage(UIImage(named:"mage.png"),forState:UIControlState.Highlighted)
+//            typeCharacter = MAGE
+//        }
+//    }
+    
     @IBAction func sumaStrenght(sender: UIButton) {
         println("sumaStrength")
         if(tfStrenght.text.toInt() <= MAXPOINTS_STRENGHT){
@@ -60,7 +82,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
             tfStrenght.text = pointsStrenght.description
         }
     }
-
     @IBAction func sumaInteligence(sender: UIButton) {
         println("sumaInteligence")
         if(tfInteligence.text.toInt() <= MAXPOINTS_INTELIGENCE){
@@ -76,18 +97,35 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    // METODES CONTROLLER-VIEW
+    // CONTROLLER VIEW METHODS
     @IBAction func createTapped(sender: UIButton) {
         //Checkejar els camps, si son correctes enviar al servidor i espera resposta
         //Si el server diu OK pasem a menu
 
-//TODO cambiar el nom de la variable a comprobar
         //Validar camps i enviar al servidor
         let validarUsuari: Bool = application.validatePlayerName(tfCharacterName.text)
         println(validarUsuari)
         if(validarUsuari){
-            application.myController.sendMessage(userName + "," + userMail + "," + userPassword + "," + tfCharacterName.text + "," + MAGE.description)
-            self.performSegueWithIdentifier("goto_menu", sender: self)
+            
+            /*
+            @IBOutlet weak var tfStrenght: UITextField!
+            @IBOutlet weak var tfInteligence: UITextField!
+            @IBOutlet weak var tfPoints: UITextField!
+            @IBOutlet weak var tfLife: UITextField!
+            @IBOutlet weak var tfEnergy: UITextField!
+            @IBOutlet weak var tfEnergyRegeneration: UITextField!
+            @IBOutlet weak var tfCharacterName: UITextField!
+            */
+            
+            // playerName typePlayer life energy regeneration strenght intelligent
+            println(tfCharacterName.text.lowercaseString + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            
+            application.myController.sendMessage(tfCharacterName.text.lowercaseString + "," + typeCharacter.description + "," + tfLife.text + "," + tfEnergy.text + "," + tfEnergyRegeneration.text + "," + tfStrenght.text + "," + tfInteligence.text)
+            if(application.myController.readMessage() == SUCCES){
+                self.performSegueWithIdentifier("goto_login", sender: self)
+            }else{
+                println("ERROR -> unseccfull")
+            }
         }
         
     }
@@ -95,10 +133,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        // Setup image background
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
+        // Setup switcher
+        
+        
         
         // Set up the container view to hold your custom view hierarchy
         //let containerSize = CGSizeMake(640.0, 640.0)
@@ -142,18 +184,21 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate {
         containerView.frame = contentsFrame
     }
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return containerView
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView!) {
+    func scrollViewDidZoom(scrollView: UIScrollView) {
         centerScrollViewContents()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
     
 }

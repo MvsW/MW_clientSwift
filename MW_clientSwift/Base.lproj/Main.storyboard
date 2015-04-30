@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Augusta.ttf">
@@ -41,23 +41,19 @@
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <action selector="entraUserName:" destination="vXZ-lx-hvc" eventType="touchDown" id="iNH-B5-foH"/>
+                                    <action selector="fieldSelected:" destination="vXZ-lx-hvc" eventType="touchDown" id="LhM-RU-9yE"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="OxY-Vt-Au0">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="OxY-Vt-Au0">
                                 <rect key="frame" x="63" y="364" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.90980398654937744" green="0.27843138575553894" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="entraPassword:" destination="vXZ-lx-hvc" eventType="touchDown" id="8E3-VQ-Ibv"/>
+                                    <action selector="fieldSelected:" destination="vXZ-lx-hvc" eventType="touchDown" id="cS7-ab-XKc"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="HBT-YJ-Fht">
-                                <rect key="frame" x="40" y="33" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RFJ-Bz-Cgy">
                                 <rect key="frame" x="56" y="466" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,10 +67,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7eW-co-nFt">
-                                <rect key="frame" x="176" y="466" width="87" height="30"/>
+                                <rect key="frame" x="176" y="461" width="87" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="25"/>
-                                <state key="normal" title="Log In">
+                                <state key="normal" title="Log in">
                                     <color key="titleColor" white="0.61379523026315785" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -86,18 +82,24 @@
                                 <rect key="frame" x="211" y="429" width="108" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="HBT-YJ-Fht">
+                                <rect key="frame" x="53" y="20" width="240" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vbX-06-8Sh"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btn_login" destination="7eW-co-nFt" id="MbD-Kf-pTa"/>
                         <outlet property="btn_register" destination="RFJ-Bz-Cgy" id="LVD-5g-jAf"/>
                         <outlet property="txtPassword" destination="OxY-Vt-Au0" id="9iy-iD-At5"/>
                         <outlet property="txtUserOrMail" destination="Ega-aw-ReO" id="qEG-jq-vZu"/>
-                        <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="MCF-eK-elW"/>
                         <segue destination="MhL-eL-g1l" kind="modal" identifier="goto_register" id="WaJ-8b-7nV"/>
+                        <segue destination="uaD-jh-2tf" kind="modal" identifier="goto_menu" id="ERN-yZ-chc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -107,7 +109,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-214" y="298"/>
+            <point key="canvasLocation" x="-554" y="269"/>
         </scene>
         <!--Register-->
         <scene sceneID="hX6-Br-5cr">
@@ -165,16 +167,6 @@
                                     <action selector="clicPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="KPZ-Xx-E8A"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="fTa-57-fgB">
-                                <rect key="frame" x="44" y="399" width="229" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="clicConfirmPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="VBz-5N-kJg"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mKj-Ye-jZD">
                                 <rect key="frame" x="69" y="371" width="194" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,11 +196,30 @@
                                     <action selector="clicUserName:" destination="MhL-eL-g1l" eventType="touchDown" id="t7U-mr-Kg6"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EEw-50-bdc">
+                                <rect key="frame" x="133" y="518" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Free pass">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0J5-T5-yBG" kind="modal" id="4HL-p1-cgQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="fTa-57-fgB">
+                                <rect key="frame" x="44" y="400" width="229" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="clicConfirmPassword:" destination="MhL-eL-g1l" eventType="touchDown" id="VBz-5N-kJg"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationItem key="navigationItem" id="Lxm-Dr-Pe0"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="fTa-57-fgB" id="uZf-RN-5cT"/>
                         <outlet property="txtMail" destination="pj3-Wd-R59" id="3YR-Xg-yfO"/>
@@ -219,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Y2-YJ-VuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="-101"/>
+            <point key="canvasLocation" x="-29" y="-491"/>
         </scene>
         <!--Register player-->
         <scene sceneID="hP8-mv-Ifh">
@@ -246,20 +257,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mage.png" id="kVc-DU-IXF">
-                                        <rect key="frame" x="77" y="92" width="166" height="154"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siguiente.png" id="j6p-7f-KFx">
-                                        <rect key="frame" x="226" y="266" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anterior.png" id="cz4-HG-it5">
-                                        <rect key="frame" x="63" y="266" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warlock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9P-7L-wkY">
-                                        <rect key="frame" x="129" y="271" width="62" height="21"/>
+                                        <rect key="frame" x="129" y="277" width="62" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,14 +425,25 @@
                                             <action selector="restaStrenght:" destination="0J5-T5-yBG" eventType="touchUpInside" id="Kc5-4C-rSi"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SXn-S8-yPL">
+                                        <rect key="frame" x="72" y="93" width="176" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rayitaSeparadora.png" id="cxA-GR-yyw">
+                                        <rect key="frame" x="23" y="466" width="274" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X6y-57-ZiN"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="classImage" destination="SXn-S8-yPL" id="Lql-GO-jE3"/>
+                        <outlet property="lbl_classSelected" destination="t9P-7L-wkY" id="pV8-N1-2uR"/>
                         <outlet property="restaInteligence" destination="aFk-dF-ihp" id="csS-wa-ndD"/>
                         <outlet property="restaStrenght" destination="gyB-M0-JBc" id="wsd-dB-r2w"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
@@ -446,12 +456,31 @@
                         <outlet property="tfLife" destination="5BG-rV-qso" id="rQK-NN-OGJ"/>
                         <outlet property="tfPoints" destination="36W-cb-Ycs" id="L35-zH-ZAC"/>
                         <outlet property="tfStrenght" destination="Dmh-7x-HZs" id="6Lc-RZ-DSF"/>
-                        <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="HMF-wu-8va"/>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="goto_login" id="pTQ-2B-IbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5D-6J-odj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-101"/>
+            <point key="canvasLocation" x="-554" y="-491"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gyd-8j-IS6">
+            <objects>
+                <navigationController id="uaD-jh-2tf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XfA-Y3-odp"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fw-oH-tNC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YwS-vd-cY9" kind="relationship" relationship="rootViewController" id="5gK-xs-hAW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="669"/>
         </scene>
         <!--Menu-->
         <scene sceneID="HDV-NQ-uZC">
@@ -501,13 +530,13 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="BzW-0a-fCC" kind="modal" identifier="goto_my_data" id="Bp2-A2-CnU"/>
-                        <segue destination="J1J-0k-67x" kind="modal" identifier="got_searching" id="TIx-aK-Pgf"/>
+                        <segue destination="BzW-0a-fCC" kind="push" identifier="goto_my_data" id="Bp2-A2-CnU"/>
+                        <segue destination="J1J-0k-67x" kind="push" identifier="got_searching" id="TIx-aK-Pgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugW-S8-bYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="739"/>
+            <point key="canvasLocation" x="366" y="663"/>
         </scene>
         <!--Search Battle-->
         <scene sceneID="sHX-ES-ukG">
@@ -531,10 +560,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="VTd-K9-7yz">
-                                <rect key="frame" x="150" y="334" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mage.png" id="k4z-MB-87V">
                                 <rect key="frame" x="81" y="74" width="159" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -546,18 +571,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="vlj-93-hBS">
+                                <rect key="frame" x="142" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2RW-yb-Exe"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="loader" destination="vlj-93-hBS" id="T7b-s3-r7L"/>
                         <segue destination="xgh-lA-6PP" kind="modal" identifier="goto_battle" id="Cjy-ng-Xgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRE-IO-10K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="1491"/>
+            <point key="canvasLocation" x="296" y="1571"/>
         </scene>
         <!--Battle-->
         <scene sceneID="3xd-Yv-Gsd">
@@ -650,7 +681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXp-PT-fLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="1491"/>
+            <point key="canvasLocation" x="825" y="1571"/>
         </scene>
         <!--My data-->
         <scene sceneID="Mg3-nN-b7m">
@@ -753,31 +784,98 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rayitaSeparadora.png" id="C8m-Ye-rlH">
-                                <rect key="frame" x="54" y="318" width="217" height="135"/>
+                                <rect key="frame" x="24" y="380" width="274" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y7h-g2-JXk">
+                                <rect key="frame" x="207" y="229" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Rg-UC-0r2">
+                                <rect key="frame" x="207" y="259" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Hk-S4-E0G">
+                                <rect key="frame" x="207" y="297" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S1R-13-R84">
+                                <rect key="frame" x="207" y="337" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X6c-J9-Jmh">
+                                <rect key="frame" x="208" y="366" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L7A-tv-kbQ">
+                                <rect key="frame" x="208" y="424" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XP6-xY-Tio">
+                                <rect key="frame" x="208" y="453" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mxg-jX-Yn3">
+                                <rect key="frame" x="207" y="482" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="efk-7g-9hu"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lblCharacterName" destination="L8u-CZ-aR9" id="xhR-6u-WKV"/>
+                        <outlet property="lblDateRegister" destination="L7A-tv-kbQ" id="6Yu-Ds-uKx"/>
+                        <outlet property="lblEnergy" destination="8Rg-UC-0r2" id="Zjz-tq-oBj"/>
+                        <outlet property="lblIntelligence" destination="X6c-J9-Jmh" id="jCP-z9-hdq"/>
+                        <outlet property="lblLife" destination="y7h-g2-JXk" id="vBd-N4-GXH"/>
+                        <outlet property="lblRegeneration" destination="8Hk-S4-E0G" id="isF-nj-pS3"/>
+                        <outlet property="lblStrength" destination="S1R-13-R84" id="mu3-7m-xFY"/>
+                        <outlet property="lblTotalPoints" destination="XP6-xY-Tio" id="GuM-fR-21d"/>
+                        <outlet property="lblTotalWins" destination="mxg-jX-Yn3" id="tRE-PZ-cwm"/>
+                        <outlet property="lblTypeCharacter" destination="gWm-G4-Cck" id="Oxa-sH-oAC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j5-XL-MzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="739"/>
+            <point key="canvasLocation" x="825" y="663"/>
         </scene>
     </scenes>
     <resources>
-        <image name="anterior.png" width="286" height="286"/>
         <image name="fondo.png" width="510" height="422"/>
         <image name="iconLogin.png" width="235" height="274"/>
         <image name="iconRegister.png" width="244" height="325"/>
-        <image name="logo.png" width="1249" height="1561"/>
+        <image name="logo.png" width="1133" height="1520"/>
         <image name="mage.png" width="654" height="744"/>
         <image name="no_focus.png" width="693" height="114"/>
         <image name="pergamino.png" width="544" height="800"/>
-        <image name="rayitaSeparadora.png" width="350" height="50"/>
-        <image name="siguiente.png" width="286" height="286"/>
+        <image name="rayitaSeparadora.png" width="2845" height="272"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -786,5 +884,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oM4-i9-W4f"/>
+        <segue reference="4HL-p1-cgQ"/>
     </inferredMetricsTieBreakers>
 </document>

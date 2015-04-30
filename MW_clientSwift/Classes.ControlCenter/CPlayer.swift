@@ -30,7 +30,20 @@ class CPlayer {
     var intelligence: Double!
     var totalPoints: Int!
     var wonGames: Int!
+    var data: String!
     
+    init(playerName: String, classType: Int, life: Double, energy: Double, energyRegen: Double, strength: Double, intelligence: Double, totalPoints: Int, wonGames: Int, data: String) {
+        self.playerName = playerName
+        self.classType = classType
+        self.life = life
+        self.energy = energy
+        self.energyRegen = energyRegen
+        self.strength = strength
+        self.intelligence = intelligence
+        self.totalPoints = totalPoints
+        self.wonGames = wonGames
+        self.data = data
+    }
     
     init(playerName: String, classType: Int, life: Double, energy: Double, energyRegen: Double, strength: Double, intelligence: Double, totalPoints: Int, wonGames: Int) {
         self.playerName = playerName

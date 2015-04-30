@@ -18,6 +18,7 @@ class VCRegister: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO Mirar d'enviar la password xifrada (md5)
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -64,7 +65,7 @@ class VCRegister: UIViewController {
             String username, String email, String password, int status
             
             */
-            application.myController.sendMessage(txtMail.text + "," + txtUserName.text + "," + txtPassword.text)
+            application.myController.sendMessage(txtUserName.text.lowercaseString + "," + txtMail.text.lowercaseString + "," + txtPassword.text)
             // Si el server diu OK pasem a menu
             if (application.myController.readMessage() == SUCCES){
                 self.performSegueWithIdentifier("goto_register_player", sender: self)
@@ -104,5 +105,9 @@ class VCRegister: UIViewController {
         txtMail.background = UIImage(named: "no_focus.png")
         txtPassword.background = UIImage(named: "no_focus.png")
         txtConfirmPassword.background = UIImage(named: "focus.png")
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 }

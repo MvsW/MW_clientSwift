@@ -26,7 +26,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     
     // METODES PER LOGALITZACIO
    func findMyLocation() {
-        println("entra findMyLocation")
+        println("Inside of VCLogin > findMyLocation")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
@@ -42,23 +42,34 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
             
             if placemarks.count > 0 {
-                let pm = placemarks[0] as CLPlacemark
+                let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
             } else {
                 println("Problem with the data received from geocoder")
             }
         })
     }
-    @IBAction func entraPassword(sender: UITextField) {
-        println("Password")
-        txtPassword.background = UIImage(named: "focus.png")
-        txtUserOrMail.background = UIImage(named: "no_focus.png")
+
+    
+    @IBAction func fieldSelected(sender: UITextField) {
+        
+        switch sender.tag {
+            case 0:
+                txtPassword.background = UIImage(named: "no_focus.png")
+                txtUserOrMail.background = UIImage(named: "focus.png")
+            break
+            
+            case 1:
+                txtPassword.background = UIImage(named: "focus.png")
+                txtUserOrMail.background = UIImage(named: "no_focus.png")
+            break
+            
+            default:
+                println("Tag: \(sender.tag) from textfield received is not")
+            break
+        }
     }
-    @IBAction func entraUserName(sender: UITextField) {
-        println("UserName")
-        txtPassword.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.background = UIImage(named: "focus.png")
-    }
+    
     
     func displayLocationInfo(placemark: CLPlacemark?) {
         var latitud:CLLocationDegrees = locationManager.location.coordinate.latitude
@@ -92,10 +103,15 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         
     }
 
-    // METODES CONTROLLER-VIEW
+    
+    // CONTROLLER VIEW METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //START LOADING AND STOP THESE
+        /*var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        application.stopLoading(views)*/
+
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -115,6 +131,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
+        // Speed testing. Omplint els camps
+        txtUserOrMail.text = "user1"
+        txtPassword.text = "User1994"
+        
         if(application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
@@ -122,6 +142,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
             alert.show()
         }
+        
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
@@ -140,44 +161,62 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     
-    // METODES BOTONS
+
+    // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
-        // Checkejar els camps, si son correctes enviar al servidor i espera resposta
         
-        let validarMail: Bool = application.isValidEmail(txtUserOrMail.text)
-        let validarPassword: Bool = application.isValidPassword(txtPassword.text)
-        let validarUsuari: Bool = application.validateUserName(txtUserOrMail.text)
         
-        println("Mail: " + validarMail.description)
-        println("Password: " + validarPassword.description)
-        println("Usuari: " + validarUsuari.description)
+        let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
+        let validatePassword: Bool = application.isValidPassword(txtPassword.text)
+        let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
+        var readyForSend: Bool = false
+        
+        println("Mail: " + validateMail.description)
+        println("Password: " + validatePassword.description)
+        println("Usuari: " + validateUser.description)
         println("-----------------")
         
-        if (validarUsuari && validarPassword && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
-            println("Usuari correcte")
-            application.myController.sendMessage(txtUserOrMail.text + "," + txtPassword.text + "," + latitud.description + "," + longitud.description)
-            // Si el server diu OK pasem a menu
-            if (application.myController.readMessage() == SUCCES){
-                self.performSegueWithIdentifier("goto_menu", sender: self)
+        // Checks if the two fields are empty or not
+        if (!requiredFieldsAreEmpty()) {
+            var userOrMail = txtUserOrMail.text
+            
+            // First check if is an email or not. And check in all case the criterias
+            if (userOrMail.rangeOfString("@") == nil && validateUser && validatePassword) {
+                println("Fields filled. Username and password form valid")
+                readyForSend = true
+                
+            } else if (validateMail && validatePassword) {
+                println("Fields filled. Mail and password form are not valids")
+                readyForSend = true
+                
+            } else {
+                println("The fields are not empty but the user has not been found")
             }
-        }else{
-            if (validarMail == true && validarPassword == true && !txtUserOrMail.text.isEmpty && !txtPassword.text.isEmpty){
-                println("Mail correcte")
+            
+            if (readyForSend) {
+                // Sending user data to the server
                 application.myController.sendMessage(txtUserOrMail.text + "," + txtPassword.text + "," + latitud.description + "," + longitud.description)
-                // Si el server diu OK pasem a menu
-                if (application.myController.readMessage() == SUCCES){
+                
+                // Catching response
+                var serverResponse = application.myController.readMessage()
+                if (serverResponse == SUCCES) {
+                    // Everything is correct. Go to menu view
                     self.performSegueWithIdentifier("goto_menu", sender: self)
+                } else {
+                    // NOT SUCCES response
+                    println("Server response = \(serverResponse)")
                 }
             }
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
     @IBAction func registerTapped(sender: UIButton) {
-        //Enviar al servidor que volem registrarnos.
+        // Sending to server that we want to REGISTER and segue to Register view
         if (true){
             application.myController.sendMessage(REGISTER + "," + REGISTER + "," + REGISTER + "," + REGISTER )
             if (application.myController.readMessage() == SUCCES){
@@ -185,6 +224,10 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         }
         
+    }
+    
+    func requiredFieldsAreEmpty()-> Bool {
+        return txtPassword.text.isEmpty && txtUserOrMail.text.isEmpty
     }
     
 }
