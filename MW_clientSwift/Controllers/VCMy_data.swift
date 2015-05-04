@@ -19,6 +19,7 @@ class VCMy_data: UIViewController {
     @IBOutlet weak var lblDateRegister: UILabel!
     @IBOutlet weak var lblTotalPoints: UILabel!
     @IBOutlet weak var lblTotalWins: UILabel!
+    @IBOutlet weak var imgIconPlayer: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

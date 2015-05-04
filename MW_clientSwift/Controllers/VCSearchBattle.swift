@@ -10,12 +10,16 @@ import UIKit
 
 class VCSearchBattle: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    var views: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         application.myController.sendMessage(START_BATTLE)
         setUp()
         loader.startAnimating()
+        //START LOADING AND STOP THESE
+         views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        /*application.stopLoading(views)*/
     }
     
     func setUp(){
@@ -25,6 +29,7 @@ class VCSearchBattle: UIViewController {
                 if (application.myController.readMessage() == SUCCES){
                     // Recently added. Trying to fix the lag of loading UI
                     dispatch_async(dispatch_get_main_queue()) {
+                        application.stopLoading(self.views)
                         self.performSegueWithIdentifier("goto_battle", sender: self)
                     }
                 }
