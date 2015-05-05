@@ -37,6 +37,10 @@
 		C04161381AD576E70004BC46 /* Augusta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04161361AD576E70004BC46 /* Augusta.ttf */; };
 		C041613A1AD580780004BC46 /* no_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C04161391AD580780004BC46 /* no_focus.png */; };
 		C041613C1AD583ED0004BC46 /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C041613B1AD583ED0004BC46 /* focus.png */; };
+		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
+		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
+		C072126D1AF90C0B0010F1C5 /* warlock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C072126B1AF90C0B0010F1C5 /* warlock.jpg */; };
+		C072126E1AF90C0B0010F1C5 /* mage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C072126C1AF90C0B0010F1C5 /* mage.jpg */; };
 		C0B7EE5B1AD597DE0060699F /* iconRegister.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EE591AD597DE0060699F /* iconRegister.png */; };
 		C0B7EE5C1AD597DE0060699F /* iconLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B7EE5A1AD597DE0060699F /* iconLogin.png */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
@@ -91,6 +95,10 @@
 		C04161361AD576E70004BC46 /* Augusta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Augusta.ttf; sourceTree = "<group>"; };
 		C04161391AD580780004BC46 /* no_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_focus.png; path = MW_clientSwift/Imatges/no_focus.png; sourceTree = SOURCE_ROOT; };
 		C041613B1AD583ED0004BC46 /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = focus.png; path = MW_clientSwift/Imatges/focus.png; sourceTree = SOURCE_ROOT; };
+		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C072126B1AF90C0B0010F1C5 /* warlock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = warlock.jpg; path = MW_clientSwift/Imatges/warlock.jpg; sourceTree = SOURCE_ROOT; };
+		C072126C1AF90C0B0010F1C5 /* mage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mage.jpg; path = MW_clientSwift/Imatges/mage.jpg; sourceTree = SOURCE_ROOT; };
 		C0B7EE591AD597DE0060699F /* iconRegister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconRegister.png; path = MW_clientSwift/Imatges/iconRegister.png; sourceTree = SOURCE_ROOT; };
 		C0B7EE5A1AD597DE0060699F /* iconLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconLogin.png; path = MW_clientSwift/Imatges/iconLogin.png; sourceTree = SOURCE_ROOT; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -183,6 +191,10 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C072126B1AF90C0B0010F1C5 /* warlock.jpg */,
+				C072126C1AF90C0B0010F1C5 /* mage.jpg */,
+				C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */,
+				C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */,
 				54B912F91AEABAFE005DD10A /* warlock.png */,
 				C0B7EE591AD597DE0060699F /* iconRegister.png */,
 				C0B7EE5A1AD597DE0060699F /* iconLogin.png */,
@@ -320,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B1D24C1A6991A600962647 /* MainPrototype.storyboard in Resources */,
+				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				4159A9AE1A90EDF3006DFF54 /* Main.storyboard in Resources */,
 				41C82B151A91056600235D61 /* pergamino.png in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
@@ -333,8 +346,11 @@
 				C0B7EE5B1AD597DE0060699F /* iconRegister.png in Resources */,
 				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
 				C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */,
+				C072126D1AF90C0B0010F1C5 /* warlock.jpg in Resources */,
+				C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */,
 				41B1D24E1A6991A600962647 /* Images.xcassets in Resources */,
 				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
+				C072126E1AF90C0B0010F1C5 /* mage.jpg in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,
 				C04161381AD576E70004BC46 /* Augusta.ttf in Resources */,

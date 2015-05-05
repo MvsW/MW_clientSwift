@@ -165,7 +165,6 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
         
-        
         let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
         let validatePassword: Bool = application.isValidPassword(txtPassword.text)
         let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
@@ -200,9 +199,11 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
                 // Catching response
                 var serverResponse = application.myController.readMessage()
                 if (serverResponse == SUCCES) {
+
                     // Everything is correct. Go to menu view
                     self.performSegueWithIdentifier("goto_menu", sender: self)
                 } else {
+
                     // NOT SUCCES response
                     println("Server response = \(serverResponse)")
                 }
@@ -216,6 +217,9 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     }
 
     @IBAction func registerTapped(sender: UIButton) {
+        //START LOADING AND STOP THESE
+        //var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        //application.stopLoading(views)
         // Sending to server that we want to REGISTER and segue to Register view
         if (true){
             application.myController.sendMessage(REGISTER + "," + REGISTER + "," + REGISTER + "," + REGISTER )

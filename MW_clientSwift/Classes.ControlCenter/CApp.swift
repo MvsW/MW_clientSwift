@@ -150,4 +150,9 @@ public class CApp{
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         return scaledImage
     }
+    
+    func getData(str: String)->String{
+        let fullNameArr = str.componentsSeparatedByString(" ")
+        return fullNameArr[0]
+    }
 }
