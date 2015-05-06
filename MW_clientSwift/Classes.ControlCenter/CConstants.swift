@@ -31,5 +31,5 @@ let MAGE = 1
 let WARLOCK = 2
 
 // BATTLE ACTIONS ARRAY
-let battleAction = ["BA", "S1", "S2", "US", "DG", "SH"]
+let MAX_ACTIONS = 6
 

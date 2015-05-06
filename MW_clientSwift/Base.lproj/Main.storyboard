@@ -481,7 +481,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1R5-gz-KcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="uaD-jh-2tf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XfA-Y3-odp"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Fw-oH-tNC">
@@ -596,6 +595,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2RW-yb-Exe"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="loader" destination="vlj-93-hBS" id="T7b-s3-r7L"/>
@@ -634,7 +634,6 @@
                                 </state>
                                 <connections>
                                     <action selector="actionButtonTapped:" destination="xgh-lA-6PP" eventType="touchUpInside" id="Wh2-jK-rLK"/>
-                                    <action selector="shieldAction:" destination="xgh-lA-6PP" eventType="touchUpInside" id="Xts-6l-KKu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wkB-u8-6LY">
@@ -645,7 +644,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnActionPressed:" destination="xgh-lA-6PP" eventType="touchUpInside" id="205-cg-wQt"/>
-                                    <action selector="dodgeAction:" destination="xgh-lA-6PP" eventType="touchUpInside" id="LfR-c6-YO9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UDX-O0-FUA">
@@ -656,7 +654,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnActionPressed:" destination="xgh-lA-6PP" eventType="touchUpInside" id="0mi-bg-zZt"/>
-                                    <action selector="spell2Action:" destination="xgh-lA-6PP" eventType="touchUpInside" id="C8Z-OE-4Wc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5zn-Oc-mK8">
@@ -667,7 +664,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnActionPressed:" destination="xgh-lA-6PP" eventType="touchUpInside" id="D6S-Pk-yyH"/>
-                                    <action selector="specialSpellAction:" destination="xgh-lA-6PP" eventType="touchUpInside" id="eXw-g3-7SO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EVp-BP-Zbm">
@@ -678,7 +674,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnActionPressed:" destination="xgh-lA-6PP" eventType="touchUpInside" id="E70-qs-GAW"/>
-                                    <action selector="spell1Action:" destination="xgh-lA-6PP" eventType="touchUpInside" id="HjO-a3-TaV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eRN-Hi-ZW6">
@@ -689,7 +684,6 @@
                                 </state>
                                 <connections>
                                     <action selector="basicAtackAction:" destination="xgh-lA-6PP" eventType="touchUpInside" id="gdu-uk-G6T"/>
-                                    <action selector="btnActionPressed:" destination="xgh-lA-6PP" eventType="touchUpInside" id="nSc-dm-bb3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -871,6 +865,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="efk-7g-9hu"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -908,6 +903,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5X2-EJ-5RD"/>
-        <segue reference="5gK-xs-hAW"/>
+        <segue reference="oM4-i9-W4f"/>
     </inferredMetricsTieBreakers>
 </document>

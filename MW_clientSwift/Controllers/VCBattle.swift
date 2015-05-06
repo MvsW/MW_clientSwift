@@ -20,32 +20,6 @@ class VCBattle: UIViewController {
     @IBOutlet weak var btnSpell2: UIButton!
     @IBOutlet weak var btnBasicAttack: UIButton!
     
-    // let battleAction = ["BA", "S1", "S2", "US", "DG", "SH"]
-
-    @IBAction func shieldAction(sender: UIButton) {
-        application.myController.sendMessage(battleAction[5])
-    }
-    
-    @IBAction func specialSpellAction(sender: UIButton) {
-        application.myController.sendMessage(battleAction[3])
-    }
-    
-    @IBAction func spell1Action(sender: UIButton) {
-        application.myController.sendMessage(battleAction[1])
-    }
-    
-    @IBAction func dodgeAction(sender: UIButton) {
-        application.myController.sendMessage(battleAction[4])
-    }
-    
-    @IBAction func spell2Action(sender: UIButton) {
-        application.myController.sendMessage(battleAction[2])
-    }
-    
-    @IBAction func basicAtackAction(sender: UIButton) {
-        application.myController.sendMessage(battleAction[0])
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,10 +46,10 @@ class VCBattle: UIViewController {
         var tag: Int = sender.tag
         
         // ATTENTION! Be sure that this method only receives battle action buttons
-        if (tag >= 0 && tag <= battleAction.count) {
+        if (tag >= 0 && tag <= MAX_ACTIONS) {
             // TODO Make a method that check if have the energy required
-            application.myController.sendMessage(battleAction[tag])
-            println("Action battle sent: \(battleAction[tag])")
+            application.myController.sendMessage(String(tag))
+            println("Action battle sent: \(tag)")
         }
         
     }
