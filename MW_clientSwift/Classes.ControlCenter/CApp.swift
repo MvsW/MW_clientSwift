@@ -155,4 +155,29 @@ public class CApp{
         let fullNameArr = str.componentsSeparatedByString(" ")
         return fullNameArr[0]
     }
+    
+    func getErrorName(num: String)->String{
+        switch(num){
+        case ERROR:
+            return "Error general"
+        case ERROR_PasswordIncorrect:
+            return "Password incorrect"
+        case ERROR_UserAlreadyLogged:
+            return "User already logged"
+        case ERROR_EmailNotExist:
+            return "email not exist"
+        case ERROR_UserNotExist:
+            return "User not exist"
+        case ERROR_UserExist:
+            return "User exist"
+        case ERROR_emailExist:
+            return "Email exist"
+        case ERROR_PlayerNameExist:
+            return "Player name exist"
+        case SUCCES:
+            return "OK"
+        default:
+            return "WTF ERROR... ?¿"
+        }
+    }
 }

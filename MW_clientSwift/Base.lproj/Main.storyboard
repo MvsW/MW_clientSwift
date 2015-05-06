@@ -204,16 +204,6 @@
                                     <action selector="clicUserName:" destination="MhL-eL-g1l" eventType="touchDown" id="t7U-mr-Kg6"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EEw-50-bdc">
-                                <rect key="frame" x="133" y="518" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Free pass">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0J5-T5-yBG" kind="modal" id="4HL-p1-cgQ"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat this password" textAlignment="center" minimumFontSize="17" background="no_focus.png" id="fTa-57-fgB">
                                 <rect key="frame" x="46" y="400" width="229" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -902,7 +892,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5X2-EJ-5RD"/>
         <segue reference="oM4-i9-W4f"/>
     </inferredMetricsTieBreakers>
 </document>
