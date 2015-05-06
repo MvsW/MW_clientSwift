@@ -132,8 +132,12 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        txtUserOrMail.text = "user1"
-        txtPassword.text = "User1994"
+        //txtUserOrMail.text = "user1"
+        //txtPassword.text = "User1994"
+        txtUserOrMail.text = "user2"
+        txtPassword.text = "User1986"
+        //txtUserOrMail.text = "user3"
+        //txtPassword.text = "User1932"
         
         if(application.comprovarConexion()){
             application.myController.connect()
