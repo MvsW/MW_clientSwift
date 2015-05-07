@@ -93,7 +93,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         if bytesRead >= 0 {
             lastReceivedMessageID++
             output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-            //println("output is")
+            // println("output is")
             println("Server say: \(output)")
             var text = "Server say:  \(output) \n" //farem alguna cosa amb la variable?? es possible
             

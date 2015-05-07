@@ -109,40 +109,28 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         super.viewDidLoad()
         
         //START LOADING AND STOP THESE
-        /*var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
-        application.stopLoading(views)*/
         
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
-        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
-        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        /* TODO Es pot esborrar?! SERGI=?!!??!!!!!!
         
+        var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        application.stopLoading(views) */
         
-        // POSAR IMATGE FONS EDIT TEXT
-        txtPassword.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.layer.cornerRadius = 14
-        txtPassword.layer.cornerRadius = 14
-        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
-        txtUserOrMail.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
-        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributesDictionary)
+        // Set the images
+        setupControllerImages();
         
-        // ASSIGNAR TIPUS DE LLETRA
+        // Set the typography
         /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        //txtUserOrMail.text = "user1"
-        //txtPassword.text = "User1994"
         txtUserOrMail.text = "user2"
         txtPassword.text = "User1986"
-        //txtUserOrMail.text = "user3"
-        //txtPassword.text = "User1932"
         
-        if(application.comprovarConexion()){
+        
+        if (application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
-        }else{
+        } else {
             var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
             alert.show()
         }
@@ -218,11 +206,6 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         }
     }
     
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
-    
     @IBAction func registerTapped(sender: UIButton) {
         //START LOADING AND STOP THESE
         //var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
@@ -245,8 +228,39 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         }
     }
     
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
+    
+    // Own methods
     func requiredFieldsAreEmpty()-> Bool {
         return txtPassword.text.isEmpty && txtUserOrMail.text.isEmpty
+    }
+    
+    func setupControllerImages() {
+        
+        // Set the BACKGROUND image
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size
+        // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
+        
+        // Set the TEXTFIELDS images
+        txtPassword.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.layer.cornerRadius = 14
+        txtPassword.layer.cornerRadius = 14
+        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
+        txtUserOrMail.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
+        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributesDictionary)
+        
+        
+        // Set the BUTTONS images
+        
+        
     }
     
     

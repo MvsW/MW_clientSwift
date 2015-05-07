@@ -10,15 +10,15 @@ import UIKit
 
 class VCBattle: UIViewController {
     
-    /*
-        TODO: implementar tots els tappeds de buttons
-    */
-    @IBOutlet weak var btnShield: UIButton!
-    @IBOutlet weak var btnSpecialSpell: UIButton!
-    @IBOutlet weak var btnSpell1: UIButton!
-    @IBOutlet weak var btnDodge: UIButton!
-    @IBOutlet weak var btnSpell2: UIButton!
-    @IBOutlet weak var btnBasicAttack: UIButton!
+    // LABELS
+    @IBOutlet weak var lbl_myLife: UILabel!
+    @IBOutlet weak var lbl_myEnergy: UILabel!
+    
+    @IBOutlet weak var lbl_hisLife: UILabel!
+    @IBOutlet weak var lbl_hisEnergy: UILabel!
+    
+    var dataArray: [String]!
+    var messageReceived: NSString!
     
     
     override func viewDidLoad() {
@@ -29,7 +29,10 @@ class VCBattle: UIViewController {
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
-        println("Welcome to fisrt battle protocol by RO")
+        messageReceived = application.myController.readMessage()
+        dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
+        
+        refreshInterfaceLabels()
         
     }
     
@@ -39,18 +42,34 @@ class VCBattle: UIViewController {
     }
     
     
-    
-    @IBAction func actionButtonTapped(sender: UIButton) {
+
+    @IBAction func actionBtnTapped(sender: AnyObject) {
         
-        //var title: String = sender.titleLabel!.text!
+        // Get the tag
         var tag: Int = sender.tag
         
-        // ATTENTION! Be sure that this method only receives battle action buttons
+        // Attention! Take care that the tags are between actions number of.
         if (tag >= 0 && tag <= MAX_ACTIONS) {
             // TODO Make a method that check if have the energy required
-            application.myController.sendMessage(String(tag))
             println("Action battle sent: \(tag)")
+            application.myController.sendMessage(String(tag))
+            
+            // Receiving the data from server.
+            messageReceived = application.myController.readMessage()
+            
+            // Always receive my data, and then the other player (myLife, myEnergy, hisLife, hisEnergy)
+            dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
+            
+            refreshInterfaceLabels()
         }
-        
+    }
+    
+    func refreshInterfaceLabels() {
+        if (self.dataArray != nil) {
+            self.lbl_myLife.text = self.dataArray[0]
+            self.lbl_myEnergy.text = self.dataArray[1]
+            self.lbl_hisLife.text = self.dataArray[2]
+            self.lbl_hisEnergy.text = self.dataArray[3]
+        }
     }
 }

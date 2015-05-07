@@ -32,7 +32,8 @@ class VCSearchBattle: UIViewController {
         
         dispatch_async(dispatch_get_global_queue(
             Int(QOS_CLASS_UTILITY.value), 0)) {
-                if (application.myController.readMessage() == SUCCES){
+                var areReady = application.myController.readMessage()
+                if (areReady == SUCCES){
                     // Recently added. Trying to fix the lag of loading UI
                     dispatch_async(dispatch_get_main_queue()) {
                         application.stopLoading(self.views)
