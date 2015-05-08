@@ -12,7 +12,7 @@ import CFNetwork
 import CoreLocation
 
 class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate {
-
+    
     // DECLARACIO BOTONS
     @IBOutlet weak var btn_login: UIButton!
     @IBOutlet weak var btn_register: UIButton!
@@ -25,7 +25,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     var longitud = -122.0312186
     
     // METODES PER LOGALITZACIO
-   func findMyLocation() {
+    func findMyLocation() {
         println("Inside of VCLogin > findMyLocation")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -49,23 +49,23 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             }
         })
     }
-
+    
     
     @IBAction func fieldSelected(sender: UITextField) {
         
         switch sender.tag {
-            case 0:
-                txtPassword.background = UIImage(named: "no_focus.png")
-                txtUserOrMail.background = UIImage(named: "focus.png")
+        case 0:
+            txtPassword.background = UIImage(named: "no_focus.png")
+            txtUserOrMail.background = UIImage(named: "focus.png")
             break
             
-            case 1:
-                txtPassword.background = UIImage(named: "focus.png")
-                txtUserOrMail.background = UIImage(named: "no_focus.png")
+        case 1:
+            txtPassword.background = UIImage(named: "focus.png")
+            txtUserOrMail.background = UIImage(named: "no_focus.png")
             break
             
-            default:
-                println("Tag: \(sender.tag) from textfield received is not")
+        default:
+            println("Tag: \(sender.tag) from textfield received is not")
             break
         }
     }
@@ -102,43 +102,35 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         println("Error while updating location " + error.localizedDescription)
         
     }
-
+    
     
     // CONTROLLER VIEW METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //START LOADING AND STOP THESE
-        /*var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
-        application.stopLoading(views)*/
-
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
-        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
-        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
-
-        // POSAR IMATGE FONS EDIT TEXT
-        txtPassword.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.background = UIImage(named: "no_focus.png")
-        txtUserOrMail.layer.cornerRadius = 14
-        txtPassword.layer.cornerRadius = 14
-        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
-        txtUserOrMail.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
-        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributesDictionary)
-
-        // ASSIGNAR TIPUS DE LLETRA
+        /* TODO Es pot esborrar?! SERGI=?!!??!!!!!!
+        
+        var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        application.stopLoading(views) */
+        
+        // Set the images
+        setupControllerImages();
+        
+        // Set the typography
         /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        txtUserOrMail.text = "user1"
-        txtPassword.text = "User1994"
+        txtUserOrMail.text = "user2"
+        txtPassword.text = "User1986"
         
-        if(application.comprovarConexion()){
+        
+        if (application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
-        }else{
+        } else {
             var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
             alert.show()
         }
@@ -161,10 +153,9 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
-        
         
         let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
         let validatePassword: Bool = application.isValidPassword(txtPassword.text)
@@ -195,17 +186,44 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
             
             if (readyForSend) {
                 // Sending user data to the server
-                application.myController.sendMessage(txtUserOrMail.text + "," + txtPassword.text + "," + latitud.description + "," + longitud.description)
+                application.myController.sendMessage(txtUserOrMail.text + SEPARATOR + txtPassword.text + SEPARATOR + latitud.description + SEPARATOR + longitud.description)
                 
                 // Catching response
                 var serverResponse = application.myController.readMessage()
-                if (serverResponse == SUCCES) {
+                var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
+                
+                if (serverResponseSplit[0] as! String == SUCCES) {
+                    
                     // Everything is correct. Go to menu view
                     self.performSegueWithIdentifier("goto_menu", sender: self)
                 } else {
-                    // NOT SUCCES response
-                    println("Server response = \(serverResponse)")
+                    print("Server response = ")
+                    for(var i = 1; i<serverResponseSplit.count; i++){
+                        println((application.getErrorName(serverResponseSplit[i] as! String)))
+                    }
                 }
+            }
+        }
+    }
+    
+    @IBAction func registerTapped(sender: UIButton) {
+        //START LOADING AND STOP THESE
+        //var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+        //application.stopLoading(views)
+        // Sending to server that we want to REGISTER and segue to Register view
+        
+        application.myController.sendMessage(REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER )
+        var serverResponse = application.myController.readMessage()
+        var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
+        
+        if (serverResponseSplit[0] as! String == SUCCES) {
+            
+            // Everything is correct. Go to menu view
+            self.performSegueWithIdentifier("goto_register", sender: self)
+        } else {
+            print("Server response = ")
+            for(var i = 1; i<serverResponseSplit.count; i++){
+                println((application.getErrorName(serverResponseSplit[i] as! String)))
             }
         }
     }
@@ -214,20 +232,36 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-
-    @IBAction func registerTapped(sender: UIButton) {
-        // Sending to server that we want to REGISTER and segue to Register view
-        if (true){
-            application.myController.sendMessage(REGISTER + "," + REGISTER + "," + REGISTER + "," + REGISTER )
-            if (application.myController.readMessage() == SUCCES){
-                self.performSegueWithIdentifier("goto_register", sender: self)
-            }
-        }
-        
-    }
     
+    
+    // Own methods
     func requiredFieldsAreEmpty()-> Bool {
         return txtPassword.text.isEmpty && txtUserOrMail.text.isEmpty
     }
+    
+    func setupControllerImages() {
+        
+        // Set the BACKGROUND image
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size
+        // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
+        
+        // Set the TEXTFIELDS images
+        txtPassword.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.background = UIImage(named: "no_focus.png")
+        txtUserOrMail.layer.cornerRadius = 14
+        txtPassword.layer.cornerRadius = 14
+        let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
+        txtUserOrMail.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
+        txtPassword.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributesDictionary)
+        
+        
+        // Set the BUTTONS images
+        
+        
+    }
+    
     
 }

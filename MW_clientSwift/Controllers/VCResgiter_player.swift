@@ -30,6 +30,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     @IBOutlet weak var lbl_classSelected: UILabel!
     
     @IBOutlet weak var classImage: UIImageView!
+    @IBOutlet weak var btnCharacterImage: UIButton!
 
     // VARIABLES
     var containerView: UIView!
@@ -67,6 +68,17 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
 //            typeCharacter = MAGE
 //        }
 //    }
+    @IBAction func btnCharacterImage(sender: UIButton) {
+        if(typeCharacter == WARLOCK){
+            typeCharacter = MAGE
+            btnCharacterImage.setBackgroundImage(UIImage(named: "mage.png"), forState: UIControlState.Normal)
+            lbl_classSelected.text = "MAGE"
+        }else{
+            typeCharacter = WARLOCK
+            btnCharacterImage.setBackgroundImage(UIImage(named: "warlock.png"), forState: UIControlState.Normal)
+            lbl_classSelected.text = "WARLOCK"
+        }
+    }
     
     @IBAction func sumaStrenght(sender: UIButton) {
         println("sumaStrength")
@@ -133,14 +145,17 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup image background
+        tfLife.enabled = false
+        tfEnergy.enabled = false
+        tfEnergyRegeneration.enabled = false
+        tfStrenght.enabled = false
+        tfInteligence.enabled = false
+        tfPoints.enabled = false
+        
+        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
-        
-        // Setup switcher
-        
-        
         
         // Set up the container view to hold your custom view hierarchy
         //let containerSize = CGSizeMake(640.0, 640.0)

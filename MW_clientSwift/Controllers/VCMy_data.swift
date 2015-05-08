@@ -19,12 +19,20 @@ class VCMy_data: UIViewController {
     @IBOutlet weak var lblDateRegister: UILabel!
     @IBOutlet weak var lblTotalPoints: UILabel!
     @IBOutlet weak var lblTotalWins: UILabel!
+    @IBOutlet weak var imgIconPlayer: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+
+        
         //Llegim la informació del servidor
         var info:String = application.myController.readMessage() as String
-        var dates = info.componentsSeparatedByString(",")
+        var dates = info.componentsSeparatedByString(SEPARATOR)
         
         var playerName = dates[0]
         var classType = dates[1]
@@ -49,7 +57,7 @@ class VCMy_data: UIViewController {
         println("date: " + date)
         
         lblCharacterName.text = playerName
-        lblDateRegister.text = date
+        lblDateRegister.text = application.getData(date)
         lblEnergy.text = energy
         lblIntelligence.text = intelligence
         lblLife.text = life
@@ -59,8 +67,10 @@ class VCMy_data: UIViewController {
         lblTotalWins.text = wonGames
         if(classType == MAGE.description){
             lblTypeCharacter.text = "MAGE"
+            imgIconPlayer.image = UIImage(named: "mage.png")
         }else{
             lblTypeCharacter.text = "WARLOCK"
+            imgIconPlayer.image = UIImage(named: "warlock.png")
         }
         
         // Do any additional setup after loading the view.
