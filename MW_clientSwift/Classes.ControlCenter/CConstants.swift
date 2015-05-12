@@ -33,6 +33,9 @@ let ERROR_PlayerNameExist = "112"
 
 // CONSTANTS FIL
 let REGISTER = "register" // valor per enviar al servidor i entrar en el fil de registre
+let MAX_UNASIGNED_POINTS: Int = 14
+
+
 // Op menu TYPES aqui o a CMenu??
 let SHOW_DATA = "showData"
 let START_BATTLE = "startBattle"

@@ -95,31 +95,33 @@ public class CApp{
         return false
     }
     
-    //Comprovar que los campos no esten vacios
-    //Comprovar que el nombre del jugador sea correcto
+    // Check if the fields are not empty
     
-    func validatePlayerName(text:String) ->Bool{
+    // Check if the playername conditions has been respected
+    func validatePlayerName(text: String) ->Bool{
         let maxValue = 12;
         
         for character in text {
-            if(character == "@" || character == " " ){
+            if (character == "@" || character == " " ){
                 return false
             }
-            if(character.hashValue >= maxValue){
+            if (character.hashValue >= maxValue){
                 return false
             }
         }
-        //Pasarlo todo a misusculas para asegurar errores
-        for chr in text{
+        
+        // Converting all to lower case for evading errors
+        for chr in text {
             var str = String(chr)
-            if str.lowercaseString == str{
+            if str.lowercaseString == str {
                 return true
             }
         }
         return false
     }
     
-    // COMPROVAR CONEXIO
+    // Check the connection 
+    // TODO: Translate!!!!
     let reachability = Reachability.reachabilityForInternetConnection()
 
     func comprovarConexion()->Bool{
