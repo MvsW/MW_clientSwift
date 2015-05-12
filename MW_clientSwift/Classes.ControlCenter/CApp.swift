@@ -182,4 +182,27 @@ public class CApp{
             return "WTF ERROR... ?¿"
         }
     }
+    
+    func showAlert(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+        }))
+        alert.view.backgroundColor = UIColor.blueColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func noConnectionAlert(view: UIViewController){
+        var alert = UIAlertController(title: "There's no connection here!", message: "Try to connect again please reviewing your settings.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+        }))
+        alert.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            self.settings()
+        }))
+        alert.view.backgroundColor = UIColor.redColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func settings(){
+        UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
+    }
 }

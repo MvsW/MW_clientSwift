@@ -81,6 +81,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
             // Check points has been assigned
             if (allPointsHasBeenAssignedProperly()) {
+               println(tfCharacterName.description + "," + lbl_classSelected.description + "," + lblCount_life.description + "," + lblCount_energy.description + "," + lblCount_eRegen.description + "," + lblCount_strength.description + "," + lblCount_intelligence.description)
+                
+                application.myController.sendMessage(tfCharacterName.description + "," + lbl_classSelected.description + "," + lblCount_life.description + "," + lblCount_energy.description + "," + lblCount_eRegen.description + "," + lblCount_strength.description + "," + lblCount_intelligence.description)
                 
                 // Keep going. 
                 // TODO Send a message and get message for been success
@@ -94,6 +97,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 
             } else {
                 println("So sorry, but all the points has not been set")
+                application.showAlert(self, titles: "So sorry", messages: "All the points has not been set.")
             }
         }
     }
