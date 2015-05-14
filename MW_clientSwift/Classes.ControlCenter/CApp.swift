@@ -159,9 +159,12 @@ public class CApp{
     }
     
     func getErrorName(num: String)->String{
+        println("Error num: " + num)
         switch(num){
         case ERROR:
             return "Error general"
+        case NO_SERVER:
+            return "Maybe server is in maintenance. \nTry again later"
         case ERROR_PasswordIncorrect:
             return "Password incorrect"
         case ERROR_UserAlreadyLogged:
@@ -179,7 +182,7 @@ public class CApp{
         case SUCCES:
             return "OK"
         default:
-            return "WTF ERROR... ?¿"
+            return "Default error... WTF?"
         }
     }
     

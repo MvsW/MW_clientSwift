@@ -98,8 +98,9 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
             var text = "Server say:  \(output) \n" //farem alguna cosa amb la variable?? es possible
             
         } else {
-            println("error")
             // Handle error -> falta implementar...
+             output = NO_SERVER
+            println("ERROR => " + output.description)
         }
         return output
         

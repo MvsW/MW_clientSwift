@@ -189,7 +189,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                     } else {
                         print("Server response = ")
                         var errorsMessage = ""
-                        for(var i = 1; i<serverResponseSplit.count; i++){
+                        for(var i = 0; i<serverResponseSplit.count; i++){
                             println((application.getErrorName(serverResponseSplit[i] as! String)))
                             errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
                         }
@@ -225,9 +225,12 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                 self.performSegueWithIdentifier("goto_register", sender: self)
             } else {
                 print("Server response = ")
-                for(var i = 1; i<serverResponseSplit.count; i++){
+                var errorsMessage = ""
+                for(var i = 0; i<serverResponseSplit.count; i++){
                     println((application.getErrorName(serverResponseSplit[i] as! String)))
+                    errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
                 }
+                application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
             }
         }else{
             if (application.comprovarConexion()){

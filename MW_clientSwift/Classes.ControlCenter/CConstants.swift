@@ -19,6 +19,7 @@ var application = CApp()
 let SEPARATOR = ","
 
 // CONSTANTS ERRORS
+let NO_SERVER = "NO_SERVER"
 let SUCCES = "0"
 let ERROR = "100"
 // LOGIN
