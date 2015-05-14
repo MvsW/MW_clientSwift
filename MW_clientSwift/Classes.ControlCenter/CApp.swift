@@ -205,6 +205,19 @@ public class CApp{
         view.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func noConnectionAlertAndGoToLogin(view: UIViewController){
+        var alert = UIAlertController(title: "There's no connection here!", message: "Try to connect again please reviewing your settings.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_login", sender: self)
+        }))
+        alert.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_login", sender: self)
+            self.settings()
+        }))
+        alert.view.backgroundColor = UIColor.redColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func settings(){
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }

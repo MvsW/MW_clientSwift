@@ -209,12 +209,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func registerTapped(sender: UIButton) {
-        if(connected){
-            //START LOADING AND STOP THESE
-            //var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
-            //application.stopLoading(views)
-            // Sending to server that we want to REGISTER and segue to Register view
-            
+        if(connected && application.comprovarConexion()){
             application.myController.sendMessage(REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER )
             var serverResponse = application.myController.readMessage()
             var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
@@ -277,6 +272,16 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         
         
     }
+    
+    @IBAction func goToMenu(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_menu", sender: self)
+    }
+    
+    @IBAction func goToRegister(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_register", sender: self)
+
+    }
+    
     
     
 }

@@ -55,7 +55,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var userName = ""
     var userMail = ""
     var userPassword = ""
-    var typeCharacter = MAGE
+    var typeCharacter = WARLOCK
     
     // BUTTON METHODS
     @IBAction func btnCharacterImage(sender: UIButton) {
@@ -81,9 +81,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
             // Check points has been assigned
             if (allPointsHasBeenAssignedProperly()) {
-               println(tfCharacterName.description + "," + lbl_classSelected.description + "," + lblCount_life.description + "," + lblCount_energy.description + "," + lblCount_eRegen.description + "," + lblCount_strength.description + "," + lblCount_intelligence.description)
+                println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text!)
                 
-                application.myController.sendMessage(tfCharacterName.description + "," + lbl_classSelected.description + "," + lblCount_life.description + "," + lblCount_energy.description + "," + lblCount_eRegen.description + "," + lblCount_strength.description + "," + lblCount_intelligence.description)
+                application.myController.sendMessage(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text!)
                 
                 // Keep going. 
                 // TODO Send a message and get message for been success
@@ -105,13 +105,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     @IBAction func stpr_strength(sender: UIStepper) {
         
         var stprValue = Int(sender.value)
+        println(stprValue)
         var currentLbl = self.lblCount_strength
         var currentPoints = lblCount_unasPoints.text!.toInt()!
         
         // First check if we are inside of the bounds.
         if stprValue < pointsStrength {
             // Decreasing
-            // println("Restant contador strength.")
+            // println("Decreasing strength's counter.")
             
             if (currentPoints+1 >= 0 && currentPoints+1 <= MAX_UNASIGNED_POINTS) {
                 currentPoints++
@@ -121,7 +122,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             
         } else {
             // Summing up
-            // println("Sumant contador strength")
+            // println("Increasing intelligence's counter")
             
             if (currentPoints-1 >= 0 && currentPoints-1 <= MAX_UNASIGNED_POINTS) {
                 currentPoints--
@@ -138,6 +139,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     @IBAction func stpr_intelligence(sender: UIStepper) {
         
         var stprValue = Int(sender.value)
+        println(stprValue)
         var currentLbl = self.lblCount_strength
         var currentPoints = lblCount_unasPoints.text!.toInt()!
         
@@ -179,6 +181,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         lblCount_intelligence.enabled = false
         lblCount_unasPoints.enabled = false
         
+        lblCount_unasPoints.text = MAX_UNASIGNED_POINTS.description
+        
         // Set background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -209,7 +213,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     }
     
     func allPointsHasBeenAssignedProperly()->Bool {
-        return (lblCount_strength.text!.toInt()! + lblCount_intelligence.text!.toInt()!) == 14 && lblCount_unasPoints.text!.toInt()! == 0
+        if(lblCount_unasPoints.text!.toInt() == 0){
+            return true
+        }else{
+            return false
+        }
     }
     
     func reCountUnassignedPoints()->Int? {
@@ -261,5 +269,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         self.view.endEditing(true)
     }
     
+    @IBAction func createProva(sender: UIButton) {
+        println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text! + " => " + allPointsHasBeenAssignedProperly().description)
+    }
 }
 
