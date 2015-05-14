@@ -79,7 +79,7 @@ class VCRegister: UIViewController {
                 //Cal implementar metodes per fer com els setErrors de android i mostra el error que toca
                 //ERRORS via servidor
                 var errorsMessage = ""
-                for(var i = 1; i<serverResponseSplit.count; i++){
+                for(var i = 0; i<serverResponseSplit.count; i++){
                     println((application.getErrorName(serverResponseSplit[i] as! String)))
                     errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
                 }
