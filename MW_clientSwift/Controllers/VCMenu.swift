@@ -39,4 +39,10 @@ class VCMenu: UIViewController {
             application.noConnectionAlertAndGoToLogin(self)
         }
     }
+    @IBAction func gotoBattle(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_battle", sender: self)
+
+    }
+    
+    
 }

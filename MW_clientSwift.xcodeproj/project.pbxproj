@@ -40,6 +40,9 @@
 		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
 		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
+		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
+		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
+		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
 		C0E65DDB1AD5630800C689BF /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E65DDA1AD5630800C689BF /* login_background.png */; };
 		C0E65DDD1AD56EA400C689BF /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E65DDC1AD56EA400C689BF /* logo.png */; };
 		C0F619B71AC300660007B511 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F619B61AC300660007B511 /* Reachability.swift */; };
@@ -94,6 +97,9 @@
 		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
+		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
+		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
 		C0E65DDA1AD5630800C689BF /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_background.png; path = MW_clientSwift/Imatges/login_background.png; sourceTree = SOURCE_ROOT; };
 		C0E65DDC1AD56EA400C689BF /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = MW_clientSwift/Imatges/logo.png; sourceTree = SOURCE_ROOT; };
 		C0F619B61AC300660007B511 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0E108B61B04F189003E0DE1 /* bluebarr.png */,
+				C0E108B71B04F189003E0DE1 /* redbarr.png */,
+				C0E108B81B04F189003E0DE1 /* barrbase.png */,
 				54315D591AFBBED900BDDCE2 /* tittle_login.png */,
 				C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */,
 				C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */,
@@ -324,7 +333,9 @@
 				4159A9AE1A90EDF3006DFF54 /* Main.storyboard in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				41C82B141A91056600235D61 /* mage.png in Resources */,
+				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
 				41C82B131A91056600235D61 /* fondo.png in Resources */,
+				C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */,
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
 				54B912FA1AEABAFE005DD10A /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
@@ -334,6 +345,7 @@
 				C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */,
 				C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */,
 				41B1D24E1A6991A600962647 /* Images.xcassets in Resources */,
+				C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */,
 				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,

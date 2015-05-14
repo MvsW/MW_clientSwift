@@ -29,10 +29,11 @@ class VCBattle: UIViewController {
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
+        /* DESACTIVAT AMB FREE PASS
         messageReceived = application.myController.readMessage()
         dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
         
-        refreshInterfaceLabels()
+        refreshInterfaceLabels()*/
         
     }
     
@@ -41,8 +42,6 @@ class VCBattle: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-
     @IBAction func actionBtnTapped(sender: AnyObject) {
         
         // Get the tag
