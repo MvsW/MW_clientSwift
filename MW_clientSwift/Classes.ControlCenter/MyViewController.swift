@@ -63,7 +63,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         
         if message == nil{
             message = ""
-            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)?
+            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         }
         else{
             thisMessage = message!
@@ -93,13 +93,14 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         if bytesRead >= 0 {
             lastReceivedMessageID++
             output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-            //println("output is")
+            // println("output is")
             println("Server say: \(output)")
             var text = "Server say:  \(output) \n" //farem alguna cosa amb la variable?? es possible
             
         } else {
-            println("error")
             // Handle error -> falta implementar...
+             output = NO_SERVER
+            println("ERROR => " + output.description)
         }
         return output
         
@@ -202,7 +203,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
     }
     
     //Handle location (Experimental)
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:AnyObject) {
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         println("locations = \(locations)")
         //tv_xivato.text = "success locations = \(locations)"
     }

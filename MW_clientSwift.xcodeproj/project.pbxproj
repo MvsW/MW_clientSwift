@@ -23,13 +23,29 @@
 		41C82B121A91056600235D61 /* anterior.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0C1A91056600235D61 /* anterior.png */; };
 		41C82B131A91056600235D61 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0D1A91056600235D61 /* fondo.png */; };
 		41C82B141A91056600235D61 /* mage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0E1A91056600235D61 /* mage.png */; };
-		41C82B151A91056600235D61 /* pergamino.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0F1A91056600235D61 /* pergamino.png */; };
 		41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B101A91056600235D61 /* rayitaSeparadora.png */; };
 		41C82B171A91056600235D61 /* siguiente.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B111A91056600235D61 /* siguiente.png */; };
 		41EDC0871A8BD97C00394712 /* CApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC07F1A8BD97C00394712 /* CApp.swift */; };
 		41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0811A8BD97C00394712 /* CConstants.swift */; };
 		41F497E91A90EC390085DD7F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E71A90EC390085DD7F /* MyViewController.swift */; };
 		41F497EA1A90EC390085DD7F /* ViewControllerPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */; };
+		54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 54315D591AFBBED900BDDCE2 /* tittle_login.png */; };
+		54B912FA1AEABAFE005DD10A /* warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 54B912F91AEABAFE005DD10A /* warlock.png */; };
+		54B9EF761AE6B3460083E508 /* CPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9EF751AE6B3460083E508 /* CPlayer.swift */; };
+		54B9EF781AE6B6BF0083E508 /* CSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9EF771AE6B6BF0083E508 /* CSpell.swift */; };
+		C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04161351AD576E70004BC46 /* Augusta-Shadow.ttf */; };
+		C04161381AD576E70004BC46 /* Augusta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04161361AD576E70004BC46 /* Augusta.ttf */; };
+		C041613A1AD580780004BC46 /* no_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C04161391AD580780004BC46 /* no_focus.png */; };
+		C041613C1AD583ED0004BC46 /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C041613B1AD583ED0004BC46 /* focus.png */; };
+		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
+		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
+		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
+		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
+		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
+		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
+		C0E65DDB1AD5630800C689BF /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E65DDA1AD5630800C689BF /* login_background.png */; };
+		C0E65DDD1AD56EA400C689BF /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E65DDC1AD56EA400C689BF /* logo.png */; };
+		C0F619B71AC300660007B511 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F619B61AC300660007B511 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +79,6 @@
 		41C82B0C1A91056600235D61 /* anterior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anterior.png; path = MW_clientSwift/Imatges/anterior.png; sourceTree = SOURCE_ROOT; };
 		41C82B0D1A91056600235D61 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fondo.png; path = MW_clientSwift/Imatges/fondo.png; sourceTree = SOURCE_ROOT; };
 		41C82B0E1A91056600235D61 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage.png; path = MW_clientSwift/Imatges/mage.png; sourceTree = SOURCE_ROOT; };
-		41C82B0F1A91056600235D61 /* pergamino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pergamino.png; path = MW_clientSwift/Imatges/pergamino.png; sourceTree = SOURCE_ROOT; };
 		41C82B101A91056600235D61 /* rayitaSeparadora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rayitaSeparadora.png; path = MW_clientSwift/Imatges/rayitaSeparadora.png; sourceTree = SOURCE_ROOT; };
 		41C82B111A91056600235D61 /* siguiente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = siguiente.png; path = MW_clientSwift/Imatges/siguiente.png; sourceTree = SOURCE_ROOT; };
 		41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BlackBytePlayGround.playground; sourceTree = "<group>"; };
@@ -71,6 +86,23 @@
 		41EDC0811A8BD97C00394712 /* CConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
 		41F497E71A90EC390085DD7F /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPrototype.swift; sourceTree = "<group>"; };
+		54315D591AFBBED900BDDCE2 /* tittle_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tittle_login.png; path = MW_clientSwift/Imatges/tittle_login.png; sourceTree = SOURCE_ROOT; };
+		54B912F91AEABAFE005DD10A /* warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock.png; path = MW_clientSwift/Imatges/warlock.png; sourceTree = SOURCE_ROOT; };
+		54B9EF751AE6B3460083E508 /* CPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPlayer.swift; sourceTree = "<group>"; };
+		54B9EF771AE6B6BF0083E508 /* CSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSpell.swift; sourceTree = "<group>"; };
+		C04161351AD576E70004BC46 /* Augusta-Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Augusta-Shadow.ttf"; sourceTree = "<group>"; };
+		C04161361AD576E70004BC46 /* Augusta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Augusta.ttf; sourceTree = "<group>"; };
+		C04161391AD580780004BC46 /* no_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_focus.png; path = MW_clientSwift/Imatges/no_focus.png; sourceTree = SOURCE_ROOT; };
+		C041613B1AD583ED0004BC46 /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = focus.png; path = MW_clientSwift/Imatges/focus.png; sourceTree = SOURCE_ROOT; };
+		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
+		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
+		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
+		C0E65DDA1AD5630800C689BF /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_background.png; path = MW_clientSwift/Imatges/login_background.png; sourceTree = SOURCE_ROOT; };
+		C0E65DDC1AD56EA400C689BF /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = MW_clientSwift/Imatges/logo.png; sourceTree = SOURCE_ROOT; };
+		C0F619B61AC300660007B511 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +127,11 @@
 		41B1D2381A6991A600962647 = {
 			isa = PBXGroup;
 			children = (
+				C04161341AD576E70004BC46 /* Fonts */,
+				C0BF54051AB09F9D0066E027 /* CoreLocation.framework */,
 				41E58D861A90BBA1009A2D0F /* Imatges */,
-				41EDC07E1A8BD97C00394712 /* Classes.ControlCenter */,
+				41EDC07E1A8BD97C00394712 /* ControlCenter */,
 				41F497E41A90EC0B0085DD7F /* Controllers */,
-				41EDC0841A8BD97C00394712 /* Classes.Official */,
 				41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */,
 				41B1D2431A6991A600962647 /* MW_clientSwift */,
 				41B1D2591A6991A600962647 /* MW_clientSwiftTests */,
@@ -155,34 +189,39 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0E108B61B04F189003E0DE1 /* bluebarr.png */,
+				C0E108B71B04F189003E0DE1 /* redbarr.png */,
+				C0E108B81B04F189003E0DE1 /* barrbase.png */,
+				54315D591AFBBED900BDDCE2 /* tittle_login.png */,
+				C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */,
+				C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */,
+				54B912F91AEABAFE005DD10A /* warlock.png */,
+				C041613B1AD583ED0004BC46 /* focus.png */,
+				C04161391AD580780004BC46 /* no_focus.png */,
+				C0E65DDC1AD56EA400C689BF /* logo.png */,
+				C0E65DDA1AD5630800C689BF /* login_background.png */,
 				41C82B0C1A91056600235D61 /* anterior.png */,
 				41C82B0D1A91056600235D61 /* fondo.png */,
 				41C82B0E1A91056600235D61 /* mage.png */,
-				41C82B0F1A91056600235D61 /* pergamino.png */,
 				41C82B101A91056600235D61 /* rayitaSeparadora.png */,
 				41C82B111A91056600235D61 /* siguiente.png */,
 			);
 			path = Imatges;
 			sourceTree = "<group>";
 		};
-		41EDC07E1A8BD97C00394712 /* Classes.ControlCenter */ = {
+		41EDC07E1A8BD97C00394712 /* ControlCenter */ = {
 			isa = PBXGroup;
 			children = (
 				41F497E71A90EC390085DD7F /* MyViewController.swift */,
+				C0F619B61AC300660007B511 /* Reachability.swift */,
 				41F497E81A90EC390085DD7F /* ViewControllerPrototype.swift */,
 				41EDC07F1A8BD97C00394712 /* CApp.swift */,
 				41EDC0811A8BD97C00394712 /* CConstants.swift */,
+				54B9EF751AE6B3460083E508 /* CPlayer.swift */,
+				54B9EF771AE6B6BF0083E508 /* CSpell.swift */,
 			);
-			name = Classes.ControlCenter;
+			name = ControlCenter;
 			path = MW_clientSwift/Classes.ControlCenter;
-			sourceTree = "<group>";
-		};
-		41EDC0841A8BD97C00394712 /* Classes.Official */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Classes.Official;
-			path = MW_clientSwift/Classes.Official;
 			sourceTree = "<group>";
 		};
 		41F497E41A90EC0B0085DD7F /* Controllers */ = {
@@ -197,6 +236,16 @@
 				41C82AFE1A91054000235D61 /* VCBattle.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C04161341AD576E70004BC46 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C04161351AD576E70004BC46 /* Augusta-Shadow.ttf */,
+				C04161361AD576E70004BC46 /* Augusta.ttf */,
+			);
+			name = Fonts;
+			path = MW_clientSwift/Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,15 +329,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B1D24C1A6991A600962647 /* MainPrototype.storyboard in Resources */,
+				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				4159A9AE1A90EDF3006DFF54 /* Main.storyboard in Resources */,
-				41C82B151A91056600235D61 /* pergamino.png in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				41C82B141A91056600235D61 /* mage.png in Resources */,
+				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
 				41C82B131A91056600235D61 /* fondo.png in Resources */,
+				C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */,
+				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
+				54B912FA1AEABAFE005DD10A /* warlock.png in Resources */,
+				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */,
+				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
+				54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */,
+				C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */,
+				C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */,
 				41B1D24E1A6991A600962647 /* Images.xcassets in Resources */,
+				C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */,
+				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,
+				C04161381AD576E70004BC46 /* Augusta.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +370,7 @@
 				41C82B0A1A91054B00235D61 /* VCResgiter_player.swift in Sources */,
 				41C82B091A91054B00235D61 /* VCRegister.swift in Sources */,
 				41C82B081A91054B00235D61 /* VCMy_data.swift in Sources */,
+				54B9EF781AE6B6BF0083E508 /* CSpell.swift in Sources */,
 				41C82B061A91054B00235D61 /* VCLogin.swift in Sources */,
 				41C82B071A91054B00235D61 /* VCMenu.swift in Sources */,
 				41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */,
@@ -316,8 +378,10 @@
 				41F497E91A90EC390085DD7F /* MyViewController.swift in Sources */,
 				41C82AFF1A91054000235D61 /* VCBattle.swift in Sources */,
 				41B1D2471A6991A600962647 /* AppDelegate.swift in Sources */,
+				54B9EF761AE6B3460083E508 /* CPlayer.swift in Sources */,
 				41C82B0B1A91054B00235D61 /* VCSearchBattle.swift in Sources */,
 				41F497EA1A90EC390085DD7F /* ViewControllerPrototype.swift in Sources */,
+				C0F619B71AC300660007B511 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MW_clientSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -461,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MW_clientSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

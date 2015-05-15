@@ -161,7 +161,7 @@ class ViewControllerPrototype: UIViewController, NSStreamDelegate , CLLocationMa
         
         if message == nil{
             message = ""
-            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)?
+            data = message?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         }
         else{
             thisMessage = message!
@@ -207,7 +207,8 @@ class ViewControllerPrototype: UIViewController, NSStreamDelegate , CLLocationMa
     }
     
     
-    func locationManager(manager:CLLocationManager, didUpdateLocations locations:AnyObject) {
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         println("locations = \(locations)")
         tv_xivato.text = "success locations = \(locations)"
     }
