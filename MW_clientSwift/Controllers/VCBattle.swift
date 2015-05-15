@@ -26,6 +26,10 @@ class VCBattle: UIViewController {
     var dataArray: [String]!
     var messageReceived: NSString!
     
+    var originalMeLife = "0"
+    var originalMeEnergy = "0"
+    var originalOpponentLife = "0"
+    var originalOpponentEnergy = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +42,17 @@ class VCBattle: UIViewController {
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         
-        /* DESACTIVAT AMB FREE PASS
+         //DESACTIVAT AMB FREE PASS
         messageReceived = application.myController.readMessage()
         dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
         
-        refreshInterfaceLabels()*/
+        originalMeLife = self.dataArray[0]
+        originalMeEnergy = self.dataArray[1]
+        originalOpponentLife = self.dataArray[2]
+        originalOpponentEnergy = self.dataArray[3]
         
-       self.refreshInterfaceProgressBar(0.9, perOneMeEnergy: 0.8, perOneOpponentLife: 0.7, perOneOpponenEnergy: 0.6)
+        refreshInterfaceLabels()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,22 +78,42 @@ class VCBattle: UIViewController {
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             
             refreshInterfaceLabels()
+            
+            println(self.dataArray[0])
+            var array1ToFloat:CGFloat = CGFloat((self.dataArray[0] as NSString).floatValue)
+            var oginalMeLifeToFloat: CGFloat = CGFloat((originalMeLife as NSString).floatValue)
+            
+            var array2ToFloat:CGFloat = CGFloat((self.dataArray[1] as NSString).floatValue)
+            var oginalMeEnergyToFloat: CGFloat = CGFloat((originalMeEnergy as NSString).floatValue)
+            
+            var array3ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
+            var oginalOpponentLifeToFloat: CGFloat = CGFloat((originalOpponentLife as NSString).floatValue)
+            
+            var array4ToFloat:CGFloat = CGFloat((self.dataArray[3] as NSString).floatValue)
+            var oginalOpponentEnergyToFloat: CGFloat = CGFloat((originalOpponentEnergy as NSString).floatValue)
+            
+            var calcul1 = (array1ToFloat * 100 / oginalMeLifeToFloat)/100
+            var calcul2 = (array2ToFloat * 100 / oginalMeEnergyToFloat)/100
+            var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
+            var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
+            
+            self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
         }
     }
     
     func refreshInterfaceLabels() {
         if (self.dataArray != nil) {
-            self.lbl_myLife.text = self.dataArray[0]
-            self.lbl_myEnergy.text = self.dataArray[1]
-            self.lbl_hisLife.text = self.dataArray[2]
-            self.lbl_hisEnergy.text = self.dataArray[3]
+            self.lbl_myLife.text = (self.dataArray[0] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeLife.componentsSeparatedByString(".")[0]
+            self.lbl_myEnergy.text = (self.dataArray[1] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeEnergy.componentsSeparatedByString(".")[0]
+            self.lbl_hisLife.text = (self.dataArray[2] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentLife.componentsSeparatedByString(".")[0]
+            self.lbl_hisEnergy.text = (self.dataArray[3] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentEnergy.componentsSeparatedByString(".")[0]
         }
     }
     
     func refreshInterfaceProgressBar(perOneMeLife:CGFloat, perOneMeEnergy:CGFloat, perOneOpponentLife:CGFloat, perOneOpponenEnergy:CGFloat){
         meLife.frame = CGRectMake(119, 106, 135*perOneMeLife, 25)
-        meEnergy.frame = CGRectMake(119, 155, 135*perOneMeEnergy, 25)
+        meEnergy.frame = CGRectMake(119, 164, 135*perOneMeEnergy, 25)
         opponentLife.frame = CGRectMake(119, 256, 135*perOneOpponentLife, 25)
-        opponentEnergy.frame = CGRectMake(119, 302, 135*perOneOpponenEnergy, 25)
+        opponentEnergy.frame = CGRectMake(119, 311, 135*perOneOpponenEnergy, 25)
     }
 }
