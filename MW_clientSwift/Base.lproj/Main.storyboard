@@ -721,7 +721,7 @@
                                 <rect key="frame" x="119" y="155" width="135" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redbarr.png" id="3Sa-4a-nHb">
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redbarr.png" id="3Sa-4a-nHb">
                                 <rect key="frame" x="119" y="106" width="135" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -731,10 +731,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redbarr.png" id="FRO-Ij-JNk">
                                 <rect key="frame" x="119" y="256" width="135" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrbase.png" id="fPW-DB-l7s">
-                                <rect key="frame" x="107" y="103" width="158" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrbase.png" id="hcL-O3-MUi">
@@ -749,6 +745,10 @@
                                 <rect key="frame" x="107" y="298" width="158" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrbase.png" id="fPW-DB-l7s">
+                                <rect key="frame" x="107" y="102" width="158" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -760,6 +760,10 @@
                         <outlet property="lbl_hisLife" destination="4To-bh-w9R" id="heW-fJ-yBC"/>
                         <outlet property="lbl_myEnergy" destination="CSg-Ni-kfE" id="VGV-97-GrO"/>
                         <outlet property="lbl_myLife" destination="zhA-98-XFu" id="QtH-Hj-BZ6"/>
+                        <outlet property="meEnergy" destination="Oq5-Cw-epT" id="WfM-g0-5MW"/>
+                        <outlet property="meLife" destination="3Sa-4a-nHb" id="Sah-Vv-YFE"/>
+                        <outlet property="opponentEnergy" destination="xPn-GQ-bUQ" id="KJH-yH-soH"/>
+                        <outlet property="opponentLife" destination="FRO-Ij-JNk" id="STC-Jb-wJl"/>
                         <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="oM4-i9-W4f"/>
                     </connections>
                 </viewController>

@@ -17,6 +17,12 @@ class VCBattle: UIViewController {
     @IBOutlet weak var lbl_hisLife: UILabel!
     @IBOutlet weak var lbl_hisEnergy: UILabel!
     
+    @IBOutlet weak var meLife: UIImageView!
+    @IBOutlet weak var meEnergy: UIImageView!
+    @IBOutlet weak var opponentLife: UIImageView!
+    @IBOutlet weak var opponentEnergy: UIImageView!
+    
+    
     var dataArray: [String]!
     var messageReceived: NSString!
     
@@ -24,10 +30,13 @@ class VCBattle: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
+        
         
         /* DESACTIVAT AMB FREE PASS
         messageReceived = application.myController.readMessage()
@@ -35,6 +44,7 @@ class VCBattle: UIViewController {
         
         refreshInterfaceLabels()*/
         
+       self.refreshInterfaceProgressBar(0.9, perOneMeEnergy: 0.8, perOneOpponentLife: 0.7, perOneOpponenEnergy: 0.6)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,5 +80,12 @@ class VCBattle: UIViewController {
             self.lbl_hisLife.text = self.dataArray[2]
             self.lbl_hisEnergy.text = self.dataArray[3]
         }
+    }
+    
+    func refreshInterfaceProgressBar(perOneMeLife:CGFloat, perOneMeEnergy:CGFloat, perOneOpponentLife:CGFloat, perOneOpponenEnergy:CGFloat){
+        meLife.frame = CGRectMake(119, 106, 135*perOneMeLife, 25)
+        meEnergy.frame = CGRectMake(119, 155, 135*perOneMeEnergy, 25)
+        opponentLife.frame = CGRectMake(119, 256, 135*perOneOpponentLife, 25)
+        opponentEnergy.frame = CGRectMake(119, 302, 135*perOneOpponenEnergy, 25)
     }
 }
