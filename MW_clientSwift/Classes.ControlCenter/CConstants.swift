@@ -47,4 +47,7 @@ let WARLOCK = 2
 
 // BATTLE ACTIONS ARRAY
 let MAX_ACTIONS = 6
+let WIN = "10"
+let LOSE = "1"
+let DRAW = "11"
 
