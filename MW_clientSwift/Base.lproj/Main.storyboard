@@ -756,6 +756,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnBasicAtt" destination="eRN-Hi-ZW6" id="0D1-4t-A6w"/>
+                        <outlet property="btnDodge" destination="wkB-u8-6LY" id="bxf-EQ-Ga8"/>
+                        <outlet property="btnShield" destination="L9B-0c-XaX" id="t2c-Xb-7ZR"/>
+                        <outlet property="btnSpell1" destination="EVp-BP-Zbm" id="RLk-zc-dFJ"/>
+                        <outlet property="btnSpell2" destination="UDX-O0-FUA" id="bGK-yc-abe"/>
+                        <outlet property="btnUltimate" destination="5zn-Oc-mK8" id="kP3-7N-OWt"/>
                         <outlet property="lbl_hisEnergy" destination="POo-aw-FIa" id="RrZ-pv-6eg"/>
                         <outlet property="lbl_hisLife" destination="4To-bh-w9R" id="heW-fJ-yBC"/>
                         <outlet property="lbl_myEnergy" destination="CSg-Ni-kfE" id="VGV-97-GrO"/>

@@ -194,6 +194,33 @@ public class CApp{
         view.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func showAlertLoose(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.redColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertWin(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.greenColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertDraw(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.blueColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func noConnectionAlert(view: UIViewController){
         var alert = UIAlertController(title: "There's no connection here!", message: "Try to connect again please reviewing your settings.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in

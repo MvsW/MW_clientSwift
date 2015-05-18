@@ -22,6 +22,12 @@ class VCBattle: UIViewController {
     @IBOutlet weak var opponentLife: UIImageView!
     @IBOutlet weak var opponentEnergy: UIImageView!
     
+    @IBOutlet weak var btnShield: UIButton!
+    @IBOutlet weak var btnUltimate: UIButton!
+    @IBOutlet weak var btnSpell1: UIButton!
+    @IBOutlet weak var btnDodge: UIButton!
+    @IBOutlet weak var btnSpell2: UIButton!
+    @IBOutlet weak var btnBasicAtt: UIButton!
     
     var dataArray: [String]!
     var messageReceived: NSString!
@@ -31,10 +37,12 @@ class VCBattle: UIViewController {
     var originalOpponentLife = "0"
     var originalOpponentEnergy = "0"
     
+    override func viewDidAppear(animated: Bool) {
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         
         // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
@@ -43,13 +51,13 @@ class VCBattle: UIViewController {
         
         
          //DESACTIVAT AMB FREE PASS
-        messageReceived = application.myController.readMessage()
+        /*messageReceived = application.myController.readMessage()
         dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
         
         originalMeLife = self.dataArray[0]
         originalMeEnergy = self.dataArray[1]
         originalOpponentLife = self.dataArray[2]
-        originalOpponentEnergy = self.dataArray[3]
+        originalOpponentEnergy = self.dataArray[3]*/
         
         refreshInterfaceLabels()
         
@@ -96,8 +104,50 @@ class VCBattle: UIViewController {
             var calcul2 = (array2ToFloat * 100 / oginalMeEnergyToFloat)/100
             var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
             var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
+                        
+            if(calcul2 < 0.8 && calcul2 > 0.4){
+                btnUltimate.enabled = false
+                btnUltimate.backgroundColor = UIColor.redColor()
+                
+                btnSpell2.enabled = true
+                btnSpell2.backgroundColor = UIColor.greenColor()
+                
+                btnSpell1.enabled = true
+                btnSpell1.backgroundColor = UIColor.greenColor()
+            }
+            if(calcul2 < 0.4){
+                btnUltimate.enabled = false
+                btnUltimate.backgroundColor = UIColor.redColor()
+                
+                btnSpell2.enabled = false
+                btnSpell2.backgroundColor = UIColor.redColor()
+                
+                btnSpell1.enabled = true
+                btnSpell1.backgroundColor = UIColor.greenColor()
+            }
+            if(calcul2 < 0.15){
+                btnUltimate.enabled = false
+                btnUltimate.backgroundColor = UIColor.redColor()
+                
+                btnSpell2.enabled = false
+                btnSpell2.backgroundColor = UIColor.redColor()
+                
+                btnSpell1.enabled = false
+                btnSpell1.backgroundColor = UIColor.redColor()
+            }
             
             self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
+            
+            var guanyaPartida = 1
+            if(guanyaPartida == 1){
+                application.showAlertWin(self, titles: "Game WIN!", messages: "")
+            }
+            if(guanyaPartida == 2){
+                application.showAlertDraw(self, titles: "Game DRAW!", messages: "")
+            }
+            if(guanyaPartida == 3){
+                application.showAlertLoose(self, titles: "Game LOOSE!", messages: "")
+            }
         }
     }
     
@@ -116,4 +166,5 @@ class VCBattle: UIViewController {
         opponentLife.frame = CGRectMake(119, 256, 135*perOneOpponentLife, 25)
         opponentEnergy.frame = CGRectMake(119, 311, 135*perOneOpponenEnergy, 25)
     }
+    
 }
