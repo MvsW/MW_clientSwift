@@ -248,4 +248,47 @@ public class CApp{
     func settings(){
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
+    
+    /* Create player methods */
+    func getDefaultStats(classType: Int)->String {
+        var defaultStats: String = "nothing"
+        var life: Int!
+        var energy: Int!
+        var reEnergy: Int!
+        var strength: Int = BASE_CALC / 2
+        var intelligence: Int = BASE_CALC / 2
+        
+        // Set the base of:
+        life = TOTAL_BASE_LIFE + (strength * LIFE_INTEL_PERCENT) / 100
+        
+        energy = TOTAL_BASE_LIFE + (intelligence * LIFE_INTEL_PERCENT) / 100
+        
+        // regen at the end of the method
+        
+        // Get the random value
+        for x in 0...RAND_CALC {
+            
+            var randomNumber = getIntValueBetween(0, max: RAND_CALC)
+            
+            if classType == MAGE {
+                // Type selected: Mage
+                
+                
+            } else if classType == WARLOCK {
+                // Type selected: Warlock
+                
+                
+            }
+            
+        }
+        
+        return defaultStats
+    }
+
+    
+    /* Maths */
+    func getIntValueBetween(min: Int, max: Int)->Int {
+        return Int(arc4random_uniform(UInt32((max - min) + min)))
+    }
+
 }
