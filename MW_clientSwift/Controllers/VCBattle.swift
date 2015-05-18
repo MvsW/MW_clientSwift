@@ -37,10 +37,6 @@ class VCBattle: UIViewController {
     var originalOpponentLife = "0"
     var originalOpponentEnergy = "0"
     
-    override func viewDidAppear(animated: Bool) {
-
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
