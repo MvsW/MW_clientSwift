@@ -65,7 +65,8 @@ class VCBattle: UIViewController {
     }
     
     @IBAction func actionBtnTapped(sender: AnyObject) {
-        
+        var guanyaPartida = "9"
+
         // Get the tag
         var tag: Int = sender.tag
         
@@ -134,14 +135,17 @@ class VCBattle: UIViewController {
             
             self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
             
-            var guanyaPartida = 1
-            if(guanyaPartida == 1){
+            if(dataArray.count == 5){
+               guanyaPartida = dataArray[4]
+            }
+            
+            if(guanyaPartida == WIN){
                 application.showAlertWin(self, titles: "Game WIN!", messages: "")
             }
-            if(guanyaPartida == 2){
+            if(guanyaPartida == DRAW){
                 application.showAlertDraw(self, titles: "Game DRAW!", messages: "")
             }
-            if(guanyaPartida == 3){
+            if(guanyaPartida == LOSE){
                 application.showAlertLoose(self, titles: "Game LOOSE!", messages: "")
             }
         }
