@@ -47,13 +47,13 @@ class VCBattle: UIViewController {
         
         
          //DESACTIVAT AMB FREE PASS
-        /*messageReceived = application.myController.readMessage()
+        messageReceived = application.myController.readMessage()
         dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
         
         originalMeLife = self.dataArray[0]
         originalMeEnergy = self.dataArray[1]
         originalOpponentLife = self.dataArray[2]
-        originalOpponentEnergy = self.dataArray[3]*/
+        originalOpponentEnergy = self.dataArray[3]
         
         refreshInterfaceLabels()
         refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
