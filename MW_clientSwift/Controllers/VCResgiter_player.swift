@@ -38,7 +38,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsEnergyRegeneration = 0
     var pointsStrength = 0
     var pointsInteligence = 0
-    var pointsPoints = 0
+    var pointsPoints: Double = Double(MAX_UNASIGNED_POINTS)
+    var pointsStepperStrenght: Double = 0
+    var pointsStepperIntelligence: Double = 0
     
     // CONSTANTS
     let MAX_STRENGHT = 5
@@ -59,6 +61,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     // BUTTON METHODS
     @IBAction func btnCharacterImage(sender: UIButton) {
+        randomStats()
         if(typeCharacter == WARLOCK){
             typeCharacter = MAGE
             btnCharacterImage.setBackgroundImage(UIImage(named: "mage.png"), forState: UIControlState.Normal)
@@ -78,19 +81,19 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         let characterValidation: Bool = application.validatePlayerName(tfCharacterName.text)
         
         if (characterValidation) {
-        
+            
             // Check points has been assigned
             if (allPointsHasBeenAssignedProperly()) {
                 println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text!)
                 
                 application.myController.sendMessage(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text!)
                 
-                // Keep going. 
+                // Keep going.
                 // TODO Send a message and get message for been success
                 // TODO Make and implement the methods for increase the life, energy or regen depending of the strength and intel.
                 if (application.myController.readMessage() == SUCCES){
                     self.performSegueWithIdentifier("goto_login", sender: self)
-                
+                    
                 } else{
                     println("ERROR -> unsuccessfull")
                 }
@@ -103,76 +106,38 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     }
     
     @IBAction func stpr_strength(sender: UIStepper) {
-        
-        var stprValue = Int(sender.value)
-        println(stprValue)
-        var currentLbl = self.lblCount_strength
-        var currentPoints = lblCount_unasPoints.text!.toInt()!
-        
-        // First check if we are inside of the bounds.
-        if stprValue < pointsStrength {
-            // Decreasing
-            // println("Decreasing strength's counter.")
-            
-            if (currentPoints+1 >= 0 && currentPoints+1 <= MAX_UNASIGNED_POINTS) {
-                currentPoints++
-                pointsStrength = stprValue
-                lblCount_strength.text = pointsStrength.description
+        println(Int(pointsPoints)-1)
+            lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
+            if(pointsStepperStrenght < sender.value && Int(pointsPoints)-1 >= 0){
+                pointsPoints = pointsPoints - 1
+            }else{
+                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
+                pointsPoints = pointsPoints + 1
+                }
             }
-            
-        } else {
-            // Summing up
-            // println("Increasing intelligence's counter")
-            
-            if (currentPoints-1 >= 0 && currentPoints-1 <= MAX_UNASIGNED_POINTS) {
-                currentPoints--
-                // Setting the value
-                pointsStrength = stprValue
-                lblCount_strength.text = pointsStrength.description
-            }
-            
-        }
-        
-        lblCount_unasPoints.text = currentPoints.description
+            pointsStepperStrenght = Double(sender.value)
+            lblCount_unasPoints.text = Int(pointsPoints).description
     }
     
     @IBAction func stpr_intelligence(sender: UIStepper) {
-        
-        var stprValue = Int(sender.value)
-        println(stprValue)
-        var currentLbl = self.lblCount_strength
-        var currentPoints = lblCount_unasPoints.text!.toInt()!
-        
-        // First check if we are inside of the bounds.
-        if stprValue < pointsInteligence {
-            // Decreasing
-            // println("Decreasing strength's counter.")
-            
-            if (currentPoints+1 >= 0 && currentPoints+1 <= MAX_UNASIGNED_POINTS) {
-                currentPoints++
-                pointsInteligence = stprValue
-                lblCount_intelligence.text = pointsInteligence.description
+        println(Int(pointsPoints)-1)
+            lblCount_intelligence.text = Int((Double(pointsInteligence) + Double(sender.value))).description
+            if(pointsStepperIntelligence < sender.value && Int(pointsPoints)-1 >= 0 ){
+                pointsPoints = pointsPoints - 1
+            }else{
+                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
+                pointsPoints = pointsPoints + 1
+                }
             }
-            
-        } else {
-            // Summing up
-            // println("Increasing intelligence's counter")
-            
-            if (currentPoints-1 >= 0 && currentPoints-1 <= MAX_UNASIGNED_POINTS) {
-                currentPoints--
-                // Setting the value
-                pointsInteligence = stprValue
-                lblCount_intelligence.text = pointsInteligence.description
-            }
-            
-        }
-        
-        lblCount_unasPoints.text = currentPoints.description
+            pointsStepperIntelligence = Double(sender.value)
+            lblCount_unasPoints.text = Int(pointsPoints).description
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.randomStats()
         
         lblCount_life.enabled = false
         lblCount_energy.enabled = false
@@ -223,9 +188,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     func reCountUnassignedPoints()->Int? {
         
         var newValue = MAX_UNASIGNED_POINTS - (lblCount_strength.text!.toInt()! + lblCount_intelligence.text!.toInt()!)
-
-        if (newValue >= 0) {
         
+        if (newValue >= 0) {
+            
             lblCount_unasPoints.text = String(newValue)
             
         }
@@ -271,6 +236,23 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     @IBAction func createProva(sender: UIButton) {
         println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text! + " => " + allPointsHasBeenAssignedProperly().description)
+    }
+    
+    func randomStats(){
+        pointsLife = application.getDefaultStats(typeCharacter)[0]
+        lblCount_life.text = pointsLife.description
+        
+        pointsEnergy = application.getDefaultStats(typeCharacter)[1]
+        lblCount_energy.text = pointsEnergy.description
+        
+        pointsEnergyRegeneration = application.getDefaultStats(typeCharacter)[2]
+        lblCount_eRegen.text = pointsEnergyRegeneration.description
+        
+        pointsStrength = application.getDefaultStats(typeCharacter)[3]
+        lblCount_strength.text = pointsStrength.description
+        
+        pointsInteligence = application.getDefaultStats(typeCharacter)[4]
+        lblCount_intelligence.text = pointsInteligence.description
     }
 }
 

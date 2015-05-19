@@ -248,47 +248,51 @@ public class CApp{
     func settings(){
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
-    
-    /* Create player methods */
-    func getDefaultStats(classType: Int)->String {
-        var defaultStats: String = "nothing"
-        var life: Int!
-        var energy: Int!
-        var reEnergy: Int!
-        var strength: Int = BASE_CALC / 2
-        var intelligence: Int = BASE_CALC / 2
-        
-        // Set the base of:
-        life = TOTAL_BASE_LIFE + (strength * LIFE_INTEL_PERCENT) / 100
-        
-        energy = TOTAL_BASE_LIFE + (intelligence * LIFE_INTEL_PERCENT) / 100
-        
-        // regen at the end of the method
-        
-        // Get the random value
-        for x in 0...RAND_CALC {
-            
-            var randomNumber = getIntValueBetween(0, max: RAND_CALC)
-            
-            if classType == MAGE {
-                // Type selected: Mage
-                
-                
-            } else if classType == WARLOCK {
-                // Type selected: Warlock
-                
-                
-            }
-            
-        }
-        
-        return defaultStats
-    }
 
     
     /* Maths */
     func getIntValueBetween(min: Int, max: Int)->Int {
         return Int(arc4random_uniform(UInt32((max - min) + min)))
+    }
+    
+    func getDefaultStats(classType:Int)->[Int]{
+     
+        var life: Double
+        var energy: Double
+        var eReg: Double
+        var str: Double = BASE_CALC/2
+        var intll: Double = BASE_CALC/2
+    
+        for(var x: Double = 0; x < RAND_CALC; x++){
+    
+          var val: Int = getIntValueBetween(1,max: 15)
+            
+            switch (classType) {
+            case WARLOCK:
+                if (val <= 10){
+                    str++
+                }else{
+                    intll++
+                }
+                break
+            case MAGE:
+                if (val <= 10){
+                    intll++
+                }else{
+                    str++
+                }
+                break
+            default:
+                break
+            }
+        }
+    
+        life = 100.0 + str * LIFE_INTEL_PERCENT
+        energy = 100.0 + intll * LIFE_INTEL_PERCENT
+        eReg = Double(energy) * 0.1
+        var arrayInt = [Int(life),Int(energy),Int(eReg),Int(str),Int(intll)]
+        
+        return arrayInt
     }
 
 }
