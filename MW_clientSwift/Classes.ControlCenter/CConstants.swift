@@ -22,11 +22,13 @@ let SEPARATOR = ","
 let NO_SERVER = "NO_SERVER"
 let SUCCES = "0"
 let ERROR = "100"
+
 // LOGIN
 let ERROR_UserAlreadyLogged = "101"
 let ERROR_PasswordIncorrect = "102"
 let ERROR_EmailNotExist = "103"
 let ERROR_UserNotExist = "104"
+
 //RESISTER
 let ERROR_UserExist = "110"
 let ERROR_emailExist = "111"
@@ -47,4 +49,25 @@ let WARLOCK = 2
 
 // BATTLE ACTIONS ARRAY
 let MAX_ACTIONS = 6
+let WIN = "10"
+let LOSE = "1"
+let DRAW = "11"
+
+
+// CREATE PLAYER CONSTANTS
+let TOTAL_POINTS: Int = 200
+let TOTAL_BASE_LIFE: Int = 100
+let BASE_PERCENT: Int = 76
+let RAND_PERCENT: Int = 4
+let CUSTOM_PERCENT: Int = 20
+let LIFE_INTEL_PERCENT: Int = 80
+let REGEN_ENERGY_BASE_PERCENT: Int = 10;
+
+
+//Calcs
+let BASE_CALC: Int = TOTAL_POINTS * BASE_PERCENT / 100
+let RAND_CALC: Int = TOTAL_POINTS * RAND_PERCENT / 100
+let CUSTOM_CALC: Int = TOTAL_POINTS * CUSTOM_PERCENT / 100
+
+
 

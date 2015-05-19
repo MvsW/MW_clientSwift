@@ -194,6 +194,33 @@ public class CApp{
         view.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func showAlertLoose(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.redColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertWin(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.greenColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertDraw(view: UIViewController, titles: String, messages: String){
+        var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+            view.performSegueWithIdentifier("goto_menu", sender: self)
+        }))
+        alert.view.backgroundColor = UIColor.blueColor()
+        view.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func noConnectionAlert(view: UIViewController){
         var alert = UIAlertController(title: "There's no connection here!", message: "Try to connect again please reviewing your settings.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
@@ -221,4 +248,47 @@ public class CApp{
     func settings(){
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
+    
+    /* Create player methods */
+    func getDefaultStats(classType: Int)->String {
+        var defaultStats: String = "nothing"
+        var life: Int!
+        var energy: Int!
+        var reEnergy: Int!
+        var strength: Int = BASE_CALC / 2
+        var intelligence: Int = BASE_CALC / 2
+        
+        // Set the base of:
+        life = TOTAL_BASE_LIFE + (strength * LIFE_INTEL_PERCENT) / 100
+        
+        energy = TOTAL_BASE_LIFE + (intelligence * LIFE_INTEL_PERCENT) / 100
+        
+        // regen at the end of the method
+        
+        // Get the random value
+        for x in 0...RAND_CALC {
+            
+            var randomNumber = getIntValueBetween(0, max: RAND_CALC)
+            
+            if classType == MAGE {
+                // Type selected: Mage
+                
+                
+            } else if classType == WARLOCK {
+                // Type selected: Warlock
+                
+                
+            }
+            
+        }
+        
+        return defaultStats
+    }
+
+    
+    /* Maths */
+    func getIntValueBetween(min: Int, max: Int)->Int {
+        return Int(arc4random_uniform(UInt32((max - min) + min)))
+    }
+
 }
