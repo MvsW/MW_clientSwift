@@ -36,6 +36,23 @@
 		C04161381AD576E70004BC46 /* Augusta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04161361AD576E70004BC46 /* Augusta.ttf */; };
 		C041613A1AD580780004BC46 /* no_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C04161391AD580780004BC46 /* no_focus.png */; };
 		C041613C1AD583ED0004BC46 /* focus.png in Resources */ = {isa = PBXBuildFile; fileRef = C041613B1AD583ED0004BC46 /* focus.png */; };
+		C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83131B0B220D002C4AA5 /* baseprogressbar1.png */; };
+		C05D83251B0B220D002C4AA5 /* bluebar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83141B0B220D002C4AA5 /* bluebar1.png */; };
+		C05D83261B0B220D002C4AA5 /* redbar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83151B0B220D002C4AA5 /* redbar1.png */; };
+		C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83161B0B220D002C4AA5 /* redbar2.png */; };
+		C05D83281B0B220D002C4AA5 /* bluebar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83171B0B220D002C4AA5 /* bluebar2.png */; };
+		C05D83291B0B220D002C4AA5 /* baseprogressbar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83181B0B220D002C4AA5 /* baseprogressbar2.png */; };
+		C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83191B0B220D002C4AA5 /* progressBarr GUIA.png */; };
+		C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831A1B0B220D002C4AA5 /* specialbutton.png */; };
+		C05D832C1B0B220D002C4AA5 /* special2.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831B1B0B220D002C4AA5 /* special2.png */; };
+		C05D832D1B0B220D002C4AA5 /* special1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831C1B0B220D002C4AA5 /* special1.png */; };
+		C05D832E1B0B220D002C4AA5 /* dodgebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831D1B0B220D002C4AA5 /* dodgebutton.png */; };
+		C05D832F1B0B220D002C4AA5 /* blockbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831E1B0B220D002C4AA5 /* blockbutton.png */; };
+		C05D83301B0B220D002C4AA5 /* basic2.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D831F1B0B220D002C4AA5 /* basic2.png */; };
+		C05D83311B0B220D002C4AA5 /* basic1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83201B0B220D002C4AA5 /* basic1.png */; };
+		C05D83321B0B220D002C4AA5 /* iconRegister.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83211B0B220D002C4AA5 /* iconRegister.png */; };
+		C05D83331B0B220D002C4AA5 /* iconLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83221B0B220D002C4AA5 /* iconLogin.png */; };
+		C05D83341B0B220D002C4AA5 /* pergamino.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83231B0B220D002C4AA5 /* pergamino.png */; };
 		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
 		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
@@ -93,6 +110,23 @@
 		C04161361AD576E70004BC46 /* Augusta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Augusta.ttf; sourceTree = "<group>"; };
 		C04161391AD580780004BC46 /* no_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_focus.png; path = MW_clientSwift/Imatges/no_focus.png; sourceTree = SOURCE_ROOT; };
 		C041613B1AD583ED0004BC46 /* focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = focus.png; path = MW_clientSwift/Imatges/focus.png; sourceTree = SOURCE_ROOT; };
+		C05D83131B0B220D002C4AA5 /* baseprogressbar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseprogressbar1.png; path = MW_clientSwift/Imatges/baseprogressbar1.png; sourceTree = SOURCE_ROOT; };
+		C05D83141B0B220D002C4AA5 /* bluebar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebar1.png; path = MW_clientSwift/Imatges/bluebar1.png; sourceTree = SOURCE_ROOT; };
+		C05D83151B0B220D002C4AA5 /* redbar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbar1.png; path = MW_clientSwift/Imatges/redbar1.png; sourceTree = SOURCE_ROOT; };
+		C05D83161B0B220D002C4AA5 /* redbar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbar2.png; path = MW_clientSwift/Imatges/redbar2.png; sourceTree = SOURCE_ROOT; };
+		C05D83171B0B220D002C4AA5 /* bluebar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebar2.png; path = MW_clientSwift/Imatges/bluebar2.png; sourceTree = SOURCE_ROOT; };
+		C05D83181B0B220D002C4AA5 /* baseprogressbar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baseprogressbar2.png; path = MW_clientSwift/Imatges/baseprogressbar2.png; sourceTree = SOURCE_ROOT; };
+		C05D83191B0B220D002C4AA5 /* progressBarr GUIA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "progressBarr GUIA.png"; path = "MW_clientSwift/Imatges/progressBarr GUIA.png"; sourceTree = SOURCE_ROOT; };
+		C05D831A1B0B220D002C4AA5 /* specialbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = specialbutton.png; path = MW_clientSwift/Imatges/specialbutton.png; sourceTree = SOURCE_ROOT; };
+		C05D831B1B0B220D002C4AA5 /* special2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = special2.png; path = MW_clientSwift/Imatges/special2.png; sourceTree = SOURCE_ROOT; };
+		C05D831C1B0B220D002C4AA5 /* special1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = special1.png; path = MW_clientSwift/Imatges/special1.png; sourceTree = SOURCE_ROOT; };
+		C05D831D1B0B220D002C4AA5 /* dodgebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dodgebutton.png; path = MW_clientSwift/Imatges/dodgebutton.png; sourceTree = SOURCE_ROOT; };
+		C05D831E1B0B220D002C4AA5 /* blockbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blockbutton.png; path = MW_clientSwift/Imatges/blockbutton.png; sourceTree = SOURCE_ROOT; };
+		C05D831F1B0B220D002C4AA5 /* basic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basic2.png; path = MW_clientSwift/Imatges/basic2.png; sourceTree = SOURCE_ROOT; };
+		C05D83201B0B220D002C4AA5 /* basic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basic1.png; path = MW_clientSwift/Imatges/basic1.png; sourceTree = SOURCE_ROOT; };
+		C05D83211B0B220D002C4AA5 /* iconRegister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconRegister.png; path = MW_clientSwift/Imatges/iconRegister.png; sourceTree = SOURCE_ROOT; };
+		C05D83221B0B220D002C4AA5 /* iconLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconLogin.png; path = MW_clientSwift/Imatges/iconLogin.png; sourceTree = SOURCE_ROOT; };
+		C05D83231B0B220D002C4AA5 /* pergamino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pergamino.png; path = MW_clientSwift/Imatges/pergamino.png; sourceTree = SOURCE_ROOT; };
 		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -189,6 +223,23 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C05D83131B0B220D002C4AA5 /* baseprogressbar1.png */,
+				C05D83141B0B220D002C4AA5 /* bluebar1.png */,
+				C05D83151B0B220D002C4AA5 /* redbar1.png */,
+				C05D83161B0B220D002C4AA5 /* redbar2.png */,
+				C05D83171B0B220D002C4AA5 /* bluebar2.png */,
+				C05D83181B0B220D002C4AA5 /* baseprogressbar2.png */,
+				C05D83191B0B220D002C4AA5 /* progressBarr GUIA.png */,
+				C05D831A1B0B220D002C4AA5 /* specialbutton.png */,
+				C05D831B1B0B220D002C4AA5 /* special2.png */,
+				C05D831C1B0B220D002C4AA5 /* special1.png */,
+				C05D831D1B0B220D002C4AA5 /* dodgebutton.png */,
+				C05D831E1B0B220D002C4AA5 /* blockbutton.png */,
+				C05D831F1B0B220D002C4AA5 /* basic2.png */,
+				C05D83201B0B220D002C4AA5 /* basic1.png */,
+				C05D83211B0B220D002C4AA5 /* iconRegister.png */,
+				C05D83221B0B220D002C4AA5 /* iconLogin.png */,
+				C05D83231B0B220D002C4AA5 /* pergamino.png */,
 				C0E108B61B04F189003E0DE1 /* bluebarr.png */,
 				C0E108B71B04F189003E0DE1 /* redbarr.png */,
 				C0E108B81B04F189003E0DE1 /* barrbase.png */,
@@ -331,15 +382,26 @@
 				41B1D24C1A6991A600962647 /* MainPrototype.storyboard in Resources */,
 				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
+				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
 				41C82B141A91056600235D61 /* mage.png in Resources */,
+				C05D83321B0B220D002C4AA5 /* iconRegister.png in Resources */,
 				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
 				C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */,
 				41C82B131A91056600235D61 /* fondo.png in Resources */,
+				C05D83311B0B220D002C4AA5 /* basic1.png in Resources */,
+				C05D83341B0B220D002C4AA5 /* pergamino.png in Resources */,
 				C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */,
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
+				C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */,
+				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
 				54B912FA1AEABAFE005DD10A /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
+				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
 				41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */,
+				C05D83291B0B220D002C4AA5 /* baseprogressbar2.png in Resources */,
+				C05D832D1B0B220D002C4AA5 /* special1.png in Resources */,
+				C05D832C1B0B220D002C4AA5 /* special2.png in Resources */,
+				C05D83251B0B220D002C4AA5 /* bluebar1.png in Resources */,
 				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
 				54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */,
 				C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */,
@@ -347,9 +409,15 @@
 				41B1D24E1A6991A600962647 /* Images.xcassets in Resources */,
 				C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */,
 				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
+				C05D832F1B0B220D002C4AA5 /* blockbutton.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,
+				C05D83331B0B220D002C4AA5 /* iconLogin.png in Resources */,
 				C04161381AD576E70004BC46 /* Augusta.ttf in Resources */,
+				C05D83281B0B220D002C4AA5 /* bluebar2.png in Resources */,
+				C05D83261B0B220D002C4AA5 /* redbar1.png in Resources */,
+				C05D83301B0B220D002C4AA5 /* basic2.png in Resources */,
+				C05D832E1B0B220D002C4AA5 /* dodgebutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
