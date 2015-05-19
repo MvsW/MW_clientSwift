@@ -56,7 +56,7 @@ class VCBattle: UIViewController {
         originalOpponentEnergy = self.dataArray[3]*/
         
         refreshInterfaceLabels()
-        
+        refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
     }
     
     override func didReceiveMemoryWarning() {
@@ -161,10 +161,11 @@ class VCBattle: UIViewController {
     }
     
     func refreshInterfaceProgressBar(perOneMeLife:CGFloat, perOneMeEnergy:CGFloat, perOneOpponentLife:CGFloat, perOneOpponenEnergy:CGFloat){
-        meLife.frame = CGRectMake(119, 106, 135*perOneMeLife, 25)
-        meEnergy.frame = CGRectMake(119, 164, 135*perOneMeEnergy, 25)
-        opponentLife.frame = CGRectMake(119, 256, 135*perOneOpponentLife, 25)
-        opponentEnergy.frame = CGRectMake(119, 311, 135*perOneOpponenEnergy, 25)
+
+        meLife.frame = CGRectMake(meLife.frame.minX, meLife.frame.minY, meLife.frame.width*perOneMeLife, meLife.frame.height)
+        meEnergy.frame = CGRectMake(meEnergy.frame.minX, meEnergy.frame.minY, meEnergy.frame.width*perOneMeEnergy, meEnergy.frame.height)
+        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*perOneOpponentLife, opponentLife.frame.height)
+        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*perOneOpponenEnergy, opponentEnergy.frame.height)
     }
     
 }
