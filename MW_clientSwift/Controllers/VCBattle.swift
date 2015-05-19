@@ -29,6 +29,11 @@ class VCBattle: UIViewController {
     @IBOutlet weak var btnSpell2: UIButton!
     @IBOutlet weak var btnBasicAtt: UIButton!
     
+    @IBOutlet weak var imgMe: UIImageView!
+    @IBOutlet weak var imgOpponent: UIImageView!
+    @IBOutlet weak var MyName: UILabel!
+    @IBOutlet weak var OpponentName: UILabel!
+    
     var dataArray: [String]!
     var messageReceived: NSString!
     
@@ -51,10 +56,24 @@ class VCBattle: UIViewController {
         if(!freePass){
             messageReceived = application.myController.readMessage()
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
-            originalMeLife = self.dataArray[0]
-            originalMeEnergy = self.dataArray[1]
-            originalOpponentLife = self.dataArray[2]
-            originalOpponentEnergy = self.dataArray[3]
+            
+            MyName.text = self.dataArray[0]
+            if(self.dataArray[1].toInt() == MAGE){
+                imgMe.image = UIImage(named: "mage.png")
+            }else{
+                imgMe.image = UIImage(named: "warlock.png")
+            }
+            originalMeLife = self.dataArray[2]
+            originalMeEnergy = self.dataArray[3]
+            
+            OpponentName.text = self.dataArray[4]
+            if(self.dataArray[5].toInt() == MAGE){
+                imgOpponent.image = UIImage(named: "mage.png")
+            }else{
+                imgOpponent.image = UIImage(named: "warlock.png")
+            }
+            originalOpponentLife = self.dataArray[6]
+            originalOpponentEnergy = self.dataArray[7]
             
         }else{
             refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
@@ -138,8 +157,8 @@ class VCBattle: UIViewController {
             
             self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
             
-            if(dataArray.count == 5){
-                guanyaPartida = dataArray[4]
+            if(dataArray.count == 9){
+                guanyaPartida = dataArray[8]
             }
             
             if(guanyaPartida == WIN){
@@ -167,6 +186,7 @@ class VCBattle: UIViewController {
         
         meLife.frame = CGRectMake(meLife.frame.minX, meLife.frame.minY, meLife.frame.width*perOneMeLife, meLife.frame.height)
         meEnergy.frame = CGRectMake(meEnergy.frame.minX, meEnergy.frame.minY, meEnergy.frame.width*perOneMeEnergy, meEnergy.frame.height)
+        
         opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*perOneOpponentLife, opponentLife.frame.height)
         opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*perOneOpponenEnergy, opponentEnergy.frame.height)
     }

@@ -641,8 +641,8 @@
                                     <action selector="actionBtnTapped:" destination="xgh-lA-6PP" eventType="touchUpInside" id="c9f-HT-0dY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQZ-aH-IBV">
-                                <rect key="frame" x="90" y="227" width="145" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQZ-aH-IBV">
+                                <rect key="frame" x="83" y="227" width="145" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -662,7 +662,7 @@
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseprogressbar1.png" id="xHT-PI-HxL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseprogressbar2.png" id="xHT-PI-HxL">
                                 <rect key="frame" x="16" y="199" width="288" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -678,41 +678,34 @@
                                 <rect key="frame" x="70" y="156" width="180" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="-26" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebar1.png" id="a6Z-1I-5eU">
+                            <imageView userInteractionEnabled="NO" tag="-26" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluebar2.png" id="a6Z-1I-5eU">
                                 <rect key="frame" x="70" y="260" width="180" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="-26" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redbar1.png" id="M3g-nc-erl">
-                                <rect key="frame" x="70" y="250" width="180" height="10"/>
+                            <imageView userInteractionEnabled="NO" tag="-26" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redbar2.png" id="M3g-nc-erl">
+                                <rect key="frame" x="69" y="249" width="180" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mage.png" id="VDg-MC-wlQ">
-                                <rect key="frame" x="48" y="101" width="33" height="36"/>
+                                <rect key="frame" x="49" y="99" width="33" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZbL-Ih-94R">
-                                <rect key="frame" x="246" y="259" width="42" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3J-um-TtZ">
-                                <rect key="frame" x="246" y="248" width="42" height="12"/>
+                                <rect key="frame" x="31" y="261" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mLW-B4-HXX">
-                                <rect key="frame" x="35" y="248" width="42" height="12"/>
+                                <rect key="frame" x="240" y="249" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53u-8r-bgr">
-                                <rect key="frame" x="38" y="257" width="42" height="12"/>
+                                <rect key="frame" x="241" y="259" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -733,21 +726,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="23B-bY-Tkh">
-                                <rect key="frame" x="246" y="155" width="42" height="12"/>
+                                <rect key="frame" x="246" y="156" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JeN-FO-WB8">
-                                <rect key="frame" x="246" y="142" width="42" height="12"/>
+                                <rect key="frame" x="246" y="143" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warlock.png" id="qvI-bb-Qca">
-                                <rect key="frame" x="48" y="206" width="33" height="36"/>
+                                <rect key="frame" x="237" y="205" width="33" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shield" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Axu-0d-DYe">
@@ -792,6 +785,13 @@
                                 <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3J-um-TtZ">
+                                <rect key="frame" x="31" y="249" width="42" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -799,12 +799,16 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="MyName" destination="cvb-O5-2Tp" id="xqD-dd-176"/>
+                        <outlet property="OpponentName" destination="iQZ-aH-IBV" id="ie1-uO-TAg"/>
                         <outlet property="btnBasicAtt" destination="eRN-Hi-ZW6" id="0D1-4t-A6w"/>
                         <outlet property="btnDodge" destination="wkB-u8-6LY" id="bxf-EQ-Ga8"/>
                         <outlet property="btnShield" destination="L9B-0c-XaX" id="t2c-Xb-7ZR"/>
                         <outlet property="btnSpell1" destination="EVp-BP-Zbm" id="RLk-zc-dFJ"/>
                         <outlet property="btnSpell2" destination="UDX-O0-FUA" id="bGK-yc-abe"/>
                         <outlet property="btnUltimate" destination="5zn-Oc-mK8" id="kP3-7N-OWt"/>
+                        <outlet property="imgMe" destination="VDg-MC-wlQ" id="uui-pq-Jcs"/>
+                        <outlet property="imgOpponent" destination="qvI-bb-Qca" id="Me6-pu-vZU"/>
                         <outlet property="lbl_hisEnergy" destination="ZbL-Ih-94R" id="0yZ-8y-2bC"/>
                         <outlet property="lbl_hisLife" destination="M3J-um-TtZ" id="UzU-YU-VRT"/>
                         <outlet property="lbl_myEnergy" destination="23B-bY-Tkh" id="vaN-0c-zew"/>
@@ -1015,15 +1019,18 @@
     </scenes>
     <resources>
         <image name="baseprogressbar1.png" width="3494" height="1027"/>
+        <image name="baseprogressbar2.png" width="3494" height="1027"/>
         <image name="basic1.png" width="320" height="320"/>
         <image name="blockbutton.png" width="320" height="320"/>
         <image name="bluebar1.png" width="2184" height="107"/>
+        <image name="bluebar2.png" width="2184" height="107"/>
         <image name="dodgebutton.png" width="319" height="320"/>
         <image name="logo.png" width="1133" height="1520"/>
         <image name="mage.png" width="500" height="500"/>
         <image name="menu_button_no_focus.jpg" width="500" height="99"/>
         <image name="no_focus.png" width="693" height="114"/>
         <image name="redbar1.png" width="2191" height="106"/>
+        <image name="redbar2.png" width="2191" height="106"/>
         <image name="special1.png" width="319" height="320"/>
         <image name="special2.png" width="321" height="320"/>
         <image name="specialbutton.png" width="320" height="320"/>
