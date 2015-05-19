@@ -37,6 +37,7 @@ class VCBattle: UIViewController {
     var originalOpponentLife = "0"
     var originalOpponentEnergy = "0"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,18 +46,21 @@ class VCBattle: UIViewController {
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
-        
-         //DESACTIVAT AMB FREE PASS
+        //DESACTIVAT AMB FREE PASS
         messageReceived = application.myController.readMessage()
         dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
-        
-        originalMeLife = self.dataArray[0]
-        originalMeEnergy = self.dataArray[1]
-        originalOpponentLife = self.dataArray[2]
-        originalOpponentEnergy = self.dataArray[3]
-        
+        if(!freePass){
+            
+            originalMeLife = self.dataArray[0]
+            originalMeEnergy = self.dataArray[1]
+            originalOpponentLife = self.dataArray[2]
+            originalOpponentEnergy = self.dataArray[3]
+            
+        }else{
+            refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
+            
+        }
         refreshInterfaceLabels()
-        refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,7 +70,7 @@ class VCBattle: UIViewController {
     
     @IBAction func actionBtnTapped(sender: AnyObject) {
         var guanyaPartida = "9"
-
+        
         // Get the tag
         var tag: Int = sender.tag
         
@@ -101,7 +105,7 @@ class VCBattle: UIViewController {
             var calcul2 = (array2ToFloat * 100 / oginalMeEnergyToFloat)/100
             var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
             var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
-                        
+            
             if(calcul2 < 0.8 && calcul2 > 0.4){
                 btnUltimate.enabled = false
                 btnUltimate.backgroundColor = UIColor.redColor()
@@ -136,7 +140,7 @@ class VCBattle: UIViewController {
             self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
             
             if(dataArray.count == 5){
-               guanyaPartida = dataArray[4]
+                guanyaPartida = dataArray[4]
             }
             
             if(guanyaPartida == WIN){
@@ -161,7 +165,7 @@ class VCBattle: UIViewController {
     }
     
     func refreshInterfaceProgressBar(perOneMeLife:CGFloat, perOneMeEnergy:CGFloat, perOneOpponentLife:CGFloat, perOneOpponenEnergy:CGFloat){
-
+        
         meLife.frame = CGRectMake(meLife.frame.minX, meLife.frame.minY, meLife.frame.width*perOneMeLife, meLife.frame.height)
         meEnergy.frame = CGRectMake(meEnergy.frame.minX, meEnergy.frame.minY, meEnergy.frame.width*perOneMeEnergy, meEnergy.frame.height)
         opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*perOneOpponentLife, opponentLife.frame.height)

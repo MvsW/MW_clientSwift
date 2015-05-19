@@ -25,6 +25,7 @@ class VCMenu: UIViewController {
     @IBAction func battleTapped(sender: UIButton) {
         if(application.comprovarConexion()){
             self.performSegueWithIdentifier("goto_searching", sender: self)
+            freePass = false
         }else{
             application.noConnectionAlertAndGoToLogin(self)
         }
@@ -41,7 +42,7 @@ class VCMenu: UIViewController {
     }
     @IBAction func gotoBattle(sender: UIButton) {
         self.performSegueWithIdentifier("goto_battle", sender: self)
-
+        freePass = true
     }
     
     
