@@ -41,8 +41,8 @@ class VCMenu: UIViewController {
         }
     }
     @IBAction func gotoBattle(sender: UIButton) {
-        self.performSegueWithIdentifier("goto_battle", sender: self)
         freePass = true
+        self.performSegueWithIdentifier("goto_battle", sender: self)
     }
     
     

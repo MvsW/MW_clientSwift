@@ -47,10 +47,10 @@ class VCBattle: UIViewController {
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         //DESACTIVAT AMB FREE PASS
-        messageReceived = application.myController.readMessage()
-        dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
+   
         if(!freePass){
-            
+            messageReceived = application.myController.readMessage()
+            dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             originalMeLife = self.dataArray[0]
             originalMeEnergy = self.dataArray[1]
             originalOpponentLife = self.dataArray[2]
@@ -58,7 +58,6 @@ class VCBattle: UIViewController {
             
         }else{
             refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
-            
         }
         refreshInterfaceLabels()
     }
