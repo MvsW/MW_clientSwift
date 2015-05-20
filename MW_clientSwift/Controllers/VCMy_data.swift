@@ -81,6 +81,10 @@ class VCMy_data: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneTapped(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_menu", sender: self)
+
+    }
 
     /*
     // MARK: - Navigation

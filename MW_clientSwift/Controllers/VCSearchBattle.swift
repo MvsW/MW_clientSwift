@@ -9,7 +9,6 @@
 import UIKit
 
 class VCSearchBattle: UIViewController {
-    @IBOutlet weak var loader: UIActivityIndicatorView!
     var views: [UIView] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,6 @@ class VCSearchBattle: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         application.myController.sendMessage(START_BATTLE)
         setUp()
-        loader.startAnimating()
         //START LOADING AND STOP THESE
          views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
         /*application.stopLoading(views)*/

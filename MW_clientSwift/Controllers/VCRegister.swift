@@ -67,7 +67,10 @@ class VCRegister: UIViewController {
             */
             application.myController.sendMessage(txtUserName.text.lowercaseString + "," + txtMail.text.lowercaseString + "," + txtPassword.text)
             // Si el server diu OK pasem a menu
-            if (application.myController.readMessage() == SUCCES){
+            var serverResponse = application.myController.readMessage()
+            var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
+
+            if (serverResponseSplit[0] as! String == SUCCES){
                 self.performSegueWithIdentifier("goto_register_player", sender: self)
             }
             else{
@@ -75,11 +78,18 @@ class VCRegister: UIViewController {
                 //notificar el resultat del server
                 //Cal implementar metodes per fer com els setErrors de android i mostra el error que toca
                 //ERRORS via servidor
+                var errorsMessage = ""
+                for(var i = 0; i<serverResponseSplit.count; i++){
+                    println((application.getErrorName(serverResponseSplit[i] as! String)))
+                    errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
+                }
+                application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
             }
 
         }
         else{
             //Implementar mostrar per pantalla errors de control LOCAL
+            application.showAlert(self, titles: "ERROR!", messages: "Mail: " + validarMail.description + ". \n" + "Password: " + validarPassword.description + ". \n" + "Usuari: " + validarUsuari.description + ".")
         }
     }
     @IBAction func clicUserName(sender: UITextField) {

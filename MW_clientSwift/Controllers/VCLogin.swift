@@ -11,7 +11,7 @@ import Foundation
 import CFNetwork
 import CoreLocation
 
-class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate {
+class VCLogin: UIViewController, CLLocationManagerDelegate {
     
     // DECLARACIO BOTONS
     @IBOutlet weak var btn_login: UIButton!
@@ -19,6 +19,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     @IBOutlet weak var txtUserOrMail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     let locationManager = CLLocationManager()
+    var connected = false
     
     // DECLARACIO VARIABLES
     var latitud = 37.33233141
@@ -123,29 +124,18 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        txtUserOrMail.text = "user2"
-        txtPassword.text = "User1986"
-        
-        
+        txtUserOrMail.text = "ios2015"
+        txtPassword.text = "Ios2015"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         if (application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
+            connected = true
         } else {
-            var alert : UIAlertView = UIAlertView(title: "No connection!", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Settings")
-            alert.show()
+            application.noConnectionAlert(self)
         }
-        
-    }
-    
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-        println(buttonIndex.description)
-        if(buttonIndex == 1){
-            self.settings()
-        }
-    }
-    
-    func settings(){
-        UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,74 +146,94 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
     
     // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
-        
-        let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
-        let validatePassword: Bool = application.isValidPassword(txtPassword.text)
-        let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
-        var readyForSend: Bool = false
-        
-        println("Mail: " + validateMail.description)
-        println("Password: " + validatePassword.description)
-        println("Usuari: " + validateUser.description)
-        println("-----------------")
-        
-        // Checks if the two fields are empty or not
-        if (!requiredFieldsAreEmpty()) {
-            var userOrMail = txtUserOrMail.text
+        if(connected){
+            let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
+            let validatePassword: Bool = application.isValidPassword(txtPassword.text)
+            let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
+            var readyForSend: Bool = false
             
-            // First check if is an email or not. And check in all case the criterias
-            if (userOrMail.rangeOfString("@") == nil && validateUser && validatePassword) {
-                println("Fields filled. Username and password form valid")
-                readyForSend = true
-                
-            } else if (validateMail && validatePassword) {
-                println("Fields filled. Mail and password form are not valids")
-                readyForSend = true
-                
-            } else {
-                println("The fields are not empty but the user has not been found")
-            }
+            println("Mail: " + validateMail.description)
+            println("Password: " + validatePassword.description)
+            println("Usuari: " + validateUser.description)
+            println("-----------------")
             
-            if (readyForSend) {
-                // Sending user data to the server
-                application.myController.sendMessage(txtUserOrMail.text + SEPARATOR + txtPassword.text + SEPARATOR + latitud.description + SEPARATOR + longitud.description)
+            // Checks if the two fields are empty or not
+            if (!requiredFieldsAreEmpty()) {
+                var userOrMail = txtUserOrMail.text
                 
-                // Catching response
-                var serverResponse = application.myController.readMessage()
-                var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
-                
-                if (serverResponseSplit[0] as! String == SUCCES) {
+                // First check if is an email or not. And check in all case the criterias
+                if (userOrMail.rangeOfString("@") == nil && validateUser && validatePassword) {
+                    println("Fields filled. Username and password form valid")
+                    readyForSend = true
                     
-                    // Everything is correct. Go to menu view
-                    self.performSegueWithIdentifier("goto_menu", sender: self)
+                } else if (validateMail && validatePassword) {
+                    println("Fields filled. Mail and password form are not valids")
+                    readyForSend = true
+                    
                 } else {
-                    print("Server response = ")
-                    for(var i = 1; i<serverResponseSplit.count; i++){
-                        println((application.getErrorName(serverResponseSplit[i] as! String)))
+                    println("The fields are not empty but the user has not been found")
+                }
+                
+                if (readyForSend) {
+                    // Sending user data to the server
+                    application.myController.sendMessage(txtUserOrMail.text + SEPARATOR + txtPassword.text + SEPARATOR + latitud.description + SEPARATOR + longitud.description)
+                    
+                    // Catching response
+                    var serverResponse = application.myController.readMessage()
+                    var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
+                    
+                    if (serverResponseSplit[0] as! String == SUCCES) {
+                        
+                        // Everything is correct. Go to menu view
+                        self.performSegueWithIdentifier("goto_menu", sender: self)
+                    } else {
+                        print("Server response = ")
+                        var errorsMessage = ""
+                        for(var i = 0; i<serverResponseSplit.count; i++){
+                            println((application.getErrorName(serverResponseSplit[i] as! String)))
+                            errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
+                        }
+                        application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
                     }
                 }
+            }
+        }else{
+            if (application.comprovarConexion()){
+                application.myController.connect()
+                findMyLocation()
+                connected = true
+            } else {
+                application.noConnectionAlert(self)
             }
         }
     }
     
     @IBAction func registerTapped(sender: UIButton) {
-        //START LOADING AND STOP THESE
-        //var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
-        //application.stopLoading(views)
-        // Sending to server that we want to REGISTER and segue to Register view
-        
-        application.myController.sendMessage(REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER )
-        var serverResponse = application.myController.readMessage()
-        var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
-        
-        if (serverResponseSplit[0] as! String == SUCCES) {
+        if(connected && application.comprovarConexion()){
+            application.myController.sendMessage(REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER )
+            var serverResponse = application.myController.readMessage()
+            var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
             
-            // Everything is correct. Go to menu view
-            self.performSegueWithIdentifier("goto_register", sender: self)
-        } else {
-            print("Server response = ")
-            for(var i = 1; i<serverResponseSplit.count; i++){
-                println((application.getErrorName(serverResponseSplit[i] as! String)))
+            if (serverResponseSplit[0] as! String == SUCCES) {
+                
+                // Everything is correct. Go to menu view
+                self.performSegueWithIdentifier("goto_register", sender: self)
+            } else {
+                print("Server response = ")
+                var errorsMessage = ""
+                for(var i = 0; i<serverResponseSplit.count; i++){
+                    println((application.getErrorName(serverResponseSplit[i] as! String)))
+                    errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
+                }
+                application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
+            }
+        }else{
+            if (application.comprovarConexion()){
+                application.myController.connect()
+                findMyLocation()
+                connected = true
+            } else {
+                application.noConnectionAlert(self)
             }
         }
     }
@@ -262,6 +272,16 @@ class VCLogin: UIViewController, CLLocationManagerDelegate, UIAlertViewDelegate 
         
         
     }
+    
+    @IBAction func goToMenu(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_menu", sender: self)
+    }
+    
+    @IBAction func goToRegister(sender: UIButton) {
+        self.performSegueWithIdentifier("goto_register", sender: self)
+
+    }
+    
     
     
 }

@@ -23,19 +23,27 @@ class VCMenu: UIViewController {
     }
     
     @IBAction func battleTapped(sender: UIButton) {
-        if(true){
-            
-            self.performSegueWithIdentifier("got_searching", sender: self)
+        if(application.comprovarConexion()){
+            self.performSegueWithIdentifier("goto_searching", sender: self)
+            freePass = false
+        }else{
+            application.noConnectionAlertAndGoToLogin(self)
         }
         
     }
     
     @IBAction func myDataTapped(sender: UIButton) {
-        if(true){
+        if(application.comprovarConexion()){
             application.myController.sendMessage(SHOW_DATA)
             self.performSegueWithIdentifier("goto_my_data", sender: self)
+        }else{
+            application.noConnectionAlertAndGoToLogin(self)
         }
-        
     }
-
+    @IBAction func gotoBattle(sender: UIButton) {
+        freePass = true
+        self.performSegueWithIdentifier("goto_battle", sender: self)
+    }
+    
+    
 }
