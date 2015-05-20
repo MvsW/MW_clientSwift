@@ -40,7 +40,7 @@ class VCSearchBattle: UIViewController {
                             self.performSegueWithIdentifier("goto_battle", sender: self)
                         }
                     }else{
-                        application.myController.sendMessage("xxx")
+                        application.myController.sendMessage("*")
                     }
                 }
         }

@@ -291,7 +291,19 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         
         if(battle){
             application.myController.sendMessage(CANCEL)
+            
+            var succ = true
+            
+            while(succ){
+                var a = application.myController.readMessage()
+                println("!!! " + (a as String) + " !!!")
+                if(a == SUCCES){
+                    succ = false
+                }
+            }
+            
             actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
+          
         }
     }
 }
