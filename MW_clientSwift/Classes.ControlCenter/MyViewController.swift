@@ -291,19 +291,40 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         
         if(battle){
             application.myController.sendMessage(CANCEL)
-            
-            var succ = true
-            
-            while(succ){
-                var a = application.myController.readMessage()
-                println("!!! " + (a as String) + " !!!")
-                if(a == SUCCES){
-                    succ = false
-                }
+            println("preWhile")
+            while(!application.myController.readMessage2()){
+                println("inWhile")
             }
-            
+            println("postWhile")
             actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
-          
         }
     }
+    
+    func readMessage2() -> Bool{
+        var output:NSString!
+        let bufferSize = 1024
+        var buffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
+        var bytesRead: Int = inputStream.read(&buffer, maxLength: bufferSize)
+        
+        //println(bytesRead)
+        var textt = ""
+        if bytesRead >= 0 {
+            lastReceivedMessageID++
+            output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
+            // println("output is")
+            println("Server say: \(output)")
+            textt = "Server say: \(output)" //farem alguna cosa amb la variable?? es possible
+            println("Text: " + textt)
+        } else {
+            // Handle error -> falta implementar...
+            output = NO_SERVER
+            println("ERROR => " + output.description)
+        }
+        if(textt == "Server say: 0"){
+            return true
+        }else{
+            return false
+        }
+    }
+    
 }
