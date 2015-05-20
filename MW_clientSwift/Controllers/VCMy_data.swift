@@ -32,8 +32,9 @@ class VCMy_data: UIViewController {
         
         //Llegim la informació del servidor
         var info:String = application.myController.readMessage() as String
-        var dates = info.componentsSeparatedByString(SEPARATOR)
         
+        var dates = info.componentsSeparatedByString(SEPARATOR)
+
         var playerName = dates[0]
         var classType = dates[1]
         var life = dates[2]

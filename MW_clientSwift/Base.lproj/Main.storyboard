@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Augusta.ttf">
-            <string>Augusta-Regular</string>
             <string>Augusta-Regular</string>
             <string>Augusta-Regular</string>
             <string>Augusta-Regular</string>
@@ -562,6 +561,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="xgh-lA-6PP" kind="modal" identifier="goto_battle" id="Cjy-ng-Xgh"/>
+                        <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="5U3-zf-fUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRE-IO-10K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,13 +786,6 @@
                                 <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWJ-5e-PMh">
-                                <rect key="frame" x="134" y="183" width="57" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="39"/>
-                                <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3J-um-TtZ">
                                 <rect key="frame" x="31" y="260" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -800,6 +793,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorvs.png" id="IJB-JX-VUI">
+                                <rect key="frame" x="25" y="155" width="269" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1039,6 +1036,7 @@
         <image name="no_focus.png" width="693" height="114"/>
         <image name="redbar1.png" width="2191" height="106"/>
         <image name="redbar2.png" width="2191" height="106"/>
+        <image name="separatorvs.png" width="1009" height="261"/>
         <image name="special1.png" width="319" height="320"/>
         <image name="special2.png" width="321" height="320"/>
         <image name="specialbutton.png" width="320" height="320"/>
@@ -1051,9 +1049,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cjy-ng-Xgh"/>
+        <segue reference="Rjb-Da-inw"/>
         <segue reference="oM4-i9-W4f"/>
+        <segue reference="FsR-Dq-Cwg"/>
         <segue reference="S6g-KB-Q3n"/>
-        <segue reference="pTQ-2B-IbA"/>
     </inferredMetricsTieBreakers>
 </document>

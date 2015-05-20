@@ -42,6 +42,7 @@ let MAX_UNASIGNED_POINTS: Int = 14
 // Op menu TYPES aqui o a CMenu??
 let SHOW_DATA = "showData"
 let START_BATTLE = "startBattle"
+let CANCEL = "cancel";
 
 // CONSTANTS CLASS TYPES
 let MAGE = 1

@@ -105,18 +105,17 @@ class VCBattle: UIViewController {
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             
             refreshInterfaceLabels()
-            
             println(self.dataArray[0])
-            var array1ToFloat:CGFloat = CGFloat((self.dataArray[0] as NSString).floatValue)
+            var array1ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
             var oginalMeLifeToFloat: CGFloat = CGFloat((originalMeLife as NSString).floatValue)
             
-            var array2ToFloat:CGFloat = CGFloat((self.dataArray[1] as NSString).floatValue)
+            var array2ToFloat:CGFloat = CGFloat((self.dataArray[3] as NSString).floatValue)
             var oginalMeEnergyToFloat: CGFloat = CGFloat((originalMeEnergy as NSString).floatValue)
             
-            var array3ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
+            var array3ToFloat:CGFloat = CGFloat((self.dataArray[6] as NSString).floatValue)
             var oginalOpponentLifeToFloat: CGFloat = CGFloat((originalOpponentLife as NSString).floatValue)
-            
-            var array4ToFloat:CGFloat = CGFloat((self.dataArray[3] as NSString).floatValue)
+        
+            var array4ToFloat:CGFloat = CGFloat((self.dataArray[7] as NSString).floatValue)
             var oginalOpponentEnergyToFloat: CGFloat = CGFloat((originalOpponentEnergy as NSString).floatValue)
             
             var calcul1 = (array1ToFloat * 100 / oginalMeLifeToFloat)/100
@@ -175,10 +174,10 @@ class VCBattle: UIViewController {
     
     func refreshInterfaceLabels() {
         if (self.dataArray != nil) {
-            self.lbl_myLife.text = (self.dataArray[0] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeLife.componentsSeparatedByString(".")[0]
-            self.lbl_myEnergy.text = (self.dataArray[1] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeEnergy.componentsSeparatedByString(".")[0]
-            self.lbl_hisLife.text = (self.dataArray[2] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentLife.componentsSeparatedByString(".")[0]
-            self.lbl_hisEnergy.text = (self.dataArray[3] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentEnergy.componentsSeparatedByString(".")[0]
+            self.lbl_myLife.text = (self.dataArray[2] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeLife.componentsSeparatedByString(".")[0]
+            self.lbl_myEnergy.text = (self.dataArray[3] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeEnergy.componentsSeparatedByString(".")[0]
+            self.lbl_hisLife.text = (self.dataArray[6] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentLife.componentsSeparatedByString(".")[0]
+            self.lbl_hisEnergy.text = (self.dataArray[7] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentEnergy.componentsSeparatedByString(".")[0]
         }
     }
     

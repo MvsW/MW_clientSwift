@@ -30,8 +30,10 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
     var lastSentMessageID = 0
     var lastReceivedMessageID = 0
     
+    var views:[UIView] = []
+    var actualViewController: UIViewController = UIViewController()
+    var battle = false
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         startClient()
@@ -39,7 +41,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         // Do any additional setup after loading the view.
     }
     
-    //METHODS 
+    //METHODS
     
     //start client
     func startClient(){
@@ -99,7 +101,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
             
         } else {
             // Handle error -> falta implementar...
-             output = NO_SERVER
+            output = NO_SERVER
             println("ERROR => " + output.description)
         }
         return output
@@ -151,7 +153,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
             if let inputStream = stream as? NSInputStream {
                 if inputStream.hasBytesAvailable {
                     
-                                    }
+                }
                 
             }
             break
@@ -170,7 +172,7 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
             break
         case NSStreamEvent.EndEncountered: //Closing and releasing the NSInputStream objec
             println(s+"EndEncountered \(stream)")
-        
+            
             stream.close()
             stream.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             break
@@ -192,9 +194,9 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         while true {
             // println("waiting \(lastSentMessageID)  = \(lastReceivedMessageID)")
             if lastSentMessageID == lastReceivedMessageID && lastReceivedMessageID > 0  {
-//                println("wait F*")
+                //                println("wait F*")
                 break
-            } 
+            }
             
             
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1));
@@ -208,21 +210,100 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         //tv_xivato.text = "success locations = \(locations)"
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    func startLoading(uiView:UIView, text:String, size2:CGFloat, viewController: UIViewController, areInBattle:Bool)->[UIView] {
+        self.actualViewController = viewController
+        self.battle = areInBattle
+        var container: UIView = UIView()
+        container.frame = uiView.frame
+        container.center = uiView.center
+        container.backgroundColor = UIColor(red: 75, green: 75, blue: 75, alpha: 0.5)
+        
+        var loadingView: UIView = UIView()
+        loadingView.frame = CGRectMake(0, 0, 200, 150)
+        loadingView.center = uiView.center
+        loadingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        loadingView.clipsToBounds = true
+        loadingView.layer.cornerRadius = 10
+        
+        var views:[UIView] = [loadingView,container]
+        self.views = views
+        
+        var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+        label.center = CGPointMake(loadingView.frame.size.width / 2,
+            loadingView.frame.size.height / 1.7);
+        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.whiteColor()
+        label.text = text
+        label.font = UIFont(name: "Helvetica", size: size2)
+        
+        var button = UIButton(frame: CGRectMake(0, 5, 100, 21))
+        button.setBackgroundImage(UIImage(named: "menu_button_focus.jpg")!, forState: UIControlState.Normal)
+        button.center = CGPointMake(loadingView.frame.size.width / 2,
+            loadingView.frame.size.height / 1.27)
+        button.titleLabel?.font = UIFont.systemFontOfSize(12)
+        button.setTitle("Cancel", forState: UIControlState.Normal)
+        button.addTarget(self, action: "buttonAction", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var actInd: UIActivityIndicatorView = UIActivityIndicatorView()
+        actInd.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.WhiteLarge
+        actInd.center = CGPointMake(loadingView.frame.size.width / 2,
+            loadingView.frame.size.height / 2.5);
+        actInd.color = UIColor.redColor()
+        
+        loadingView.addSubview(actInd)
+        loadingView.addSubview(label)
+        loadingView.addSubview(button)
+        container.addSubview(loadingView)
+        uiView.addSubview(container)
+        actInd.startAnimating()
+        
+        return views
+    }
+    
+    func stopLoading(views:[UIView]){
+        views[0].removeFromSuperview()
+        views[1].removeFromSuperview()
+    }
+    
+    func buttonAction()
+    {
+        
+        stopLoading(views)
+        
+        if(battle){
+            application.myController.sendMessage(CANCEL)
+            
+            var succ = true
+            
+            while(succ){
+                var a = application.myController.readMessage()
+                println("!!! " + (a as String) + " !!!")
+                if(a == SUCCES){
+                    succ = false
+                }
+            }
+            
+            actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
+          
+        }
+    }
 }
