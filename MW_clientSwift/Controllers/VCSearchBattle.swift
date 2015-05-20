@@ -20,9 +20,11 @@ class VCSearchBattle: UIViewController {
 
         // Do any additional setup after loading the view, typically from a nib.
         application.myController.sendMessage(START_BATTLE)
-        setUp()
+        
         //START LOADING AND STOP THESE
          views = application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: true)
+        
+        setUp()
         /*application.stopLoading(views)*/
     }
     
@@ -40,7 +42,18 @@ class VCSearchBattle: UIViewController {
                             self.performSegueWithIdentifier("goto_battle", sender: self)
                         }
                     }else{
-                        application.myController.sendMessage("*")
+                        println("else send \(test)")
+                        application.myController.sendMessage(test)
+                        if(test == "cancel"){
+                            println("waiting false")
+                            waitting = false
+                            dispatch_async(dispatch_get_main_queue()) {
+                                if(application.myController.readMessage() == SUCCES){
+                                self.performSegueWithIdentifier("goto_menu", sender: self)
+                                }
+                            }
+                            
+                        }
                     }
                 }
         }

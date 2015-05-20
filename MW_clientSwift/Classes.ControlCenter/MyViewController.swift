@@ -290,16 +290,23 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         stopLoading(views)
         
         if(battle){
+            test = "cancel"
+            //no cal fer res mes ;-) by: Ro
+            /*
             application.myController.sendMessage(CANCEL)
             println("preWhile")
             while(!application.myController.readMessage2()){
                 println("inWhile")
             }
             println("postWhile")
-            actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
+            //actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
+
+            */
         }
     }
     
+    //xapuza no serveix per res, pero por si, de moment cal testejar mes la nova solucio
+    /*
     func readMessage2() -> Bool{
         var output:NSString!
         let bufferSize = 1024
@@ -311,20 +318,32 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         if bytesRead >= 0 {
             lastReceivedMessageID++
             output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-            // println("output is")
+            println("output is")
+            
             println("Server say: \(output)")
+            println("hola?")
             textt = "Server say: \(output)" //farem alguna cosa amb la variable?? es possible
             println("Text: " + textt)
+            
+            if(output == SUCCES){
+                println("return true")
+            }
+            else{
+                println("return false")
+            }
+            println("ME CAGO EN LA PUTA MADRE QUE PARIO ESTO")
         } else {
             // Handle error -> falta implementar...
             output = NO_SERVER
             println("ERROR => " + output.description)
         }
-        if(textt == "Server say: 0"){
+        if(output == "0"){
+            println("segon return true")
             return true
         }else{
+            println("segon return false")
             return false
         }
     }
-    
+    */
 }

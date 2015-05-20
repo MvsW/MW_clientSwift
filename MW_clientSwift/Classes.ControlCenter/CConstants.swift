@@ -8,6 +8,7 @@
 
 import Foundation
 
+var test = "*"
 
 var serverAddress: CFString = "kintoncloud.com"
 //var serverAddress: CFString = "192.168.1.11"
