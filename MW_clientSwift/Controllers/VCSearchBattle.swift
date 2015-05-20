@@ -27,15 +27,20 @@ class VCSearchBattle: UIViewController {
     }
     
     func setUp(){
-        
+        var waitting = true
         dispatch_async(dispatch_get_global_queue(
             Int(QOS_CLASS_UTILITY.value), 0)) {
-                var areReady = application.myController.readMessage()
-                if (areReady == SUCCES){
-                    // Recently added. Trying to fix the lag of loading UI
-                    dispatch_async(dispatch_get_main_queue()) {
-                        application.stopLoading(self.views)
-                        self.performSegueWithIdentifier("goto_battle", sender: self)
+                while(waitting){
+                    var areReady = application.myController.readMessage()
+                    if (areReady == SUCCES){
+                        waitting = false
+                        // Recently added. Trying to fix the lag of loading UI
+                        dispatch_async(dispatch_get_main_queue()) {
+                            application.stopLoading(self.views)
+                            self.performSegueWithIdentifier("goto_battle", sender: self)
+                        }
+                    }else{
+                        application.myController.sendMessage("xxx")
                     }
                 }
         }
