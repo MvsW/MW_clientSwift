@@ -30,7 +30,6 @@
             <string>Augusta-Regular</string>
             <string>Augusta-Regular</string>
             <string>Augusta-Regular</string>
-            <string>Augusta-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -787,13 +786,6 @@
                                 <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tWJ-5e-PMh">
-                                <rect key="frame" x="134" y="183" width="57" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="39"/>
-                                <color key="textColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3J-um-TtZ">
                                 <rect key="frame" x="31" y="260" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -801,6 +793,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorvs.png" id="IJB-JX-VUI">
+                                <rect key="frame" x="25" y="155" width="269" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1040,6 +1036,7 @@
         <image name="no_focus.png" width="693" height="114"/>
         <image name="redbar1.png" width="2191" height="106"/>
         <image name="redbar2.png" width="2191" height="106"/>
+        <image name="separatorvs.png" width="1009" height="261"/>
         <image name="special1.png" width="319" height="320"/>
         <image name="special2.png" width="321" height="320"/>
         <image name="specialbutton.png" width="320" height="320"/>
@@ -1053,7 +1050,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Rjb-Da-inw"/>
-        <segue reference="5U3-zf-fUs"/>
+        <segue reference="oM4-i9-W4f"/>
         <segue reference="FsR-Dq-Cwg"/>
         <segue reference="S6g-KB-Q3n"/>
     </inferredMetricsTieBreakers>

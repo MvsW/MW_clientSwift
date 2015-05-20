@@ -56,6 +56,7 @@
 		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
 		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
+		C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C7D1421B0CE90900AF5470 /* separatorvs.png */; };
 		C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE11F61B062CBF00C2960A /* Main.storyboard */; };
 		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
 		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
@@ -130,6 +131,7 @@
 		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C0C7D1421B0CE90900AF5470 /* separatorvs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = separatorvs.png; path = MW_clientSwift/Imatges/separatorvs.png; sourceTree = SOURCE_ROOT; };
 		C0CE11F71B062CBF00C2960A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
@@ -223,6 +225,7 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0C7D1421B0CE90900AF5470 /* separatorvs.png */,
 				C05D83131B0B220D002C4AA5 /* baseprogressbar1.png */,
 				C05D83141B0B220D002C4AA5 /* bluebar1.png */,
 				C05D83151B0B220D002C4AA5 /* redbar1.png */,
@@ -383,6 +386,7 @@
 				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
+				C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */,
 				41C82B141A91056600235D61 /* mage.png in Resources */,
 				C05D83321B0B220D002C4AA5 /* iconRegister.png in Resources */,
 				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
