@@ -22,7 +22,7 @@ class VCSearchBattle: UIViewController {
         application.myController.sendMessage(START_BATTLE)
         setUp()
         //START LOADING AND STOP THESE
-         views = application.myController.startLoading(self.view, text: "Loading...", size2: 12.5)
+         views = application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: true)
         /*application.stopLoading(views)*/
     }
     

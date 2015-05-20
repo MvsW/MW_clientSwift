@@ -129,6 +129,8 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+//        application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: false)
         if (application.comprovarConexion()){
             application.myController.connect()
             findMyLocation()
