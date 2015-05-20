@@ -22,7 +22,7 @@ class VCSearchBattle: UIViewController {
         application.myController.sendMessage(START_BATTLE)
         setUp()
         //START LOADING AND STOP THESE
-         views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
+         views = application.myController.startLoading(self.view, text: "Loading...", size2: 12.5)
         /*application.stopLoading(views)*/
     }
     
@@ -36,7 +36,7 @@ class VCSearchBattle: UIViewController {
                         waitting = false
                         // Recently added. Trying to fix the lag of loading UI
                         dispatch_async(dispatch_get_main_queue()) {
-                            application.stopLoading(self.views)
+                            application.myController.stopLoading(self.views)
                             self.performSegueWithIdentifier("goto_battle", sender: self)
                         }
                     }else{
