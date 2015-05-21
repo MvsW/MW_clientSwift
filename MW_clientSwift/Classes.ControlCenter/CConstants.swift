@@ -62,7 +62,7 @@ let TOTAL_BASE_LIFE: Double = 100
 let BASE_PERCENT: Double = 0.76
 let RAND_PERCENT: Double = 0.4
 let CUSTOM_PERCENT: Double = 0.2
-let LIFE_INTEL_PERCENT: Double = 0.8
+let LIFE_INTEL_PERCENT: Double = 0.7
 let REGEN_ENERGY_BASE_PERCENT: Double = 0.1;
 
 //Calcs
