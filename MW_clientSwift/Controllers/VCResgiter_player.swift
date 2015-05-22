@@ -42,6 +42,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsStepperStrenght: Double = 0
     var pointsStepperIntelligence: Double = 0
     
+    @IBOutlet weak var stepperStr: UIStepper!
+    @IBOutlet weak var stepperInt: UIStepper!
+    
     // CONSTANTS
     let MAX_STRENGHT = 5
     let MIN_STRENGHT = 1
@@ -59,9 +62,27 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var userPassword = ""
     var typeCharacter = WARLOCK
     
+    var senderValueAnteriorStr = 0
+    var senderValueAnteriorInt = 0
+    
     // BUTTON METHODS
+    func resetStatsSteppers(){
+        
+        pointsPoints = Double(MAX_UNASIGNED_POINTS)
+        pointsStepperStrenght = 0
+        pointsStepperIntelligence = 0
+        lblCount_unasPoints.text = Int(pointsPoints).description
+        stepperStr.value = 0
+        stepperInt.value = 0
+        stepperStr.maximumValue = 9999
+        stepperInt.maximumValue = 9999
+        stepperInt.minimumValue = -9999
+        stepperStr.minimumValue = -9999
+    }
+    
     @IBAction func btnCharacterImage(sender: UIButton) {
         randomStats()
+        resetStatsSteppers()
         if(typeCharacter == WARLOCK){
             typeCharacter = MAGE
             btnCharacterImage.setBackgroundImage(UIImage(named: "mage.png"), forState: UIControlState.Normal)
@@ -107,30 +128,44 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     @IBAction func stpr_strength(sender: UIStepper) {
         println(Int(pointsPoints)-1)
+        if(pointsStepperStrenght <= sender.value && Int(pointsPoints)-1 >= 0){
+            pointsPoints = pointsPoints - 1
             lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
-            if(pointsStepperStrenght < sender.value && Int(pointsPoints)-1 >= 0){
-                pointsPoints = pointsPoints - 1
-            }else{
-                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
-                pointsPoints = pointsPoints + 1
-                }
-            }
             pointsStepperStrenght = Double(sender.value)
             lblCount_unasPoints.text = Int(pointsPoints).description
+            senderValueAnteriorStr = Int(sender.value)
+        }else{
+            if(pointsStepperStrenght >= sender.value && Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
+                pointsPoints = pointsPoints + 1
+                lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
+                pointsStepperStrenght = Double(sender.value)
+                lblCount_unasPoints.text = Int(pointsPoints).description
+                senderValueAnteriorStr = Int(sender.value)
+            }else{
+                sender.value = Double(senderValueAnteriorStr)
+            }
+        }
     }
     
     @IBAction func stpr_intelligence(sender: UIStepper) {
         println(Int(pointsPoints)-1)
+        if(pointsStepperIntelligence <= sender.value && Int(pointsPoints)-1 >= 0){
+            pointsPoints = pointsPoints - 1
             lblCount_intelligence.text = Int((Double(pointsInteligence) + Double(sender.value))).description
-            if(pointsStepperIntelligence < sender.value && Int(pointsPoints)-1 >= 0 ){
-                pointsPoints = pointsPoints - 1
-            }else{
-                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
-                pointsPoints = pointsPoints + 1
-                }
-            }
             pointsStepperIntelligence = Double(sender.value)
             lblCount_unasPoints.text = Int(pointsPoints).description
+            senderValueAnteriorInt = Int(sender.value)
+        }else{
+            if(pointsStepperIntelligence >= sender.value && Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
+                pointsPoints = pointsPoints + 1
+                lblCount_intelligence.text = Int((Double(pointsInteligence) + Double(sender.value))).description
+                pointsStepperIntelligence = Double(sender.value)
+                lblCount_unasPoints.text = Int(pointsPoints).description
+                senderValueAnteriorInt = Int(sender.value)
+            }else{
+                sender.value = Double(senderValueAnteriorInt)
+            }
+        }
     }
     
     
@@ -138,6 +173,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         super.viewDidLoad()
         
         self.randomStats()
+        self.resetStatsSteppers()
         
         lblCount_life.enabled = false
         lblCount_energy.enabled = false

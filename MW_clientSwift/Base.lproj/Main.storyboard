@@ -444,6 +444,8 @@
                         <outlet property="lblCount_unasPoints" destination="wcJ-rJ-yVu" id="zbr-Uz-RGt"/>
                         <outlet property="lbl_classSelected" destination="t9P-7L-wkY" id="pV8-N1-2uR"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
+                        <outlet property="stepperInt" destination="2Pr-qL-cEm" id="MGL-DQ-fag"/>
+                        <outlet property="stepperStr" destination="g4N-ix-r35" id="fDK-F3-rwh"/>
                         <outlet property="stpr_intelligence" destination="2Pr-qL-cEm" id="gia-L3-9dg"/>
                         <outlet property="stpr_strength" destination="g4N-ix-r35" id="3DE-AD-b7R"/>
                         <outlet property="tfCharacterName" destination="GRU-dV-Hj6" id="ZOv-bL-8V3"/>
@@ -1049,9 +1051,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rjb-Da-inw"/>
+        <segue reference="pTQ-2B-IbA"/>
+        <segue reference="S6g-KB-Q3n"/>
         <segue reference="oM4-i9-W4f"/>
         <segue reference="FsR-Dq-Cwg"/>
-        <segue reference="S6g-KB-Q3n"/>
     </inferredMetricsTieBreakers>
 </document>
