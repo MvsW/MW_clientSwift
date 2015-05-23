@@ -39,15 +39,15 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsStrength = 0
     var pointsInteligence = 0
     var pointsPoints: Double = Double(CUSTOM_CALC)
-    var pointsStepperStrenght: Double = 0
+    var pointsStepperStrength: Double = 0
     var pointsStepperIntelligence: Double = 0
     
     @IBOutlet weak var stepperStr: UIStepper!
     @IBOutlet weak var stepperInt: UIStepper!
     
     // CONSTANTS
-    let MAX_STRENGHT = 5
-    let MIN_STRENGHT = 1
+    let MAX_STRENGTH = 5
+    let MIN_STRENGTH = 1
     let MAX_INTELIGENCE = 5
     let MIN_INTELIGENCE = 1
     let MIN_GENERIC = 0.0
@@ -62,14 +62,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var userPassword = ""
     var typeCharacter = WARLOCK
     
-    var senderValueAnteriorStr = 0
-    var senderValueAnteriorInt = 0
+    var lastValueSendOfStr = 0
+    var lastValueSendOfIntel = 0
     
     // BUTTON METHODS
     func resetStatsSteppers(){
         
         pointsPoints = Double(CUSTOM_CALC)
-        pointsStepperStrenght = 0
+        pointsStepperStrength = 0
         pointsStepperIntelligence = 0
         lblCount_unasPoints.text = Int(pointsPoints).description
         stepperStr.value = 0
@@ -127,35 +127,35 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     @IBAction func stpr_strength(sender: UIStepper) {
 //        println(Int(pointsPoints)-1)
-        if (pointsStepperStrenght <= sender.value && Int(pointsPoints)-1 >= 0){
+        if (pointsStepperStrength <= sender.value && Int(pointsPoints)-1 >= 0){
             
             pointsPoints = pointsPoints - 1
             
             lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
             
-            pointsStepperStrenght = Double(sender.value)
+            pointsStepperStrength = Double(sender.value)
             
             lblCount_unasPoints.text = Int(pointsPoints).description
             
-            senderValueAnteriorStr = Int(sender.value)
+            lastValueSendOfStr = Int(sender.value)
         
         } else {
             
-            if (pointsStepperStrenght > sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
+            if (pointsStepperStrength > sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
                 
                 pointsPoints = pointsPoints + 1
                 
                 lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
                 
-                pointsStepperStrenght = Double(sender.value)    
+                pointsStepperStrength = Double(sender.value)    
                 
                 lblCount_unasPoints.text = Int(pointsPoints).description
                 
-                senderValueAnteriorStr = Int(sender.value)
+                lastValueSendOfStr = Int(sender.value)
                 
-            } else{
+            } else {
                 
-                sender.value = Double(senderValueAnteriorStr)
+                sender.value = Double(lastValueSendOfStr)
             
             }
         }
@@ -177,7 +177,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             
             lblCount_unasPoints.text = Int(pointsPoints).description
             
-            senderValueAnteriorInt = Int(sender.value)
+            lastValueSendOfIntel = Int(sender.value)
         
             
         } else {
@@ -192,12 +192,12 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 
                 lblCount_unasPoints.text = Int(pointsPoints).description
                 
-                senderValueAnteriorInt = Int(sender.value)
+                lastValueSendOfIntel = Int(sender.value)
             
                 
             } else {
                 
-                sender.value = Double(senderValueAnteriorInt)
+                sender.value = Double(lastValueSendOfIntel)
             }
         }
         
@@ -322,7 +322,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         pointsInteligence = application.getDefaultStats(typeCharacter)[4]
         lblCount_intelligence.text = pointsInteligence.description
     }
-    
     
     func refreshAllLabelStats() {
         // Using the overload method getDefaultsStats passing 2 params.

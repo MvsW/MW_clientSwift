@@ -17,8 +17,8 @@ class VCBattle: UIViewController {
     @IBOutlet weak var lbl_hisLife: UILabel!
     @IBOutlet weak var lbl_hisEnergy: UILabel!
     
-    @IBOutlet weak var meLife: UIImageView!
-    @IBOutlet weak var meEnergy: UIImageView!
+    @IBOutlet weak var myLife: UIImageView!
+    @IBOutlet weak var mYEnergy: UIImageView!
     @IBOutlet weak var opponentLife: UIImageView!
     @IBOutlet weak var opponentEnergy: UIImageView!
     
@@ -29,54 +29,54 @@ class VCBattle: UIViewController {
     @IBOutlet weak var btnSpell2: UIButton!
     @IBOutlet weak var btnBasicAtt: UIButton!
     
-    @IBOutlet weak var imgMe: UIImageView!
-    @IBOutlet weak var imgOpponent: UIImageView!
-    @IBOutlet weak var MyName: UILabel!
-    @IBOutlet weak var OpponentName: UILabel!
+    @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var opponentImageView: UIImageView!
+    @IBOutlet weak var myName: UILabel!
+    @IBOutlet weak var opponentName: UILabel!
     
     var dataArray: [String]!
     var messageReceived: NSString!
     
-    var originalMeLife = "0"
-    var originalMeEnergy = "0"
-    var originalOpponentLife = "0"
-    var originalOpponentEnergy = "0"
+    var myOriginalLife = "0"
+    var myOriginalEnergy = "0"
+    var opponentOriginalLife = "0"
+    var opponentOriginalEnergy = "0"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        // Set the background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
-        //DESACTIVAT AMB FREE PASS
-   
+        
+        // DESACTIVAT AMB FREE PASS
         if(!freePass){
             messageReceived = application.myController.readMessage()
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             
-            MyName.text = self.dataArray[0]
+            myName.text = self.dataArray[0]
             if(self.dataArray[1].toInt() == MAGE){
-                imgMe.image = UIImage(named: "mage.png")
+                myImageView.image = UIImage(named: "mage.png")
             }else{
-                imgMe.image = UIImage(named: "warlock.png")
+                myImageView.image = UIImage(named: "warlock.png")
             }
-            originalMeLife = self.dataArray[2]
-            originalMeEnergy = self.dataArray[3]
+            myOriginalLife = self.dataArray[2]
+            myOriginalEnergy = self.dataArray[3]
             
-            OpponentName.text = self.dataArray[4]
+            opponentName.text = self.dataArray[4]
             if(self.dataArray[5].toInt() == MAGE){
-                imgOpponent.image = UIImage(named: "mage.png")
+                opponentImageView.image = UIImage(named: "mage.png")
             }else{
-                imgOpponent.image = UIImage(named: "warlock.png")
+                opponentImageView.image = UIImage(named: "warlock.png")
             }
-            originalOpponentLife = self.dataArray[6]
-            originalOpponentEnergy = self.dataArray[7]
+            opponentOriginalLife = self.dataArray[6]
+            opponentOriginalEnergy = self.dataArray[7]
             
         }else{
-            refreshInterfaceProgressBar(0.9,perOneMeEnergy: 0.8,perOneOpponentLife: 0.7,perOneOpponenEnergy: 0.6)
+            refreshInterfaceProgressBar(0.9, forMyEnergy: 0.8, forOpponentLife: 0.7, forOpponentEnergy: 0.6)
         }
         refreshInterfaceLabels()
     }
@@ -94,7 +94,7 @@ class VCBattle: UIViewController {
         
         // Attention! Take care that the tags are between actions number of.
         if (tag >= 0 && tag <= MAX_ACTIONS) {
-            // TODO Make a method that check if have the energy required
+            
             println("Action battle sent: \(tag)")
             application.myController.sendMessage(String(tag))
             
@@ -107,19 +107,19 @@ class VCBattle: UIViewController {
             refreshInterfaceLabels()
             println(self.dataArray[0])
             var array1ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
-            var oginalMeLifeToFloat: CGFloat = CGFloat((originalMeLife as NSString).floatValue)
+            var oginalmyLifeToFloat: CGFloat = CGFloat((myOriginalLife as NSString).floatValue)
             
             var array2ToFloat:CGFloat = CGFloat((self.dataArray[3] as NSString).floatValue)
-            var oginalMeEnergyToFloat: CGFloat = CGFloat((originalMeEnergy as NSString).floatValue)
+            var oginalmYEnergyToFloat: CGFloat = CGFloat((myOriginalEnergy as NSString).floatValue)
             
             var array3ToFloat:CGFloat = CGFloat((self.dataArray[6] as NSString).floatValue)
-            var oginalOpponentLifeToFloat: CGFloat = CGFloat((originalOpponentLife as NSString).floatValue)
+            var oginalOpponentLifeToFloat: CGFloat = CGFloat((opponentOriginalLife as NSString).floatValue)
         
             var array4ToFloat:CGFloat = CGFloat((self.dataArray[7] as NSString).floatValue)
-            var oginalOpponentEnergyToFloat: CGFloat = CGFloat((originalOpponentEnergy as NSString).floatValue)
+            var oginalOpponentEnergyToFloat: CGFloat = CGFloat((opponentOriginalEnergy as NSString).floatValue)
             
-            var calcul1 = (array1ToFloat * 100 / oginalMeLifeToFloat)/100
-            var calcul2 = (array2ToFloat * 100 / oginalMeEnergyToFloat)/100
+            var calcul1 = (array1ToFloat * 100 / oginalmyLifeToFloat)/100
+            var calcul2 = (array2ToFloat * 100 / oginalmYEnergyToFloat)/100
             var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
             var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
             
@@ -154,7 +154,7 @@ class VCBattle: UIViewController {
                 btnSpell1.backgroundColor = UIColor.redColor()
             }
             
-            self.refreshInterfaceProgressBar(calcul1, perOneMeEnergy: calcul2, perOneOpponentLife: calcul3, perOneOpponenEnergy: calcul4)
+            self.refreshInterfaceProgressBar(calcul1, forMyEnergy: calcul2, forOpponentLife: calcul3, forOpponentEnergy: calcul4)
             
             if(dataArray.count == 9){
                 guanyaPartida = dataArray[8]
@@ -174,20 +174,20 @@ class VCBattle: UIViewController {
     
     func refreshInterfaceLabels() {
         if (self.dataArray != nil) {
-            self.lbl_myLife.text = (self.dataArray[2] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeLife.componentsSeparatedByString(".")[0]
-            self.lbl_myEnergy.text = (self.dataArray[3] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalMeEnergy.componentsSeparatedByString(".")[0]
-            self.lbl_hisLife.text = (self.dataArray[6] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentLife.componentsSeparatedByString(".")[0]
-            self.lbl_hisEnergy.text = (self.dataArray[7] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + originalOpponentEnergy.componentsSeparatedByString(".")[0]
+            self.lbl_myLife.text = (self.dataArray[2] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + myOriginalLife.componentsSeparatedByString(".")[0]
+            self.lbl_myEnergy.text = (self.dataArray[3] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + myOriginalEnergy.componentsSeparatedByString(".")[0]
+            self.lbl_hisLife.text = (self.dataArray[6] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + opponentOriginalLife.componentsSeparatedByString(".")[0]
+            self.lbl_hisEnergy.text = (self.dataArray[7] as NSString).floatValue.description.componentsSeparatedByString(".")[0]+"/" + opponentOriginalEnergy.componentsSeparatedByString(".")[0]
         }
     }
     
-    func refreshInterfaceProgressBar(perOneMeLife:CGFloat, perOneMeEnergy:CGFloat, perOneOpponentLife:CGFloat, perOneOpponenEnergy:CGFloat){
+    func refreshInterfaceProgressBar(forMyLife:CGFloat, forMyEnergy:CGFloat, forOpponentLife:CGFloat, forOpponentEnergy:CGFloat){
         
-        meLife.frame = CGRectMake(meLife.frame.minX, meLife.frame.minY, meLife.frame.width*perOneMeLife, meLife.frame.height)
-        meEnergy.frame = CGRectMake(meEnergy.frame.minX, meEnergy.frame.minY, meEnergy.frame.width*perOneMeEnergy, meEnergy.frame.height)
+        myLife.frame = CGRectMake(myLife.frame.minX, myLife.frame.minY, myLife.frame.width*forMyLife, myLife.frame.height)
+        mYEnergy.frame = CGRectMake(mYEnergy.frame.minX, mYEnergy.frame.minY, mYEnergy.frame.width*forMyEnergy, mYEnergy.frame.height)
         
-        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*perOneOpponentLife, opponentLife.frame.height)
-        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*perOneOpponenEnergy, opponentEnergy.frame.height)
+        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*forOpponentLife, opponentLife.frame.height)
+        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*forOpponentEnergy, opponentEnergy.frame.height)
     }
     
 }

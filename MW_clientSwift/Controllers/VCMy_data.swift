@@ -24,14 +24,14 @@ class VCMy_data: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        // Put the backround image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
 
         
-        //Llegim la informació del servidor
-        var info:String = application.myController.readMessage() as String
+        // Reading the server
+        var info: String = application.myController.readMessage() as String
         
         var dates = info.componentsSeparatedByString(SEPARATOR)
 
@@ -86,15 +86,5 @@ class VCMy_data: UIViewController {
         self.performSegueWithIdentifier("goto_menu", sender: self)
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

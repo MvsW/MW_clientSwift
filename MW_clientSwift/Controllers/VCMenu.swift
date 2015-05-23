@@ -15,7 +15,9 @@ class VCMenu: UIViewController {
         test = "*"
         
         // Put the background image
-        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size
+        
+        // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
     }
@@ -43,6 +45,7 @@ class VCMenu: UIViewController {
             application.noConnectionAlertAndGoToLogin(self)
         }
     }
+    
     @IBAction func gotoBattle(sender: UIButton) {
         freePass = true
         self.performSegueWithIdentifier("goto_battle", sender: self)

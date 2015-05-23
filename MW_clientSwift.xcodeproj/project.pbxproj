@@ -16,7 +16,7 @@
 		41C82B071A91054B00235D61 /* VCMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B011A91054B00235D61 /* VCMenu.swift */; };
 		41C82B081A91054B00235D61 /* VCMy_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B021A91054B00235D61 /* VCMy_data.swift */; };
 		41C82B091A91054B00235D61 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B031A91054B00235D61 /* VCRegister.swift */; };
-		41C82B0A1A91054B00235D61 /* VCResgiter_player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B041A91054B00235D61 /* VCResgiter_player.swift */; };
+		41C82B0A1A91054B00235D61 /* VCRegister_player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B041A91054B00235D61 /* VCRegister_player.swift */; };
 		41C82B0B1A91054B00235D61 /* VCSearchBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B051A91054B00235D61 /* VCSearchBattle.swift */; };
 		41C82B121A91056600235D61 /* anterior.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0C1A91056600235D61 /* anterior.png */; };
 		41C82B131A91056600235D61 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0D1A91056600235D61 /* fondo.png */; };
@@ -88,7 +88,7 @@
 		41C82B011A91054B00235D61 /* VCMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCMenu.swift; path = MW_clientSwift/Controllers/VCMenu.swift; sourceTree = SOURCE_ROOT; };
 		41C82B021A91054B00235D61 /* VCMy_data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCMy_data.swift; path = MW_clientSwift/Controllers/VCMy_data.swift; sourceTree = SOURCE_ROOT; };
 		41C82B031A91054B00235D61 /* VCRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCRegister.swift; path = MW_clientSwift/Controllers/VCRegister.swift; sourceTree = SOURCE_ROOT; };
-		41C82B041A91054B00235D61 /* VCResgiter_player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCResgiter_player.swift; path = MW_clientSwift/Controllers/VCResgiter_player.swift; sourceTree = SOURCE_ROOT; };
+		41C82B041A91054B00235D61 /* VCRegister_player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCRegister_player.swift; path = MW_clientSwift/Controllers/VCRegister_player.swift; sourceTree = SOURCE_ROOT; };
 		41C82B051A91054B00235D61 /* VCSearchBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCSearchBattle.swift; path = MW_clientSwift/Controllers/VCSearchBattle.swift; sourceTree = SOURCE_ROOT; };
 		41C82B0C1A91056600235D61 /* anterior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anterior.png; path = MW_clientSwift/Imatges/anterior.png; sourceTree = SOURCE_ROOT; };
 		41C82B0D1A91056600235D61 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fondo.png; path = MW_clientSwift/Imatges/fondo.png; sourceTree = SOURCE_ROOT; };
@@ -279,7 +279,7 @@
 				41C82B011A91054B00235D61 /* VCMenu.swift */,
 				41C82B021A91054B00235D61 /* VCMy_data.swift */,
 				41C82B031A91054B00235D61 /* VCRegister.swift */,
-				41C82B041A91054B00235D61 /* VCResgiter_player.swift */,
+				41C82B041A91054B00235D61 /* VCRegister_player.swift */,
 				41C82B051A91054B00235D61 /* VCSearchBattle.swift */,
 				41C82AFE1A91054000235D61 /* VCBattle.swift */,
 			);
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C82B0A1A91054B00235D61 /* VCResgiter_player.swift in Sources */,
+				41C82B0A1A91054B00235D61 /* VCRegister_player.swift in Sources */,
 				41C82B091A91054B00235D61 /* VCRegister.swift in Sources */,
 				41C82B081A91054B00235D61 /* VCMy_data.swift in Sources */,
 				54B9EF781AE6B6BF0083E508 /* CSpell.swift in Sources */,
