@@ -24,8 +24,6 @@ public class CApp{
         return result
     }
 
-    
-    
     func isValidPassword(testStr:String) -> Bool{
         if(count(testStr) >= 6){
             for chr in testStr{
@@ -53,8 +51,6 @@ public class CApp{
         return false
     }
     
-    // Check if the fields are not empty
-    
     // Check if the playername conditions has been respected
     func validatePlayerName(text: String) ->Bool{
         let maxValue = 12;
@@ -78,11 +74,10 @@ public class CApp{
         return false
     }
     
-    // Check the connection 
-    // TODO: Translate!!!!
+    // Check the connection
     let reachability = Reachability.reachabilityForInternetConnection()
 
-    func comprovarConexion()->Bool{
+    func checkConnection()->Bool {
         println("Rechability said: " + reachability.currentReachabilityString)
         
         if(reachability.isReachable()){
@@ -152,7 +147,7 @@ public class CApp{
         view.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func showAlertLoose(view: UIViewController, titles: String, messages: String){
+    func showAlertDefeated(view: UIViewController, titles: String, messages: String){
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
@@ -248,6 +243,24 @@ public class CApp{
         life = 100.0 + str * LIFE_INTEL_PERCENT
         energy = 100.0 + intll * LIFE_INTEL_PERCENT
         eReg = Double(energy) * 0.1
+        var arrayInt = [Int(life),Int(energy),Int(eReg),Int(str),Int(intll)]
+        
+        return arrayInt
+    }
+    
+    func getDefaultsStats(strength_points: Int, intelligence_points: Int )->[Int] {
+        
+        var life: Double
+        var energy: Double
+        var eReg: Double
+        var str: Double = Double(strength_points)
+        var intll: Double = Double(intelligence_points)
+        
+        
+        life = 100.0 + str * LIFE_INTEL_PERCENT
+        energy = 100.0 + intll * LIFE_INTEL_PERCENT
+        eReg = Double(energy) * 0.1
+        
         var arrayInt = [Int(life),Int(energy),Int(eReg),Int(str),Int(intll)]
         
         return arrayInt

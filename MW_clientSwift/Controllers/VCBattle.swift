@@ -161,13 +161,13 @@ class VCBattle: UIViewController {
             }
             
             if(guanyaPartida == WIN){
-                application.showAlertWin(self, titles: "Game WIN!", messages: "")
+                application.showAlertWin(self, titles: "You WIN!", messages: "")
             }
             if(guanyaPartida == DRAW){
-                application.showAlertDraw(self, titles: "Game DRAW!", messages: "")
+                application.showAlertDraw(self, titles: "Draw!", messages: "")
             }
             if(guanyaPartida == LOSE){
-                application.showAlertLoose(self, titles: "Game LOOSE!", messages: "")
+                application.showAlertDefeated(self, titles: "Defeated!", messages: "")
             }
         }
     }
