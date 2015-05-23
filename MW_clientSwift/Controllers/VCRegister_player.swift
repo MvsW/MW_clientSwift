@@ -38,13 +38,16 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsEnergyRegeneration = 0
     var pointsStrength = 0
     var pointsInteligence = 0
-    var pointsPoints: Double = Double(MAX_UNASIGNED_POINTS)
-    var pointsStepperStrenght: Double = 0
+    var pointsPoints: Double = Double(CUSTOM_CALC)
+    var pointsStepperStrength: Double = 0
     var pointsStepperIntelligence: Double = 0
     
+    @IBOutlet weak var stepperStr: UIStepper!
+    @IBOutlet weak var stepperInt: UIStepper!
+    
     // CONSTANTS
-    let MAX_STRENGHT = 5
-    let MIN_STRENGHT = 1
+    let MAX_STRENGTH = 5
+    let MIN_STRENGTH = 1
     let MAX_INTELIGENCE = 5
     let MIN_INTELIGENCE = 1
     let MIN_GENERIC = 0.0
@@ -59,9 +62,27 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var userPassword = ""
     var typeCharacter = WARLOCK
     
+    var lastValueSendOfStr = 0
+    var lastValueSendOfIntel = 0
+    
     // BUTTON METHODS
+    func resetStatsSteppers(){
+        
+        pointsPoints = Double(CUSTOM_CALC)
+        pointsStepperStrength = 0
+        pointsStepperIntelligence = 0
+        lblCount_unasPoints.text = Int(pointsPoints).description
+        stepperStr.value = 0
+        stepperInt.value = 0
+        stepperStr.maximumValue = 9999
+        stepperInt.maximumValue = 9999
+        stepperInt.minimumValue = -9999
+        stepperStr.minimumValue = -9999
+    }
+    
     @IBAction func btnCharacterImage(sender: UIButton) {
         randomStats()
+        resetStatsSteppers()
         if(typeCharacter == WARLOCK){
             typeCharacter = MAGE
             btnCharacterImage.setBackgroundImage(UIImage(named: "mage.png"), forState: UIControlState.Normal)
@@ -73,9 +94,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         }
     }
     
-    
-    // CONTROLLER VIEW METHODS
-    @IBAction func createTapped(sender: UIButton) {
+    @IBAction func btnCreatePlayerTapped(sender: UIButton) {
         
         // Check if the fields are correctly filled
         let characterValidation: Bool = application.validatePlayerName(tfCharacterName.text)
@@ -91,11 +110,12 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 // Keep going.
                 // TODO Send a message and get message for been success
                 // TODO Make and implement the methods for increase the life, energy or regen depending of the strength and intel.
-                if (application.myController.readMessage() == SUCCES){
+                var receivedMessage = application.myController.readMessage()
+                if (receivedMessage == SUCCES){
                     self.performSegueWithIdentifier("goto_login", sender: self)
                     
                 } else{
-                    println("ERROR -> unsuccessfull")
+                    println("Error -> Message received: \(receivedMessage)")
                 }
                 
             } else {
@@ -106,38 +126,94 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     }
     
     @IBAction func stpr_strength(sender: UIStepper) {
-        println(Int(pointsPoints)-1)
+//        println(Int(pointsPoints)-1)
+        if (pointsStepperStrength <= sender.value && Int(pointsPoints)-1 >= 0){
+            
+            pointsPoints = pointsPoints - 1
+            
             lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
-            if(pointsStepperStrenght < sender.value && Int(pointsPoints)-1 >= 0){
-                pointsPoints = pointsPoints - 1
-            }else{
-                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
-                pointsPoints = pointsPoints + 1
-                }
-            }
-            pointsStepperStrenght = Double(sender.value)
+            
+            pointsStepperStrength = Double(sender.value)
+            
             lblCount_unasPoints.text = Int(pointsPoints).description
+            
+            lastValueSendOfStr = Int(sender.value)
+        
+        } else {
+            
+            if (pointsStepperStrength > sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
+                
+                pointsPoints = pointsPoints + 1
+                
+                lblCount_strength.text = Int((Double(pointsStrength) + Double(sender.value))).description
+                
+                pointsStepperStrength = Double(sender.value)    
+                
+                lblCount_unasPoints.text = Int(pointsPoints).description
+                
+                lastValueSendOfStr = Int(sender.value)
+                
+            } else {
+                
+                sender.value = Double(lastValueSendOfStr)
+            
+            }
+        }
+        
+        // Refreshing the strength and intelligence labels after modifing the current label
+        refreshAllLabelStats()
     }
     
     @IBAction func stpr_intelligence(sender: UIStepper) {
-        println(Int(pointsPoints)-1)
+//        println(Int(pointsPoints)-1)
+        
+        if (pointsStepperIntelligence < sender.value && Int(pointsPoints)-1 >= 0) {
+            
+            pointsPoints = pointsPoints - 1
+            
             lblCount_intelligence.text = Int((Double(pointsInteligence) + Double(sender.value))).description
-            if(pointsStepperIntelligence < sender.value && Int(pointsPoints)-1 >= 0 ){
-                pointsPoints = pointsPoints - 1
-            }else{
-                if(Int(pointsPoints)-1 <= MAX_UNASIGNED_POINTS){
-                pointsPoints = pointsPoints + 1
-                }
-            }
+            
             pointsStepperIntelligence = Double(sender.value)
+            
             lblCount_unasPoints.text = Int(pointsPoints).description
+            
+            lastValueSendOfIntel = Int(sender.value)
+        
+            
+        } else {
+            
+            if (pointsStepperIntelligence >= sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
+                
+                pointsPoints = pointsPoints + 1
+                
+                lblCount_intelligence.text = Int((Double(pointsInteligence) + Double(sender.value))).description
+                
+                pointsStepperIntelligence = Double(sender.value)
+                
+                lblCount_unasPoints.text = Int(pointsPoints).description
+                
+                lastValueSendOfIntel = Int(sender.value)
+            
+                
+            } else {
+                
+                sender.value = Double(lastValueSendOfIntel)
+            }
+        }
+        
+        // Refreshing the strength and intelligence labels after modifing the current label
+        refreshAllLabelStats()
     }
     
+    @IBAction func printAllDataReadyForSend(sender: UIButton) {
+        println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text! + " => " + allPointsHasBeenAssignedProperly().description)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.randomStats()
+        self.resetStatsSteppers()
         
         lblCount_life.enabled = false
         lblCount_energy.enabled = false
@@ -146,7 +222,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         lblCount_intelligence.enabled = false
         lblCount_unasPoints.enabled = false
         
-        lblCount_unasPoints.text = MAX_UNASIGNED_POINTS.description
+        lblCount_unasPoints.text = CUSTOM_CALC.description
+        
         
         // Set background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
@@ -177,6 +254,10 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+    
     func allPointsHasBeenAssignedProperly()->Bool {
         if(lblCount_unasPoints.text!.toInt() == 0){
             return true
@@ -187,14 +268,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     func reCountUnassignedPoints()->Int? {
         
-        var newValue = MAX_UNASIGNED_POINTS - (lblCount_strength.text!.toInt()! + lblCount_intelligence.text!.toInt()!)
+        var newValue = Int(CUSTOM_CALC) - (lblCount_strength.text!.toInt()! + lblCount_intelligence.text!.toInt()!)
         
         if (newValue >= 0) {
             
             lblCount_unasPoints.text = String(newValue)
             
         }
-        println("unassigned points: \(newValue)")
+//        println("unassigned points: \(newValue)")
         return newValue
     }
     
@@ -225,19 +306,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         centerScrollViewContents()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func createProva(sender: UIButton) {
-        println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text! + " => " + allPointsHasBeenAssignedProperly().description)
-    }
-    
     func randomStats(){
         pointsLife = application.getDefaultStats(typeCharacter)[0]
         lblCount_life.text = pointsLife.description
@@ -253,6 +321,22 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         pointsInteligence = application.getDefaultStats(typeCharacter)[4]
         lblCount_intelligence.text = pointsInteligence.description
+    }
+    
+    func refreshAllLabelStats() {
+        // Using the overload method getDefaultsStats passing 2 params.
+        var freshData:[Int] = application.getDefaultsStats(lblCount_strength.text!.toInt()!, intelligence_points: lblCount_intelligence.text!.toInt()!)
+        
+        println(freshData.description)
+        
+        pointsLife = freshData[0]
+        lblCount_life.text = pointsLife.description
+        
+        pointsEnergy = freshData[1]
+        lblCount_energy.text = pointsEnergy.description
+        
+        pointsEnergyRegeneration = freshData[2]
+        lblCount_eRegen.text = pointsEnergyRegeneration.description
     }
 }
 

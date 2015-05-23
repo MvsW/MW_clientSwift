@@ -308,9 +308,6 @@
                                             <color key="titleColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="createTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="z3l-dj-X3F"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BFS-qe-gzM">
                                         <rect key="frame" x="32" y="322" width="28" height="21"/>
@@ -379,35 +376,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lvM-e5-CHY">
-                                        <rect key="frame" x="257" y="489" width="55" height="21"/>
+                                        <rect key="frame" x="231" y="488" width="55" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qwU-EU-H1H">
-                                        <rect key="frame" x="257" y="536" width="55" height="21"/>
+                                        <rect key="frame" x="231" y="535" width="55" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="14" id="2Pr-qL-cEm">
-                                        <rect key="frame" x="155" y="532" width="94" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                        <connections>
-                                            <action selector="stpr_intelligence:" destination="0J5-T5-yBG" eventType="valueChanged" id="2nM-gT-XhY"/>
-                                        </connections>
-                                    </stepper>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="14" id="g4N-ix-r35">
-                                        <rect key="frame" x="155" y="484" width="94" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <connections>
-                                            <action selector="stpr_strength:" destination="0J5-T5-yBG" eventType="valueChanged" id="nMm-ow-f35"/>
-                                        </connections>
-                                    </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFr-5V-jxx">
                                         <rect key="frame" x="19" y="122" width="89" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -415,7 +396,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="createProva:" destination="0J5-T5-yBG" eventType="touchUpInside" id="c9y-tx-d6F"/>
+                                            <action selector="btnCreatePlayerTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="6KC-cL-fvo"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RbE-gF-O0R">
@@ -425,6 +406,22 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="14" id="2Pr-qL-cEm">
+                                        <rect key="frame" x="144" y="527" width="94" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="stpr_intelligence:" destination="0J5-T5-yBG" eventType="valueChanged" id="2nM-gT-XhY"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="14" id="g4N-ix-r35">
+                                        <rect key="frame" x="144" y="479" width="94" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="stpr_strength:" destination="0J5-T5-yBG" eventType="valueChanged" id="nMm-ow-f35"/>
+                                        </connections>
+                                    </stepper>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -444,6 +441,8 @@
                         <outlet property="lblCount_unasPoints" destination="wcJ-rJ-yVu" id="zbr-Uz-RGt"/>
                         <outlet property="lbl_classSelected" destination="t9P-7L-wkY" id="pV8-N1-2uR"/>
                         <outlet property="scrollView" destination="mtf-Jz-RaI" id="xUc-TL-68q"/>
+                        <outlet property="stepperInt" destination="2Pr-qL-cEm" id="MGL-DQ-fag"/>
+                        <outlet property="stepperStr" destination="g4N-ix-r35" id="fDK-F3-rwh"/>
                         <outlet property="stpr_intelligence" destination="2Pr-qL-cEm" id="gia-L3-9dg"/>
                         <outlet property="stpr_strength" destination="g4N-ix-r35" id="3DE-AD-b7R"/>
                         <outlet property="tfCharacterName" destination="GRU-dV-Hj6" id="ZOv-bL-8V3"/>
@@ -804,24 +803,24 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="MyName" destination="cvb-O5-2Tp" id="xqD-dd-176"/>
-                        <outlet property="OpponentName" destination="iQZ-aH-IBV" id="ie1-uO-TAg"/>
                         <outlet property="btnBasicAtt" destination="eRN-Hi-ZW6" id="0D1-4t-A6w"/>
                         <outlet property="btnDodge" destination="wkB-u8-6LY" id="bxf-EQ-Ga8"/>
                         <outlet property="btnShield" destination="L9B-0c-XaX" id="t2c-Xb-7ZR"/>
                         <outlet property="btnSpell1" destination="EVp-BP-Zbm" id="RLk-zc-dFJ"/>
                         <outlet property="btnSpell2" destination="UDX-O0-FUA" id="bGK-yc-abe"/>
                         <outlet property="btnUltimate" destination="5zn-Oc-mK8" id="kP3-7N-OWt"/>
-                        <outlet property="imgMe" destination="VDg-MC-wlQ" id="uui-pq-Jcs"/>
-                        <outlet property="imgOpponent" destination="qvI-bb-Qca" id="Me6-pu-vZU"/>
                         <outlet property="lbl_hisEnergy" destination="ZbL-Ih-94R" id="0yZ-8y-2bC"/>
                         <outlet property="lbl_hisLife" destination="M3J-um-TtZ" id="UzU-YU-VRT"/>
                         <outlet property="lbl_myEnergy" destination="23B-bY-Tkh" id="vaN-0c-zew"/>
                         <outlet property="lbl_myLife" destination="JeN-FO-WB8" id="1qN-UU-NYu"/>
-                        <outlet property="meEnergy" destination="HrS-BS-8qg" id="JjA-mq-qYh"/>
-                        <outlet property="meLife" destination="cob-1Q-6al" id="Ns7-AV-zA0"/>
+                        <outlet property="mYEnergy" destination="HrS-BS-8qg" id="gOs-6G-69K"/>
+                        <outlet property="myImageView" destination="VDg-MC-wlQ" id="tH3-Iu-4VJ"/>
+                        <outlet property="myLife" destination="cob-1Q-6al" id="4MR-BP-dO9"/>
+                        <outlet property="myName" destination="cvb-O5-2Tp" id="u88-AO-WHu"/>
                         <outlet property="opponentEnergy" destination="a6Z-1I-5eU" id="bbj-hP-jqg"/>
+                        <outlet property="opponentImageView" destination="qvI-bb-Qca" id="itZ-5R-9XR"/>
                         <outlet property="opponentLife" destination="M3g-nc-erl" id="Cnb-rt-aTm"/>
+                        <outlet property="opponentName" destination="iQZ-aH-IBV" id="B0M-kA-OK3"/>
                         <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="oM4-i9-W4f"/>
                     </connections>
                 </viewController>
@@ -1050,8 +1049,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Rjb-Da-inw"/>
-        <segue reference="oM4-i9-W4f"/>
-        <segue reference="FsR-Dq-Cwg"/>
+        <segue reference="qWt-cL-Pgc"/>
+        <segue reference="Cjy-ng-Xgh"/>
         <segue reference="S6g-KB-Q3n"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,8 +22,8 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     var connected = false
     
     // DECLARACIO VARIABLES
-    var latitud = 37.33233141
-    var longitud = -122.0312186
+    var latitude = 37.33233141
+    var longitude = -122.0312186
     
     // METODES PER LOGALITZACIO
     func findMyLocation() {
@@ -51,7 +51,6 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         })
     }
     
-    
     @IBAction func fieldSelected(sender: UITextField) {
         
         switch sender.tag {
@@ -71,14 +70,17 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
     func displayLocationInfo(placemark: CLPlacemark?) {
-        var latitud:CLLocationDegrees = locationManager.location.coordinate.latitude
-        var longitud:CLLocationDegrees = locationManager.location.coordinate.longitude
-        println(latitud)
-        println(longitud)
-        self.longitud = longitud
-        self.latitud = latitud
+        
+        var latitude:CLLocationDegrees = locationManager.location.coordinate.latitude
+        var longitude:CLLocationDegrees = locationManager.location.coordinate.longitude
+        
+        println(latitude)
+        println(longitude)
+        
+        self.longitude = longitude
+        self.latitude = latitude
+        
         if let containsPlacemark = placemark {
             //stop updating location to save battery life
             
@@ -131,7 +133,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(animated: Bool) {
         
 //        application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: false)
-        if (application.comprovarConexion()){
+        if (application.checkConnection()){
             application.myController.connect()
             findMyLocation()
             connected = true
@@ -178,7 +180,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                 
                 if (readyForSend) {
                     // Sending user data to the server
-                    application.myController.sendMessage(txtUserOrMail.text + SEPARATOR + txtPassword.text + SEPARATOR + latitud.description + SEPARATOR + longitud.description)
+                    application.myController.sendMessage(txtUserOrMail.text + SEPARATOR + txtPassword.text + SEPARATOR + latitude.description + SEPARATOR + longitude.description)
                     
                     // Catching response
                     var serverResponse = application.myController.readMessage()
@@ -200,7 +202,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }else{
-            if (application.comprovarConexion()){
+            if (application.checkConnection()){
                 application.myController.connect()
                 findMyLocation()
                 connected = true
@@ -211,7 +213,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func registerTapped(sender: UIButton) {
-        if(connected && application.comprovarConexion()){
+        if(connected && application.checkConnection()){
             application.myController.sendMessage(REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER + SEPARATOR + REGISTER )
             var serverResponse = application.myController.readMessage()
             var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
@@ -230,7 +232,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                 application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
             }
         }else{
-            if (application.comprovarConexion()){
+            if (application.checkConnection()){
                 application.myController.connect()
                 findMyLocation()
                 connected = true
@@ -240,7 +242,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
+    //
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
