@@ -41,7 +41,7 @@ class VCSearchBattle: UIViewController {
                     var areReady = application.myController.readMessage()
                     
                     if (areReady == SUCCES){
-                    
+                        
                         waitting = false
                         
                         // Trying to fix the lag of loading UI

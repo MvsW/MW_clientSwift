@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Augusta.ttf">
@@ -308,9 +308,6 @@
                                             <color key="titleColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="createTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="z3l-dj-X3F"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BFS-qe-gzM">
                                         <rect key="frame" x="32" y="322" width="28" height="21"/>
@@ -399,7 +396,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="createProva:" destination="0J5-T5-yBG" eventType="touchUpInside" id="c9y-tx-d6F"/>
+                                            <action selector="btnCreatePlayerTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="6KC-cL-fvo"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RbE-gF-O0R">
@@ -806,24 +803,24 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="MyName" destination="cvb-O5-2Tp" id="xqD-dd-176"/>
-                        <outlet property="OpponentName" destination="iQZ-aH-IBV" id="ie1-uO-TAg"/>
                         <outlet property="btnBasicAtt" destination="eRN-Hi-ZW6" id="0D1-4t-A6w"/>
                         <outlet property="btnDodge" destination="wkB-u8-6LY" id="bxf-EQ-Ga8"/>
                         <outlet property="btnShield" destination="L9B-0c-XaX" id="t2c-Xb-7ZR"/>
                         <outlet property="btnSpell1" destination="EVp-BP-Zbm" id="RLk-zc-dFJ"/>
                         <outlet property="btnSpell2" destination="UDX-O0-FUA" id="bGK-yc-abe"/>
                         <outlet property="btnUltimate" destination="5zn-Oc-mK8" id="kP3-7N-OWt"/>
-                        <outlet property="imgMe" destination="VDg-MC-wlQ" id="uui-pq-Jcs"/>
-                        <outlet property="imgOpponent" destination="qvI-bb-Qca" id="Me6-pu-vZU"/>
                         <outlet property="lbl_hisEnergy" destination="ZbL-Ih-94R" id="0yZ-8y-2bC"/>
                         <outlet property="lbl_hisLife" destination="M3J-um-TtZ" id="UzU-YU-VRT"/>
                         <outlet property="lbl_myEnergy" destination="23B-bY-Tkh" id="vaN-0c-zew"/>
                         <outlet property="lbl_myLife" destination="JeN-FO-WB8" id="1qN-UU-NYu"/>
-                        <outlet property="meEnergy" destination="HrS-BS-8qg" id="JjA-mq-qYh"/>
-                        <outlet property="meLife" destination="cob-1Q-6al" id="Ns7-AV-zA0"/>
+                        <outlet property="mYEnergy" destination="HrS-BS-8qg" id="gOs-6G-69K"/>
+                        <outlet property="myImageView" destination="VDg-MC-wlQ" id="tH3-Iu-4VJ"/>
+                        <outlet property="myLife" destination="cob-1Q-6al" id="4MR-BP-dO9"/>
+                        <outlet property="myName" destination="cvb-O5-2Tp" id="u88-AO-WHu"/>
                         <outlet property="opponentEnergy" destination="a6Z-1I-5eU" id="bbj-hP-jqg"/>
+                        <outlet property="opponentImageView" destination="qvI-bb-Qca" id="itZ-5R-9XR"/>
                         <outlet property="opponentLife" destination="M3g-nc-erl" id="Cnb-rt-aTm"/>
+                        <outlet property="opponentName" destination="iQZ-aH-IBV" id="B0M-kA-OK3"/>
                         <segue destination="YwS-vd-cY9" kind="modal" identifier="goto_menu" id="oM4-i9-W4f"/>
                     </connections>
                 </viewController>
@@ -1051,9 +1048,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oM4-i9-W4f"/>
-        <segue reference="FsR-Dq-Cwg"/>
-        <segue reference="pTQ-2B-IbA"/>
+        <segue reference="Rjb-Da-inw"/>
+        <segue reference="qWt-cL-Pgc"/>
+        <segue reference="Cjy-ng-Xgh"/>
         <segue reference="S6g-KB-Q3n"/>
     </inferredMetricsTieBreakers>
 </document>
