@@ -41,6 +41,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsPoints: Double = Double(CUSTOM_CALC)
     var pointsStepperStrength: Double = 0
     var pointsStepperIntelligence: Double = 0
+    var assignedStrPoints = 0;
+    var assignedIntPoints = 0;
     var stepperImage: [UIImage]!
     
     @IBOutlet weak var stepperStr: UIStepper!
@@ -256,11 +258,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         println("The description for the steppers is: \(stpr_strength.frame.size)")
         
-        // Loading all the steppers images
-        loadAllSteppersImages()
-        
-        // Presenting the steppers properly
-        setTheProperlySteppersImagesForClassType(typeCharacter)
+//        // Loading all the steppers images
+//        loadAllSteppersImages()
+//        
+//        // Presenting the steppers properly
+//        setTheProperlySteppersImagesForClassType(typeCharacter)
         
         
         // Tell the scroll view the size of the contents
