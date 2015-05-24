@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413E87281B1238F100D299D3 /* mage.png in Resources */ = {isa = PBXBuildFile; fileRef = 413E87271B1238F100D299D3 /* mage.png */; };
+		413E872A1B1238FC00D299D3 /* warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 413E87291B1238FC00D299D3 /* warlock.png */; };
 		41B1D2471A6991A600962647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1D2461A6991A600962647 /* AppDelegate.swift */; };
 		41B1D24E1A6991A600962647 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D24D1A6991A600962647 /* Images.xcassets */; };
 		41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B1D24F1A6991A600962647 /* LaunchScreen.xib */; };
@@ -20,7 +22,6 @@
 		41C82B0B1A91054B00235D61 /* VCSearchBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B051A91054B00235D61 /* VCSearchBattle.swift */; };
 		41C82B121A91056600235D61 /* anterior.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0C1A91056600235D61 /* anterior.png */; };
 		41C82B131A91056600235D61 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0D1A91056600235D61 /* fondo.png */; };
-		41C82B141A91056600235D61 /* mage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0E1A91056600235D61 /* mage.png */; };
 		41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B101A91056600235D61 /* rayitaSeparadora.png */; };
 		41C82B171A91056600235D61 /* siguiente.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B111A91056600235D61 /* siguiente.png */; };
 		41EDC0871A8BD97C00394712 /* CApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC07F1A8BD97C00394712 /* CApp.swift */; };
@@ -79,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		413E87271B1238F100D299D3 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage.png; path = MW_clientSwift/Imatges/mage.png; sourceTree = SOURCE_ROOT; };
+		413E87291B1238FC00D299D3 /* warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock.png; path = MW_clientSwift/Imatges/warlock.png; sourceTree = SOURCE_ROOT; };
 		41B1D2411A6991A600962647 /* MW_clientSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MW_clientSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B1D2451A6991A600962647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41B1D2461A6991A600962647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 		41C82B051A91054B00235D61 /* VCSearchBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCSearchBattle.swift; path = MW_clientSwift/Controllers/VCSearchBattle.swift; sourceTree = SOURCE_ROOT; };
 		41C82B0C1A91056600235D61 /* anterior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anterior.png; path = MW_clientSwift/Imatges/anterior.png; sourceTree = SOURCE_ROOT; };
 		41C82B0D1A91056600235D61 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fondo.png; path = MW_clientSwift/Imatges/fondo.png; sourceTree = SOURCE_ROOT; };
-		41C82B0E1A91056600235D61 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage.png; path = MW_clientSwift/Imatges/mage.png; sourceTree = SOURCE_ROOT; };
 		41C82B101A91056600235D61 /* rayitaSeparadora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rayitaSeparadora.png; path = MW_clientSwift/Imatges/rayitaSeparadora.png; sourceTree = SOURCE_ROOT; };
 		41C82B111A91056600235D61 /* siguiente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = siguiente.png; path = MW_clientSwift/Imatges/siguiente.png; sourceTree = SOURCE_ROOT; };
 		41D426D11A6F18B9000A758C /* BlackBytePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BlackBytePlayGround.playground; sourceTree = "<group>"; };
@@ -256,14 +258,12 @@
 				54315D591AFBBED900BDDCE2 /* tittle_login.png */,
 				C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */,
 				C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */,
-				54B912F91AEABAFE005DD10A /* warlock.png */,
 				C041613B1AD583ED0004BC46 /* focus.png */,
 				C04161391AD580780004BC46 /* no_focus.png */,
 				C0E65DDC1AD56EA400C689BF /* logo.png */,
 				C0E65DDA1AD5630800C689BF /* login_background.png */,
 				41C82B0C1A91056600235D61 /* anterior.png */,
 				41C82B0D1A91056600235D61 /* fondo.png */,
-				41C82B0E1A91056600235D61 /* mage.png */,
 				41C82B101A91056600235D61 /* rayitaSeparadora.png */,
 				41C82B111A91056600235D61 /* siguiente.png */,
 			);
@@ -392,7 +392,6 @@
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
 				C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */,
-				41C82B141A91056600235D61 /* mage.png in Resources */,
 				C05D83321B0B220D002C4AA5 /* iconRegister.png in Resources */,
 				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
 				C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */,
@@ -404,7 +403,6 @@
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
 				C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */,
 				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
-				54B912FA1AEABAFE005DD10A /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
 				41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */,
@@ -423,7 +421,9 @@
 				546012B51B123DE0008E632A /* mage_increment_btn_focus.png in Resources */,
 				C05D832F1B0B220D002C4AA5 /* blockbutton.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
+				413E872A1B1238FC00D299D3 /* warlock.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,
+				413E87281B1238F100D299D3 /* mage.png in Resources */,
 				C05D83331B0B220D002C4AA5 /* iconLogin.png in Resources */,
 				C04161381AD576E70004BC46 /* Augusta.ttf in Resources */,
 				546012B31B123DE0008E632A /* warlock_increment_btn_focus.png in Resources */,
