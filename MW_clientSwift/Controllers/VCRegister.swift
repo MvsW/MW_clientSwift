@@ -36,6 +36,11 @@ class VCRegister: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func cancelTapped(sender: UIButton) {
+        application.myController.sendMessage(CANCEL)
+        self.performSegueWithIdentifier("goto_login", sender: self)
+    }
 
     @IBAction func registerTapped(sender: UIButton) {
         //Validar camps i enviar al servidor 

@@ -45,8 +45,7 @@ class VCBattle: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+     
         // Set the background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -61,8 +60,12 @@ class VCBattle: UIViewController {
             myName.text = self.dataArray[0]
             if(self.dataArray[1].toInt() == MAGE){
                 myImageView.image = UIImage(named: "mage.png")
+                btnBasicAtt.setBackgroundImage(UIImage(named: "basic2.png"), forState: UIControlState.Normal)
+
             }else{
                 myImageView.image = UIImage(named: "warlock.png")
+                btnBasicAtt.setBackgroundImage(UIImage(named: "basic1.png"), forState: UIControlState.Normal)
+
             }
             myOriginalLife = self.dataArray[2]
             myOriginalEnergy = self.dataArray[3]
@@ -126,33 +129,33 @@ class VCBattle: UIViewController {
             
             if(calcul2 < 0.8 && calcul2 > 0.4){
                 btnUltimate.enabled = false
-                btnUltimate.backgroundColor = UIColor.redColor()
+                btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png"), forState: UIControlState.Normal)
                 
                 btnSpell2.enabled = true
-                btnSpell2.backgroundColor = UIColor.greenColor()
+                btnSpell2.setBackgroundImage(UIImage(named: "special2.png"), forState: UIControlState.Normal)
                 
                 btnSpell1.enabled = true
-                btnSpell1.backgroundColor = UIColor.greenColor()
+                btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
             if(calcul2 < 0.4){
                 btnUltimate.enabled = false
-                btnUltimate.backgroundColor = UIColor.redColor()
+                btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
                 btnSpell2.enabled = false
-                btnSpell2.backgroundColor = UIColor.redColor()
+                btnSpell2.setBackgroundImage(UIImage(named: "nospecial2.png"), forState: UIControlState.Normal)
                 
                 btnSpell1.enabled = true
-                btnSpell1.backgroundColor = UIColor.greenColor()
+                btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
             if(calcul2 < 0.15){
                 btnUltimate.enabled = false
-                btnUltimate.backgroundColor = UIColor.redColor()
+                btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
                 btnSpell2.enabled = false
-                btnSpell2.backgroundColor = UIColor.redColor()
+                btnSpell2.setBackgroundImage(UIImage(named: "nospecial2.png"), forState: UIControlState.Normal)
                 
                 btnSpell1.enabled = false
-                btnSpell1.backgroundColor = UIColor.redColor()
+                btnSpell1.setBackgroundImage(UIImage(named: "nospecial1.png"), forState: UIControlState.Normal)
             }
             
             self.refreshInterfaceProgressBar(calcul1, forMyEnergy: calcul2, forOpponentLife: calcul3, forOpponentEnergy: calcul4)
