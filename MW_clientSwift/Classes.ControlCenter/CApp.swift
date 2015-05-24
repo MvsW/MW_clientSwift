@@ -198,7 +198,7 @@ public class CApp{
         view.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func settings(){
+    func settings() {
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
 

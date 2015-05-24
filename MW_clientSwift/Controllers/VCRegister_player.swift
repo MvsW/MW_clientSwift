@@ -41,6 +41,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsPoints: Double = Double(CUSTOM_CALC)
     var pointsStepperStrength: Double = 0
     var pointsStepperIntelligence: Double = 0
+    var stepperImage: [UIImage]!
     
     @IBOutlet weak var stepperStr: UIStepper!
     @IBOutlet weak var stepperInt: UIStepper!
@@ -55,6 +56,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     let mageClass = UIImage(named: "mage.png")
     let warlockClass = UIImage(named: "warlock.png")
     
+    let stepperImageName = ["mage_decrement_btn_focus", "mage_increment_btn_focus", "warlock_decrement_btn_focus", "warlock_increment_btn_focus"]
     
     // SPECIFIC VARIABLES FROM VCRegister.swift
     var userName = ""
@@ -237,6 +239,15 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         containerView = UIView(frame: CGRect(origin: CGPointMake(0.0, 0.0), size:containerSize))
         scrollView.addSubview(containerView)
         
+        println("The description for the steppers is: \(stpr_strength.frame.size)")
+        
+        // Loading all the steppers images
+        loadAllSteppersImages()
+        
+        // Presenting the steppers properly
+        setTheProperlySteppersImagesForClassType(typeCharacter)
+        
+        
         // Tell the scroll view the size of the contents
         scrollView.contentSize = containerSize;
         
@@ -337,6 +348,55 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         pointsEnergyRegeneration = freshData[2]
         lblCount_eRegen.text = pointsEnergyRegeneration.description
+    }
+    
+    func loadAllSteppersImages() {
+        
+        // Fill the stepperImages array with the images
+        for stepperName in stepperImageName {
+            
+            var newImageBtn = UIImage(named: stepperName)!
+            
+            println("New image: " + newImageBtn.description)
+            
+            stepperImage.append(newImageBtn)
+            
+        }
+    }
+    
+    func setTheProperlySteppersImagesForClassType(classType: Int) {
+        var classTypeName = "NO CLASS"
+        
+        if (classType == MAGE) {
+            
+            // MAGE
+            stpr_strength.setDecrementImage(stepperImage[0], forState: UIControlState.Normal)
+            stpr_strength.setIncrementImage(stepperImage[1], forState: UIControlState.Normal)
+            
+            stpr_intelligence.setDecrementImage(stepperImage[0], forState: UIControlState.Normal)
+            stpr_intelligence.setIncrementImage(stepperImage[1], forState: UIControlState.Normal)
+            
+            classTypeName = "MAGE"
+            
+        } else if (classType == WARLOCK) {
+            
+            // WARLOCK
+            stpr_strength.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
+            stpr_strength.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
+            
+            stpr_intelligence.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
+            stpr_intelligence.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
+            
+            classTypeName = "WARLOCK"
+            
+        }
+        
+        // Setting the size of the steppers
+        stpr_strength.sizeThatFits(CGSize(width: 50.0, height: 35.0))
+        stpr_intelligence.sizeThatFits(CGSize(width: 50.0, height: 35.0))
+
+        println("VCRegister_Player > setTheProperlySteppersImagesForClassType: \(classTypeName) selected")
+        
     }
 }
 
