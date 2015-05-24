@@ -308,6 +308,9 @@
                                             <color key="titleColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnCreatePlayerTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="T17-7h-zsN"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BFS-qe-gzM">
                                         <rect key="frame" x="32" y="322" width="28" height="21"/>
@@ -347,7 +350,7 @@
                                             <action selector="btnCharacterImage:" destination="0J5-T5-yBG" eventType="touchUpInside" id="Ya1-gp-b7F"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9P-7L-wkY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9P-7L-wkY">
                                         <rect key="frame" x="32" y="276" width="253" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Augusta-Regular" family="Augusta" pointSize="25"/>
@@ -396,7 +399,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnCreatePlayerTapped:" destination="0J5-T5-yBG" eventType="touchUpInside" id="6KC-cL-fvo"/>
+                                            <action selector="printAllDataReadyForSend:" destination="0J5-T5-yBG" eventType="touchUpInside" id="kZX-xQ-qU1"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RbE-gF-O0R">
@@ -1030,7 +1033,7 @@
         <image name="bluebar2.png" width="2184" height="107"/>
         <image name="dodgebutton.png" width="319" height="320"/>
         <image name="logo.png" width="1133" height="1520"/>
-        <image name="mage.png" width="500" height="500"/>
+        <image name="mage.png" width="504" height="751"/>
         <image name="menu_button_no_focus.jpg" width="500" height="99"/>
         <image name="no_focus.png" width="693" height="114"/>
         <image name="redbar1.png" width="2191" height="106"/>
@@ -1040,7 +1043,7 @@
         <image name="special2.png" width="321" height="320"/>
         <image name="specialbutton.png" width="320" height="320"/>
         <image name="tittle_login.png" width="656" height="127"/>
-        <image name="warlock.png" width="500" height="650"/>
+        <image name="warlock.png" width="504" height="751"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1048,9 +1051,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rjb-Da-inw"/>
+        <segue reference="pTQ-2B-IbA"/>
+        <segue reference="S6g-KB-Q3n"/>
         <segue reference="qWt-cL-Pgc"/>
         <segue reference="Cjy-ng-Xgh"/>
-        <segue reference="S6g-KB-Q3n"/>
     </inferredMetricsTieBreakers>
 </document>
