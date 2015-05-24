@@ -59,9 +59,9 @@ public class CApp{
             if (character == "@" || character == " " ){
                 return false
             }
-            if (character.hashValue >= maxValue){
-                return false
-            }
+        }
+        if (count(text) >= maxValue){
+            return false
         }
         
         // Converting all to lower case for evading errors

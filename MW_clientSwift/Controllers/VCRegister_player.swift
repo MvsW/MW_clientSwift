@@ -41,6 +41,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsPoints: Double = Double(CUSTOM_CALC)
     var pointsStepperStrength: Double = 0
     var pointsStepperIntelligence: Double = 0
+    var assignedStrPoints = 0;
+    var assignedIntPoints = 0;
     
     @IBOutlet weak var stepperStr: UIStepper!
     @IBOutlet weak var stepperInt: UIStepper!
@@ -60,24 +62,28 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var userName = ""
     var userMail = ""
     var userPassword = ""
-    var typeCharacter = WARLOCK
+    var typeCharacter = MAGE
     
     var lastValueSendOfStr = 0
     var lastValueSendOfIntel = 0
     
     // BUTTON METHODS
     func resetStatsSteppers(){
-        
+        assignedIntPoints = 0
+        assignedStrPoints = 0
         pointsPoints = Double(CUSTOM_CALC)
         pointsStepperStrength = 0
         pointsStepperIntelligence = 0
         lblCount_unasPoints.text = Int(pointsPoints).description
         stepperStr.value = 0
         stepperInt.value = 0
+        stpr_strength.value = 0
+        stpr_intelligence.value = 0
         stepperStr.maximumValue = 9999
         stepperInt.maximumValue = 9999
         stepperInt.minimumValue = -9999
         stepperStr.minimumValue = -9999
+        
     }
     
     @IBAction func btnCharacterImage(sender: UIButton) {
@@ -98,9 +104,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         // Check if the fields are correctly filled
         let characterValidation: Bool = application.validatePlayerName(tfCharacterName.text)
-        
         if (characterValidation) {
-            
             // Check points has been assigned
             if (allPointsHasBeenAssignedProperly()) {
                 println(tfCharacterName.text + "," + typeCharacter.description + "," + lblCount_life.text! + "," + lblCount_energy.text! + "," + lblCount_eRegen.text! + "," + lblCount_strength.text! + "," + lblCount_intelligence.text!)
@@ -127,7 +131,10 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     @IBAction func stpr_strength(sender: UIStepper) {
 //        println(Int(pointsPoints)-1)
-        if (pointsStepperStrength <= sender.value && Int(pointsPoints)-1 >= 0){
+        println(" \(pointsStepperStrength) \(assignedStrPoints) \(sender.value)")
+        if (pointsStepperStrength <= sender.value  && Int(pointsPoints) > 0){
+            println("sumar? \(assignedStrPoints) \(sender.value)")
+            assignedStrPoints++
             
             pointsPoints = pointsPoints - 1
             
@@ -138,10 +145,13 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             lblCount_unasPoints.text = Int(pointsPoints).description
             
             lastValueSendOfStr = Int(sender.value)
+            refreshAllLabelStats()
         
         } else {
             
-            if (pointsStepperStrength > sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
+            if (pointsStepperStrength > sender.value && Int(pointsPoints) < Int(CUSTOM_CALC) && assignedStrPoints > 0){
+                println("restar ? \(assignedStrPoints) \(sender.value)")
+                assignedStrPoints--
                 
                 pointsPoints = pointsPoints + 1
                 
@@ -152,22 +162,25 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 lblCount_unasPoints.text = Int(pointsPoints).description
                 
                 lastValueSendOfStr = Int(sender.value)
+                refreshAllLabelStats()
                 
             } else {
-                
-                sender.value = Double(lastValueSendOfStr)
+                sender.value = 0
+               // sender.value = Double(lastValueSendOfStr)
             
             }
         }
         
         // Refreshing the strength and intelligence labels after modifing the current label
-        refreshAllLabelStats()
+        
     }
     
     @IBAction func stpr_intelligence(sender: UIStepper) {
 //        println(Int(pointsPoints)-1)
         
-        if (pointsStepperIntelligence < sender.value && Int(pointsPoints)-1 >= 0) {
+        if (pointsStepperIntelligence < sender.value && Int(pointsPoints) > 0) {
+            
+            assignedIntPoints++
             
             pointsPoints = pointsPoints - 1
             
@@ -178,11 +191,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             lblCount_unasPoints.text = Int(pointsPoints).description
             
             lastValueSendOfIntel = Int(sender.value)
+            refreshAllLabelStats()
         
             
         } else {
             
-            if (pointsStepperIntelligence >= sender.value && Int(pointsPoints)-1 < Int(CUSTOM_CALC)){
+            if (pointsStepperIntelligence > sender.value && Int(pointsPoints) < Int(CUSTOM_CALC) && assignedIntPoints > 0){
+                
+                assignedIntPoints--
                 
                 pointsPoints = pointsPoints + 1
                 
@@ -193,16 +209,17 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                 lblCount_unasPoints.text = Int(pointsPoints).description
                 
                 lastValueSendOfIntel = Int(sender.value)
+                refreshAllLabelStats()
             
                 
             } else {
-                
-                sender.value = Double(lastValueSendOfIntel)
+                sender.value = 0
+                //sender.value = Double(lastValueSendOfIntel)
             }
         }
         
         // Refreshing the strength and intelligence labels after modifing the current label
-        refreshAllLabelStats()
+        
     }
     
     @IBAction func printAllDataReadyForSend(sender: UIButton) {
