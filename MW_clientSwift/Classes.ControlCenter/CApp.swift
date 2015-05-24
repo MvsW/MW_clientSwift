@@ -209,16 +209,15 @@ public class CApp{
     }
     
     func getDefaultStats(classType:Int)->[Int]{
-     
-        var life: Double
-        var energy: Double
-        var eReg: Double
-        var str: Double = BASE_CALC/2
-        var intll: Double = BASE_CALC/2
+        var life: Int
+        var energy: Int
+        var eReg: Int
+        var str: Int = BASE_CALC/2
+        var intll: Int = BASE_CALC/2
     
-        for(var x: Double = 0; x < RAND_CALC; x++){
+        for(var x: Int = 0; x < Int(RAND_CALC); x++){
     
-          var val: Int = getIntValueBetween(1,max: 15)
+          var val: Int = getIntValueBetween(0,max: 15)
             
             switch (classType) {
             case WARLOCK:
@@ -240,9 +239,9 @@ public class CApp{
             }
         }
     
-        life = 100.0 + str * LIFE_INTEL_PERCENT
-        energy = 100.0 + intll * LIFE_INTEL_PERCENT
-        eReg = Double(energy) * 0.1
+        life = 100 + Int(Double(str) * LIFE_INTEL_PERCENT)
+        energy = 100 + Int(Double(intll) * LIFE_INTEL_PERCENT)
+        eReg = Int(Double(energy) * 0.1)
         var arrayInt = [Int(life),Int(energy),Int(eReg),Int(str),Int(intll)]
         
         return arrayInt

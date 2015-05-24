@@ -131,7 +131,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     @IBAction func stpr_strength(sender: UIStepper) {
 //        println(Int(pointsPoints)-1)
-        println(" \(pointsStepperStrength) \(assignedStrPoints) \(sender.value)")
+        println(" \(pointsStepperStrength) \(pointsPoints)")
         if (pointsStepperStrength <= sender.value  && Int(pointsPoints) > 0){
             println("sumar? \(assignedStrPoints) \(sender.value)")
             assignedStrPoints++
@@ -324,19 +324,21 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     }
     
     func randomStats(){
-        pointsLife = application.getDefaultStats(typeCharacter)[0]
+        var myStats = application.getDefaultStats(typeCharacter)
+        
+        pointsLife = myStats[0]
         lblCount_life.text = pointsLife.description
         
-        pointsEnergy = application.getDefaultStats(typeCharacter)[1]
+        pointsEnergy = myStats[1]
         lblCount_energy.text = pointsEnergy.description
         
-        pointsEnergyRegeneration = application.getDefaultStats(typeCharacter)[2]
+        pointsEnergyRegeneration = myStats[2]
         lblCount_eRegen.text = pointsEnergyRegeneration.description
         
-        pointsStrength = application.getDefaultStats(typeCharacter)[3]
+        pointsStrength = myStats[3]
         lblCount_strength.text = pointsStrength.description
         
-        pointsInteligence = application.getDefaultStats(typeCharacter)[4]
+        pointsInteligence = myStats[4]
         lblCount_intelligence.text = pointsInteligence.description
     }
     
