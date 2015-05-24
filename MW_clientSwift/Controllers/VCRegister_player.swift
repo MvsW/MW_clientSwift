@@ -87,6 +87,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         stepperStr.minimumValue = -9999
         
     }
+    @IBAction func cancelTapped(sender: UIButton) {
+        application.myController.sendMessage(CANCEL)
+        self.performSegueWithIdentifier("goto_login", sender: self)
+
+    }
     
     @IBAction func btnCharacterImage(sender: UIButton) {
         randomStats()

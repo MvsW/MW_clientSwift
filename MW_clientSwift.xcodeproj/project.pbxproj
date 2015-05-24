@@ -32,7 +32,6 @@
 		546012B41B123DE0008E632A /* mage_decrement_btn_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 546012B01B123DE0008E632A /* mage_decrement_btn_focus.png */; };
 		546012B51B123DE0008E632A /* mage_increment_btn_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 546012B11B123DE0008E632A /* mage_increment_btn_focus.png */; };
 		546012B61B123DE0008E632A /* warlock_decrement_btn_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 546012B21B123DE0008E632A /* warlock_decrement_btn_focus.png */; };
-		54B912FA1AEABAFE005DD10A /* warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 54B912F91AEABAFE005DD10A /* warlock.png */; };
 		54B9EF761AE6B3460083E508 /* CPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9EF751AE6B3460083E508 /* CPlayer.swift */; };
 		54B9EF781AE6B6BF0083E508 /* CSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9EF771AE6B6BF0083E508 /* CSpell.swift */; };
 		C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C04161351AD576E70004BC46 /* Augusta-Shadow.ttf */; };
@@ -58,6 +57,15 @@
 		C05D83341B0B220D002C4AA5 /* pergamino.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83231B0B220D002C4AA5 /* pergamino.png */; };
 		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
 		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
+		C084204D1B125A0600D2A878 /* nobasic2.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420441B125A0600D2A878 /* nobasic2.png */; };
+		C084204E1B125A0600D2A878 /* nobasic1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420451B125A0600D2A878 /* nobasic1.png */; };
+		C084204F1B125A0600D2A878 /* noblockbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420461B125A0600D2A878 /* noblockbutton.png */; };
+		C08420501B125A0600D2A878 /* nododgebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420471B125A0600D2A878 /* nododgebutton.png */; };
+		C08420511B125A0600D2A878 /* nospecial1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420481B125A0600D2A878 /* nospecial1.png */; };
+		C08420521B125A0600D2A878 /* nospecial2.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420491B125A0600D2A878 /* nospecial2.png */; };
+		C08420531B125A0600D2A878 /* nospecialbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C084204A1B125A0600D2A878 /* nospecialbutton.png */; };
+		C08420541B125A0600D2A878 /* mage.png in Resources */ = {isa = PBXBuildFile; fileRef = C084204B1B125A0600D2A878 /* mage.png */; };
+		C08420551B125A0600D2A878 /* warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C084204C1B125A0600D2A878 /* warlock.png */; };
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
 		C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C7D1421B0CE90900AF5470 /* separatorvs.png */; };
 		C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE11F61B062CBF00C2960A /* Main.storyboard */; };
@@ -110,7 +118,6 @@
 		546012B01B123DE0008E632A /* mage_decrement_btn_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage_decrement_btn_focus.png; path = MW_clientSwift/Imatges/mage_decrement_btn_focus.png; sourceTree = SOURCE_ROOT; };
 		546012B11B123DE0008E632A /* mage_increment_btn_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage_increment_btn_focus.png; path = MW_clientSwift/Imatges/mage_increment_btn_focus.png; sourceTree = SOURCE_ROOT; };
 		546012B21B123DE0008E632A /* warlock_decrement_btn_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock_decrement_btn_focus.png; path = MW_clientSwift/Imatges/warlock_decrement_btn_focus.png; sourceTree = SOURCE_ROOT; };
-		54B912F91AEABAFE005DD10A /* warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock.png; path = MW_clientSwift/Imatges/warlock.png; sourceTree = SOURCE_ROOT; };
 		54B9EF751AE6B3460083E508 /* CPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPlayer.swift; sourceTree = "<group>"; };
 		54B9EF771AE6B6BF0083E508 /* CSpell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSpell.swift; sourceTree = "<group>"; };
 		C04161351AD576E70004BC46 /* Augusta-Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Augusta-Shadow.ttf"; sourceTree = "<group>"; };
@@ -136,6 +143,15 @@
 		C05D83231B0B220D002C4AA5 /* pergamino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pergamino.png; path = MW_clientSwift/Imatges/pergamino.png; sourceTree = SOURCE_ROOT; };
 		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C08420441B125A0600D2A878 /* nobasic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nobasic2.png; path = MW_clientSwift/Imatges/nobasic2.png; sourceTree = SOURCE_ROOT; };
+		C08420451B125A0600D2A878 /* nobasic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nobasic1.png; path = MW_clientSwift/Imatges/nobasic1.png; sourceTree = SOURCE_ROOT; };
+		C08420461B125A0600D2A878 /* noblockbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noblockbutton.png; path = MW_clientSwift/Imatges/noblockbutton.png; sourceTree = SOURCE_ROOT; };
+		C08420471B125A0600D2A878 /* nododgebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nododgebutton.png; path = MW_clientSwift/Imatges/nododgebutton.png; sourceTree = SOURCE_ROOT; };
+		C08420481B125A0600D2A878 /* nospecial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nospecial1.png; path = MW_clientSwift/Imatges/nospecial1.png; sourceTree = SOURCE_ROOT; };
+		C08420491B125A0600D2A878 /* nospecial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nospecial2.png; path = MW_clientSwift/Imatges/nospecial2.png; sourceTree = SOURCE_ROOT; };
+		C084204A1B125A0600D2A878 /* nospecialbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nospecialbutton.png; path = MW_clientSwift/Imatges/nospecialbutton.png; sourceTree = SOURCE_ROOT; };
+		C084204B1B125A0600D2A878 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage.png; path = MW_clientSwift/Imatges/mage.png; sourceTree = SOURCE_ROOT; };
+		C084204C1B125A0600D2A878 /* warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock.png; path = MW_clientSwift/Imatges/warlock.png; sourceTree = SOURCE_ROOT; };
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C0C7D1421B0CE90900AF5470 /* separatorvs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = separatorvs.png; path = MW_clientSwift/Imatges/separatorvs.png; sourceTree = SOURCE_ROOT; };
 		C0CE11F71B062CBF00C2960A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -230,6 +246,15 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C08420441B125A0600D2A878 /* nobasic2.png */,
+				C08420451B125A0600D2A878 /* nobasic1.png */,
+				C08420461B125A0600D2A878 /* noblockbutton.png */,
+				C08420471B125A0600D2A878 /* nododgebutton.png */,
+				C08420481B125A0600D2A878 /* nospecial1.png */,
+				C08420491B125A0600D2A878 /* nospecial2.png */,
+				C084204A1B125A0600D2A878 /* nospecialbutton.png */,
+				C084204B1B125A0600D2A878 /* mage.png */,
+				C084204C1B125A0600D2A878 /* warlock.png */,
 				546012AF1B123DE0008E632A /* warlock_increment_btn_focus.png */,
 				546012B01B123DE0008E632A /* mage_decrement_btn_focus.png */,
 				546012B11B123DE0008E632A /* mage_increment_btn_focus.png */,
@@ -388,9 +413,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C084204F1B125A0600D2A878 /* noblockbutton.png in Resources */,
 				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
+				C08420531B125A0600D2A878 /* nospecialbutton.png in Resources */,
 				C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */,
 				C05D83321B0B220D002C4AA5 /* iconRegister.png in Resources */,
 				C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */,
@@ -403,6 +430,7 @@
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
 				C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */,
 				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
+				C08420551B125A0600D2A878 /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
 				41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */,
@@ -413,15 +441,20 @@
 				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
 				54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */,
 				C04161371AD576E70004BC46 /* Augusta-Shadow.ttf in Resources */,
+				C084204E1B125A0600D2A878 /* nobasic1.png in Resources */,
 				C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */,
 				41B1D24E1A6991A600962647 /* Images.xcassets in Resources */,
 				C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */,
+				C08420521B125A0600D2A878 /* nospecial2.png in Resources */,
+				C084204D1B125A0600D2A878 /* nobasic2.png in Resources */,
 				546012B41B123DE0008E632A /* mage_decrement_btn_focus.png in Resources */,
+				C08420511B125A0600D2A878 /* nospecial1.png in Resources */,
 				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
 				546012B51B123DE0008E632A /* mage_increment_btn_focus.png in Resources */,
 				C05D832F1B0B220D002C4AA5 /* blockbutton.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
 				413E872A1B1238FC00D299D3 /* warlock.png in Resources */,
+				C08420501B125A0600D2A878 /* nododgebutton.png in Resources */,
 				41C82B171A91056600235D61 /* siguiente.png in Resources */,
 				413E87281B1238F100D299D3 /* mage.png in Resources */,
 				C05D83331B0B220D002C4AA5 /* iconLogin.png in Resources */,
@@ -431,6 +464,7 @@
 				C05D83261B0B220D002C4AA5 /* redbar1.png in Resources */,
 				C05D83301B0B220D002C4AA5 /* basic2.png in Resources */,
 				C05D832E1B0B220D002C4AA5 /* dodgebutton.png in Resources */,
+				C08420541B125A0600D2A878 /* mage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
