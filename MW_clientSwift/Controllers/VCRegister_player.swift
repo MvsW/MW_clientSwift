@@ -43,7 +43,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsStepperIntelligence: Double = 0
     var assignedStrPoints = 0;
     var assignedIntPoints = 0;
-    var stepperImage: [UIImage]!
+    var stepperImage: [UIImage] = []
     
     @IBOutlet weak var stepperStr: UIStepper!
     @IBOutlet weak var stepperInt: UIStepper!
@@ -58,9 +58,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     let mageClass = UIImage(named: "mage.png")
     let warlockClass = UIImage(named: "warlock.png")
     
-    let stepperImageName = ["mage_decrement_btn_focus", "mage_increment_btn_focus", "warlock_decrement_btn_focus", "warlock_increment_btn_focus"]
+    let stepperImageName = ["mage_decrement_btn_focus", "mage_increment_btn_focus", "warlock_decrement_btn_focus", "warlock_increment_btn_focus", "stepper_divider"]
     
-    // SPECIFIC VARIABLES FROM VCRegister.swift
+    // SPECIFIC VARIABLES FROM VCRegister.swift (user)
     var userName = ""
     var userMail = ""
     var userPassword = ""
@@ -70,23 +70,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var lastValueSendOfIntel = 0
     
     // BUTTON METHODS
-    func resetStatsSteppers(){
-        assignedIntPoints = 0
-        assignedStrPoints = 0
-        pointsPoints = Double(CUSTOM_CALC)
-        pointsStepperStrength = 0
-        pointsStepperIntelligence = 0
-        lblCount_unasPoints.text = Int(pointsPoints).description
-        stepperStr.value = 0
-        stepperInt.value = 0
-        stpr_strength.value = 0
-        stpr_intelligence.value = 0
-        stepperStr.maximumValue = 9999
-        stepperInt.maximumValue = 9999
-        stepperInt.minimumValue = -9999
-        stepperStr.minimumValue = -9999
-        
-    }
     @IBAction func cancelTapped(sender: UIButton) {
         application.myController.sendMessage(CANCEL)
         self.performSegueWithIdentifier("goto_login", sender: self)
@@ -246,7 +229,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         lblCount_intelligence.enabled = false
         lblCount_unasPoints.enabled = false
         
-        lblCount_unasPoints.text = CUSTOM_CALC.description
+        lblCount_unasPoints.text = Int(CUSTOM_CALC).description
         
         
         // Set background image
@@ -261,13 +244,13 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         containerView = UIView(frame: CGRect(origin: CGPointMake(0.0, 0.0), size:containerSize))
         scrollView.addSubview(containerView)
         
-        println("The description for the steppers is: \(stpr_strength.frame.size)")
+        println("The frame size of the steppers is: \(stpr_strength.frame.size)")
         
 //        // Loading all the steppers images
-//        loadAllSteppersImages()
-//        
+        loadAllSteppersImages()
+//
 //        // Presenting the steppers properly
-//        setTheProperlySteppersImagesForClassType(typeCharacter)
+        setTheProperlySteppersImagesForClassType(typeCharacter)
         
         
         // Tell the scroll view the size of the contents
@@ -356,6 +339,24 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         lblCount_intelligence.text = pointsInteligence.description
     }
     
+    func resetStatsSteppers(){
+        assignedIntPoints = 0
+        assignedStrPoints = 0
+        pointsPoints = Double(CUSTOM_CALC)
+        pointsStepperStrength = 0
+        pointsStepperIntelligence = 0
+        lblCount_unasPoints.text = Int(pointsPoints).description
+        stepperStr.value = 0
+        stepperInt.value = 0
+        stpr_strength.value = 0
+        stpr_intelligence.value = 0
+        stepperStr.maximumValue = 9999
+        stepperInt.maximumValue = 9999
+        stepperInt.minimumValue = -9999
+        stepperStr.minimumValue = -9999
+        
+    }
+    
     func refreshAllLabelStats() {
         // Using the overload method getDefaultsStats passing 2 params.
         var freshData:[Int] = application.getDefaultsStats(lblCount_strength.text!.toInt()!, intelligence_points: lblCount_intelligence.text!.toInt()!)
@@ -375,11 +376,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     func loadAllSteppersImages() {
         
         // Fill the stepperImages array with the images
+        var count = 0
+        
         for stepperName in stepperImageName {
             
-            var newImageBtn = UIImage(named: stepperName)!
+            var newImageBtn: UIImage = UIImage(named: stepperName)!
             
-            println("New image: " + newImageBtn.description)
+            // Print all information of the new image for notice if everything has gone alright
+            println("New image: \(newImageBtn.description) count: \(count++)")
             
             stepperImage.append(newImageBtn)
             
@@ -392,8 +396,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         if (classType == MAGE) {
             
             // MAGE
-            stpr_strength.setDecrementImage(stepperImage[0], forState: UIControlState.Normal)
-            stpr_strength.setIncrementImage(stepperImage[1], forState: UIControlState.Normal)
+            stpr_strength.setDecrementImage(stepperImage[0], forState: UIControlState.allZeros)
+            stpr_strength.setIncrementImage(stepperImage[1], forState: UIControlState.allZeros)
             
             stpr_intelligence.setDecrementImage(stepperImage[0], forState: UIControlState.Normal)
             stpr_intelligence.setIncrementImage(stepperImage[1], forState: UIControlState.Normal)
@@ -406,6 +410,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             stpr_strength.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
             stpr_strength.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
             
+            
             stpr_intelligence.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
             stpr_intelligence.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
             
@@ -413,9 +418,14 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             
         }
         
-        // Setting the size of the steppers
-        stpr_strength.sizeThatFits(CGSize(width: 50.0, height: 35.0))
-        stpr_intelligence.sizeThatFits(CGSize(width: 50.0, height: 35.0))
+        // Deleting the background of the stepper
+        stpr_strength.setBackgroundImage(UIImage(), forState: UIControlState.Normal)
+        stpr_intelligence.setBackgroundImage(UIImage(), forState: UIControlState.Normal)
+        
+        // Changing the divider of the stepper
+        stpr_strength.setDividerImage(stepperImage[4], forLeftSegmentState: UIControlState.allZeros, rightSegmentState: UIControlState.allZeros)
+        stpr_intelligence.setDividerImage(stepperImage[4], forLeftSegmentState: UIControlState.allZeros, rightSegmentState: UIControlState.allZeros)
+        
 
         println("VCRegister_Player > setTheProperlySteppersImagesForClassType: \(classTypeName) selected")
         
