@@ -43,7 +43,8 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     var pointsStepperIntelligence: Double = 0
     var assignedStrPoints = 0;
     var assignedIntPoints = 0;
-    var stepperImage: [UIImage] = []
+    var stepperFocusImages: [UIImage] = []
+    var stepperNoFocusImages: [UIImage] = []
     
     @IBOutlet weak var stepperStr: UIStepper!
     @IBOutlet weak var stepperInt: UIStepper!
@@ -58,7 +59,13 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     let mageClass = UIImage(named: "mage.png")
     let warlockClass = UIImage(named: "warlock.png")
     
-    let stepperImageName = ["mage_decrement_btn_focus", "mage_increment_btn_focus", "warlock_decrement_btn_focus", "warlock_increment_btn_focus", "stepper_divider"]
+    let stepperFocusImagesFocusNames = ["mage_decrement_btn_focus", "mage_increment_btn_focus", "warlock_decrement_btn_focus", "warlock_increment_btn_focus", "stepper_divider"]
+    
+    let stepperFocusImagesNoFocusNames =
+        ["mage_decrement_btn_nofocus",
+        "mage_increment_btn_nofocus",
+        "warlock_decrement_btn_focus",
+        "warlock_increment_btn_focus"]
     
     // SPECIFIC VARIABLES FROM VCRegister.swift (user)
     var userName = ""
@@ -246,11 +253,11 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         println("The frame size of the steppers is: \(stpr_strength.frame.size)")
         
-//        // Loading all the steppers images
-        loadAllSteppersImages()
-//
-//        // Presenting the steppers properly
-        setTheProperlySteppersImagesForClassType(typeCharacter)
+        // Loading all the steppers images
+//        loadAllSteppersImages()
+
+        // Presenting the steppers properly
+//        setTheProperlySteppersImagesForClassType(typeCharacter)
         
         
         // Tell the scroll view the size of the contents
@@ -375,17 +382,21 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     func loadAllSteppersImages() {
         
-        // Fill the stepperImages array with the images
-        var count = 0
+        // Fill the stepperFocusImagess array with the images
+        // First no focus images
+        for imageName in stepperFocusImagesNoFocusNames {
+            
+            var newImageBtn: UIImage = UIImage(named: imageName)!
+            
+            stepperNoFocusImages.append(newImageBtn)
+        }
         
-        for stepperName in stepperImageName {
+        // Secon focus images
+        for stepperName in stepperFocusImagesFocusNames {
             
             var newImageBtn: UIImage = UIImage(named: stepperName)!
             
-            // Print all information of the new image for notice if everything has gone alright
-            println("New image: \(newImageBtn.description) count: \(count++)")
-            
-            stepperImage.append(newImageBtn)
+            stepperFocusImages.append(newImageBtn)
             
         }
     }
@@ -396,39 +407,53 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         if (classType == MAGE) {
             
             // MAGE
-            stpr_strength.setDecrementImage(stepperImage[0], forState: UIControlState.allZeros)
-            stpr_strength.setIncrementImage(stepperImage[1], forState: UIControlState.allZeros)
+            // Set no focus images
+            stpr_strength.setDecrementImage(stepperFocusImages[0], forState: UIControlState.Normal)
+            stpr_strength.setIncrementImage(stepperFocusImages[1], forState: UIControlState.Normal)
             
-            stpr_intelligence.setDecrementImage(stepperImage[0], forState: UIControlState.Normal)
-            stpr_intelligence.setIncrementImage(stepperImage[1], forState: UIControlState.Normal)
+            stpr_intelligence.setDecrementImage(stepperFocusImages[0], forState: UIControlState.Normal)
+            stpr_intelligence.setIncrementImage(stepperFocusImages[1], forState: UIControlState.Normal)
+            
+            // Set focus images
+            stpr_strength.setDecrementImage(stepperFocusImages[0], forState: UIControlState.Highlighted)
+            stpr_strength.setIncrementImage(stepperFocusImages[1], forState: UIControlState.Highlighted)
+            
+            stpr_intelligence.setDecrementImage(stepperFocusImages[0], forState: UIControlState.Highlighted)
+            stpr_intelligence.setIncrementImage(stepperFocusImages[1], forState: UIControlState.Highlighted)
             
             classTypeName = "MAGE"
             
         } else if (classType == WARLOCK) {
             
             // WARLOCK
-            stpr_strength.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
-            stpr_strength.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
+            // Set no focus images
+            stpr_strength.setDecrementImage(stepperFocusImages[2], forState: UIControlState.Normal)
+            stpr_strength.setIncrementImage(stepperFocusImages[3], forState: UIControlState.Normal)
+            //
+            stpr_intelligence.setDecrementImage(stepperFocusImages[2], forState: UIControlState.Normal)
+            stpr_intelligence.setIncrementImage(stepperFocusImages[3], forState: UIControlState.Normal)
             
             
-            stpr_intelligence.setDecrementImage(stepperImage[2], forState: UIControlState.Normal)
-            stpr_intelligence.setIncrementImage(stepperImage[3], forState: UIControlState.Normal)
+            // Set focus images
+            stpr_strength.setDecrementImage(stepperFocusImages[2], forState: UIControlState.Highlighted)
+            stpr_strength.setIncrementImage(stepperFocusImages[3], forState: UIControlState.Highlighted)
+            //
+            stpr_intelligence.setDecrementImage(stepperFocusImages[2], forState: UIControlState.Highlighted)
+            stpr_intelligence.setIncrementImage(stepperFocusImages[3], forState: UIControlState.Highlighted)
             
             classTypeName = "WARLOCK"
             
         }
+        // Changing auto-resizing mask
+        stpr_strength.setTranslatesAutoresizingMaskIntoConstraints(false)
+        stpr_intelligence.setTranslatesAutoresizingMaskIntoConstraints(false)
         
-        // Deleting the background of the stepper
-        stpr_strength.setBackgroundImage(UIImage(), forState: UIControlState.Normal)
-        stpr_intelligence.setBackgroundImage(UIImage(), forState: UIControlState.Normal)
         
-        // Changing the divider of the stepper
-        stpr_strength.setDividerImage(stepperImage[4], forLeftSegmentState: UIControlState.allZeros, rightSegmentState: UIControlState.allZeros)
-        stpr_intelligence.setDividerImage(stepperImage[4], forLeftSegmentState: UIControlState.allZeros, rightSegmentState: UIControlState.allZeros)
+        // Changing the divider (blank image) of the stepper
+        stpr_strength.setDividerImage(UIImage(), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Normal)
+        stpr_intelligence.setDividerImage(UIImage(), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Normal)
         
-
-        println("VCRegister_Player > setTheProperlySteppersImagesForClassType: \(classTypeName) selected")
-        
+        println("VCRegister_Player > setTheProperlySteppersImagesForClassType: \(classTypeName) selected")        
     }
 }
 
