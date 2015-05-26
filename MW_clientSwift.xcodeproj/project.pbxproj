@@ -73,6 +73,7 @@
 		C0D2481E1B14C6C40007CAF3 /* pg_avatar_warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */; };
 		C0D2481F1B14C6C40007CAF3 /* pg_avatar_mage.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */; };
 		C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248201B14CFC10007CAF3 /* battle_display.jpg */; };
+		C0D248231B14DE290007CAF3 /* guiabattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248221B14DE290007CAF3 /* guiabattle.jpg */; };
 		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
 		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
 		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
@@ -163,6 +164,7 @@
 		C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_warlock.png; path = MW_clientSwift/Imatges/pg_avatar_warlock.png; sourceTree = SOURCE_ROOT; };
 		C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_mage.png; path = MW_clientSwift/Imatges/pg_avatar_mage.png; sourceTree = SOURCE_ROOT; };
 		C0D248201B14CFC10007CAF3 /* battle_display.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battle_display.jpg; path = MW_clientSwift/Imatges/battle_display.jpg; sourceTree = SOURCE_ROOT; };
+		C0D248221B14DE290007CAF3 /* guiabattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = guiabattle.jpg; path = MW_clientSwift/Imatges/guiabattle.jpg; sourceTree = SOURCE_ROOT; };
 		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
@@ -254,6 +256,7 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0D248221B14DE290007CAF3 /* guiabattle.jpg */,
 				C0D248201B14CFC10007CAF3 /* battle_display.jpg */,
 				C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */,
 				C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */,
@@ -447,6 +450,7 @@
 				C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */,
 				410B65731B13B16100464785 /* mage_point_up_focus.png in Resources */,
 				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
+				C0D248231B14DE290007CAF3 /* guiabattle.jpg in Resources */,
 				C08420551B125A0600D2A878 /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
