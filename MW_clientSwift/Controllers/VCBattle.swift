@@ -96,6 +96,37 @@ class VCBattle: UIViewController {
         // Get the tag
         var tag: Int = sender.tag
         
+        // 4 ulti
+        // 1 basic
+        // 2 spell 1
+        // 3 spell 2
+        // 6 dodge
+        // 5 shield
+        
+        switch(String(tag)){
+            case "1":
+                application.precarregarEfect("basico")
+                application.startEfect()
+            case "2":
+                application.precarregarEfect("spell1")
+                application.startEfect()
+            case "3":
+                application.precarregarEfect("spell2")
+                application.startEfect()
+            case "4":
+                application.precarregarEfect("ua")
+                application.startEfect()
+            case "5":
+                application.precarregarEfect("shield")
+                application.startEfect()
+            case "6":
+                application.precarregarEfect("dodge")
+                application.startEfect()
+        default:
+            println("default music! WTF?")
+        }
+       
+        
         // Attention! Take care that the tags are between actions number of.
         if (tag >= 0 && tag <= MAX_ACTIONS) {
             
@@ -165,12 +196,18 @@ class VCBattle: UIViewController {
             }
             
             if(guanyaPartida == WIN){
+                application.precarregarEfect("victory")
+                application.startEfect()
                 application.showAlertWin(self, titles: "You WIN!", messages: "")
             }
             if(guanyaPartida == DRAW){
+                application.precarregarEfect("derrota")
+                application.startEfect()
                 application.showAlertDraw(self, titles: "Draw!", messages: "")
             }
             if(guanyaPartida == LOSE){
+                application.precarregarEfect("derrota")
+                application.startEfect()
                 application.showAlertDefeated(self, titles: "Defeated!", messages: "")
             }
         }

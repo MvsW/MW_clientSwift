@@ -9,7 +9,6 @@
 import UIKit
 
 class VCMy_data: UIViewController {
-    @IBOutlet weak var lblTypeCharacter: UILabel!
     @IBOutlet weak var lblCharacterName: UILabel!
     @IBOutlet weak var lblLife: UILabel!
     @IBOutlet weak var lblEnergy: UILabel!
@@ -67,11 +66,12 @@ class VCMy_data: UIViewController {
         lblTotalPoints.text = currentPoints
         lblTotalWins.text = wonGames
         if(classType == MAGE.description){
-            lblTypeCharacter.text = "MAGE"
             imgIconPlayer.image = UIImage(named: "mage.png")
+            lblCharacterName.textColor = UIColor(red: 31/255, green: 0/255, blue: 186/255, alpha: 1)
+            
         }else{
-            lblTypeCharacter.text = "WARLOCK"
             imgIconPlayer.image = UIImage(named: "warlock.png")
+            lblCharacterName.textColor = UIColor(red: 151/255, green: 7/255, blue: 25/255, alpha: 1)
         }
         
         // Do any additional setup after loading the view.

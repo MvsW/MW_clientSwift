@@ -27,6 +27,7 @@ class VCSearchBattle: UIViewController {
          views = application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: true)
         
         searchBattle()
+        application.changeMusic("busqueda + batalla")
     }
     
     func searchBattle(){
@@ -69,7 +70,7 @@ class VCSearchBattle: UIViewController {
                                 if (application.myController.readMessage() == SUCCES){
                                 
                                     self.performSegueWithIdentifier("goto_menu", sender: self)
-                                
+                                    application.changeMusic("main theme")
                                 }
                             
                             }

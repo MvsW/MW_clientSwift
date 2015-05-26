@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import MediaPlayer
+import AVFoundation
 
 public class CApp{
     var myController = MyViewController()
@@ -151,27 +153,35 @@ public class CApp{
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
+            application.changeMusic("main theme")
+
         }))
         alert.view.backgroundColor = UIColor.redColor()
         view.presentViewController(alert, animated: true, completion: nil)
-    }
+        }
     
     func showAlertWin(view: UIViewController, titles: String, messages: String){
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
+            application.changeMusic("main theme")
+
         }))
         alert.view.backgroundColor = UIColor.greenColor()
         view.presentViewController(alert, animated: true, completion: nil)
+    
     }
     
     func showAlertDraw(view: UIViewController, titles: String, messages: String){
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
+            application.changeMusic("main theme")
+
         }))
         alert.view.backgroundColor = UIColor.blueColor()
         view.presentViewController(alert, animated: true, completion: nil)
+      
     }
     
     func noConnectionAlert(view: UIViewController){
@@ -263,6 +273,60 @@ public class CApp{
         var arrayInt = [Int(life),Int(energy),Int(eReg),Int(str),Int(intll)]
         
         return arrayInt
+    }
+    
+    
+    // DECLARACIO VARIABLES I METODES USATS PER REPRODUIR MUSICA
+    var audioPlayer = AVAudioPlayer()
+    
+    func precarregarMusica(nameSong: String){
+        let audioPath = NSBundle.mainBundle().pathForResource("Music/" + nameSong, ofType: "mp3")
+        var music = NSURL(fileURLWithPath: audioPath!)
+        
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: music, error: &error)
+        audioPlayer.prepareToPlay()
+    }
+    
+    func startMusic(){
+        audioPlayer.play()
+    }
+    
+    func stopMusic(){
+        audioPlayer.stop()
+    }
+    
+    func changeMusic(newMusic: String){
+        self.stopMusic()
+        self.precarregarMusica(newMusic)
+        self.startMusic()
+    }
+    
+    var audioPlayerEfects = AVAudioPlayer()
+    
+    func precarregarEfect(nameSong: String){
+        let audioPath = NSBundle.mainBundle().pathForResource("Music/" + nameSong, ofType: "mp3")
+        var music = NSURL(fileURLWithPath: audioPath!)
+        
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        
+        audioPlayerEfects = AVAudioPlayer(contentsOfURL: music, error: &error)
+        audioPlayerEfects.prepareToPlay()
+    }
+    
+    func startEfect(){
+        audioPlayerEfects.play()
+    }
+    
+    func stopEfect(){
+        audioPlayerEfects.stop()
     }
 
 }

@@ -21,11 +21,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     @IBOutlet weak var lblCount_eRegen: UILabel!
     @IBOutlet weak var lblCount_strength: UILabel!
     @IBOutlet weak var lblCount_intelligence: UILabel!
-    @IBOutlet weak var lbl_classSelected: UILabel!
     @IBOutlet weak var lblCount_unasPoints: UILabel!
     @IBOutlet weak var btnCharacterImage: UIButton!
     @IBOutlet weak var tfCharacterName: UITextField!
-
     
     @IBOutlet weak var intIncrement: UIButton!
     @IBOutlet weak var intDecrement: UIButton!
@@ -146,11 +144,9 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         if(typeCharacter == WARLOCK){
             typeCharacter = MAGE
             btnCharacterImage.setBackgroundImage(UIImage(named: "mage.png"), forState: UIControlState.Normal)
-            lbl_classSelected.text = "MAGE"
         }else{
             typeCharacter = WARLOCK
             btnCharacterImage.setBackgroundImage(UIImage(named: "warlock.png"), forState: UIControlState.Normal)
-            lbl_classSelected.text = "WARLOCK"
         }
         loadAllButtonsImages()
     }
