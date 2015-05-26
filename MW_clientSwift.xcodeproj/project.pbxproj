@@ -70,6 +70,9 @@
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
 		C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C7D1421B0CE90900AF5470 /* separatorvs.png */; };
 		C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE11F61B062CBF00C2960A /* Main.storyboard */; };
+		C0D2481E1B14C6C40007CAF3 /* pg_avatar_warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */; };
+		C0D2481F1B14C6C40007CAF3 /* pg_avatar_mage.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */; };
+		C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248201B14CFC10007CAF3 /* battle_display.jpg */; };
 		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
 		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
 		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
@@ -157,6 +160,9 @@
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C0C7D1421B0CE90900AF5470 /* separatorvs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = separatorvs.png; path = MW_clientSwift/Imatges/separatorvs.png; sourceTree = SOURCE_ROOT; };
 		C0CE11F71B062CBF00C2960A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_warlock.png; path = MW_clientSwift/Imatges/pg_avatar_warlock.png; sourceTree = SOURCE_ROOT; };
+		C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_mage.png; path = MW_clientSwift/Imatges/pg_avatar_mage.png; sourceTree = SOURCE_ROOT; };
+		C0D248201B14CFC10007CAF3 /* battle_display.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battle_display.jpg; path = MW_clientSwift/Imatges/battle_display.jpg; sourceTree = SOURCE_ROOT; };
 		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
@@ -248,6 +254,9 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0D248201B14CFC10007CAF3 /* battle_display.jpg */,
+				C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */,
+				C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */,
 				C0817AB41B14BAB50067E241 /* separador.png */,
 				410B65761B13B17900464785 /* warlock_point_up_focus.png */,
 				410B65741B13B17000464785 /* warlock_point_down_focus.png */,
@@ -418,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C084204F1B125A0600D2A878 /* noblockbutton.png in Resources */,
+				C0D2481F1B14C6C40007CAF3 /* pg_avatar_mage.png in Resources */,
 				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
@@ -434,6 +444,7 @@
 				C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */,
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
 				C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */,
+				C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */,
 				410B65731B13B16100464785 /* mage_point_up_focus.png in Resources */,
 				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
 				C08420551B125A0600D2A878 /* warlock.png in Resources */,
@@ -444,6 +455,7 @@
 				C05D832D1B0B220D002C4AA5 /* special1.png in Resources */,
 				C05D832C1B0B220D002C4AA5 /* special2.png in Resources */,
 				C05D83251B0B220D002C4AA5 /* bluebar1.png in Resources */,
+				C0D2481E1B14C6C40007CAF3 /* pg_avatar_warlock.png in Resources */,
 				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
 				54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */,
 				410B65771B13B17900464785 /* warlock_point_up_focus.png in Resources */,

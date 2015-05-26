@@ -48,7 +48,7 @@ class VCBattle: UIViewController {
      
         // Set the background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "battle_display.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         
@@ -72,9 +72,9 @@ class VCBattle: UIViewController {
             
             opponentName.text = self.dataArray[4]
             if(self.dataArray[5].toInt() == MAGE){
-                opponentImageView.image = UIImage(named: "mage.png")
+                opponentImageView.image = UIImage(named: "pg_avatar_mage.png")
             }else{
-                opponentImageView.image = UIImage(named: "warlock.png")
+                opponentImageView.image = UIImage(named: "pg_avatar_warlock.png")
             }
             opponentOriginalLife = self.dataArray[6]
             opponentOriginalEnergy = self.dataArray[7]
