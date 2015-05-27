@@ -25,13 +25,18 @@ public class CApp{
         
         return result
     }
-
+    
     func isValidPassword(testStr:String) -> Bool{
+        for character in testStr{
+            if(character == " "){
+                return false
+            }
+        }
         if(count(testStr) >= 6){
             for chr in testStr{
                 var str = String(chr)
                 if(str.uppercaseString == str){
-                return true
+                    return true
                 }
             }
         }
@@ -40,7 +45,7 @@ public class CApp{
     
     func validateUserName(text:String) ->Bool{
         for character in text {
-            if(character == "@"){
+            if(character == "@" || character == " "){
                 return false
             }
         }
@@ -78,16 +83,16 @@ public class CApp{
     
     // Check the connection
     let reachability = Reachability.reachabilityForInternetConnection()
-
+    
     func checkConnection()->Bool {
         println("Rechability said: " + reachability.currentReachabilityString)
         
         if(reachability.isReachable()){
             if(reachability.isReachableViaWiFi()){
-            println("Via WIFI")
+                println("Via WIFI")
             }
             if(reachability.isReachableViaWWAN()){
-            println("Via WWAN")
+                println("Via WWAN")
             }
             return true
         }else{
@@ -154,22 +159,22 @@ public class CApp{
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
             application.changeMusic("main theme")
-
+            
         }))
         alert.view.backgroundColor = UIColor.redColor()
         view.presentViewController(alert, animated: true, completion: nil)
-        }
+    }
     
     func showAlertWin(view: UIViewController, titles: String, messages: String){
         var alert = UIAlertController(title: titles, message: messages, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
             application.changeMusic("main theme")
-
+            
         }))
         alert.view.backgroundColor = UIColor.greenColor()
         view.presentViewController(alert, animated: true, completion: nil)
-    
+        
     }
     
     func showAlertDraw(view: UIViewController, titles: String, messages: String){
@@ -177,11 +182,11 @@ public class CApp{
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
             view.performSegueWithIdentifier("goto_menu", sender: self)
             application.changeMusic("main theme")
-
+            
         }))
         alert.view.backgroundColor = UIColor.blueColor()
         view.presentViewController(alert, animated: true, completion: nil)
-      
+        
     }
     
     func noConnectionAlert(view: UIViewController){
@@ -211,7 +216,7 @@ public class CApp{
     func settings() {
         UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
     }
-
+    
     
     /* Maths */
     func getIntValueBetween(min: Int, max: Int)->Int {
@@ -224,10 +229,10 @@ public class CApp{
         var eReg: Int
         var str: Int = BASE_CALC/2
         var intll: Int = BASE_CALC/2
-    
+        
         for(var x: Int = 0; x < Int(RAND_CALC); x++){
-    
-          var val: Int = getIntValueBetween(0,max: 15)
+            
+            var val: Int = getIntValueBetween(0,max: 15)
             
             switch (classType) {
             case WARLOCK:
@@ -248,7 +253,7 @@ public class CApp{
                 break
             }
         }
-    
+        
         life = 100 + Int(Double(str) * LIFE_INTEL_PERCENT)
         energy = 100 + Int(Double(intll) * LIFE_INTEL_PERCENT)
         eReg = Int(Double(energy) * 0.1)
@@ -328,5 +333,13 @@ public class CApp{
     func stopEfect(){
         audioPlayerEfects.stop()
     }
-
+    
+    func getErrorTrueFalse(tipus: Bool)->String{
+        if(tipus){
+            return "Correct"
+        }else{
+            return "Incorrect"
+        }
+    }
+    
 }

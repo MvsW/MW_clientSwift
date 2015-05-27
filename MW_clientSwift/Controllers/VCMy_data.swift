@@ -25,7 +25,7 @@ class VCMy_data: UIViewController {
 
         // Put the backround image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "bg_generic3.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
 
         

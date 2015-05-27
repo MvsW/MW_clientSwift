@@ -52,7 +52,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
     
     let mageClass = UIImage(named: "mage.png")
     let warlockClass = UIImage(named: "warlock.png")
-    
 
     
     // SPECIFIC VARIABLES FROM VCRegister.swift (user)
@@ -171,12 +170,22 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
                     
                 } else{
                     println("Error -> Message received: \(receivedMessage)")
+                    var serverResponseSplit = receivedMessage.componentsSeparatedByString(SEPARATOR)
+                    var errorsMessage = ""
+                    for(var i = 0; i<serverResponseSplit.count; i++){
+                        println((application.getErrorName(serverResponseSplit[i] as! String)))
+                        errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
+                    }
+                    application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
+
                 }
                 
             } else {
                 println("So sorry, but all the points has not been set")
                 application.showAlert(self, titles: "So sorry", messages: "All the points has not been set.")
             }
+        }else{
+            application.showAlert(self, titles: "Error!", messages: "The player name is not correct.")
         }
     }
 
@@ -203,7 +212,7 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         
         // Set background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "wallpapper_mvw_2.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         // Set up the container view to hold your custom view hierarchy
@@ -344,5 +353,23 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             break
         }
     }
+    
+    @IBOutlet weak var lblPlayerNameCount: UILabel!
+    @IBAction func editingPlayerName(sender: UITextField) {
+        if(count(tfCharacterName.text) <= 20){
+            lblPlayerNameCount.text = String(20 - count(tfCharacterName.text))
+        }else{
+            var contador = 0
+            var textFinal = ""
+            for character in tfCharacterName.text{
+                contador++
+                textFinal = textFinal + String(character)
+                if(contador == 20){
+                    tfCharacterName.text = textFinal
+                }
+            }
+        }
+    }
+ 
 }
 
