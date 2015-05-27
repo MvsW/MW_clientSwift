@@ -59,11 +59,11 @@ class VCBattle: UIViewController {
             
             myName.text = self.dataArray[0]
             if(self.dataArray[1].toInt() == MAGE){
-                myImageView.image = UIImage(named: "mage.png")
+                myImageView.image = UIImage(named: "pg_avatar_mage.png")
                 btnBasicAtt.setBackgroundImage(UIImage(named: "basic2.png"), forState: UIControlState.Normal)
 
             }else{
-                myImageView.image = UIImage(named: "warlock.png")
+                myImageView.image = UIImage(named: "pg_avatar_warlock.png")
                 btnBasicAtt.setBackgroundImage(UIImage(named: "basic1.png"), forState: UIControlState.Normal)
 
             }
