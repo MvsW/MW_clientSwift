@@ -139,7 +139,6 @@ class VCBattle: UIViewController {
             // Always receive my data, and then the other player (myLife, myEnergy, hisLife, hisEnergy)
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             
-            refreshInterfaceLabels()
             println(self.dataArray[0])
             var array1ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
             var oginalmyLifeToFloat: CGFloat = CGFloat((myOriginalLife as NSString).floatValue)
@@ -190,7 +189,8 @@ class VCBattle: UIViewController {
             }
             
             self.refreshInterfaceProgressBar(calcul1, forMyEnergy: calcul2, forOpponentLife: calcul3, forOpponentEnergy: calcul4)
-            
+            refreshInterfaceLabels()
+
             if(dataArray.count == 9){
                 guanyaPartida = dataArray[8]
             }
