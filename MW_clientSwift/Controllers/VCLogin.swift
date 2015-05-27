@@ -127,8 +127,8 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        txtUserOrMail.text = "ios2015"
-        txtPassword.text = "Ios2015"
+        //txtUserOrMail.text = "ios2015"
+        //txtPassword.text = "Ios2015"
         
     }
     
