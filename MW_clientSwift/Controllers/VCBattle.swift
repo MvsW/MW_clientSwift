@@ -42,10 +42,19 @@ class VCBattle: UIViewController {
     var opponentOriginalLife = "0"
     var opponentOriginalEnergy = "0"
     
+    var originalLifeFrameWidth:CGFloat = 0
+    var originalmYEnergyFrameWidth:CGFloat = 0
+    var originalOpponentLifeFrameWidth:CGFloat = 0
+    var originalOpponentEnergyFrameWidth:CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
+        originalLifeFrameWidth = myLife.frame.width
+        originalmYEnergyFrameWidth = mYEnergy.frame.width
+        originalOpponentLifeFrameWidth = opponentLife.frame.width
+        originalOpponentEnergyFrameWidth = opponentEnergy.frame.width
+        
         // Set the background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
         var imageObbj:UIImage! = application.imageResize(UIImage(named: "battle_display.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
@@ -157,6 +166,11 @@ class VCBattle: UIViewController {
             var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
             var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
             
+            println(calcul1)
+            println(calcul2)
+            println(calcul3)
+            println(calcul4)
+            
             if(calcul2 < 0.8 && calcul2 > 0.4){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png"), forState: UIControlState.Normal)
@@ -224,11 +238,11 @@ class VCBattle: UIViewController {
     
     func refreshInterfaceProgressBar(forMyLife:CGFloat, forMyEnergy:CGFloat, forOpponentLife:CGFloat, forOpponentEnergy:CGFloat){
         
-        myLife.frame = CGRectMake(myLife.frame.minX, myLife.frame.minY, myLife.frame.width*forMyLife, myLife.frame.height)
-        mYEnergy.frame = CGRectMake(mYEnergy.frame.minX, mYEnergy.frame.minY, mYEnergy.frame.width*forMyEnergy, mYEnergy.frame.height)
+        myLife.frame = CGRectMake(myLife.frame.minX, myLife.frame.minY, originalLifeFrameWidth*forMyLife, myLife.frame.height)
+        mYEnergy.frame = CGRectMake(mYEnergy.frame.minX, mYEnergy.frame.minY, originalmYEnergyFrameWidth*forMyEnergy, mYEnergy.frame.height)
         
-        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*forOpponentLife, opponentLife.frame.height)
-        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*forOpponentEnergy, opponentEnergy.frame.height)
+        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, originalOpponentLifeFrameWidth*forOpponentLife, opponentLife.frame.height)
+        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, originalOpponentEnergyFrameWidth*forOpponentEnergy, opponentEnergy.frame.height)
     }
     
 }
