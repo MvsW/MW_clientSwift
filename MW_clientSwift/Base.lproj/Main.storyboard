@@ -639,7 +639,7 @@
                                     <action selector="actionBtnTapped:" destination="xgh-lA-6PP" eventType="touchUpInside" id="j2B-d1-cMU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UDX-O0-FUA">
+                            <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UDX-O0-FUA">
                                 <rect key="frame" x="238" y="373" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="special2.png">
@@ -661,7 +661,7 @@
                                     <action selector="actionBtnTapped:" destination="xgh-lA-6PP" eventType="touchUpInside" id="Y9i-rL-leb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EVp-BP-Zbm">
+                            <button opaque="NO" tag="3" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EVp-BP-Zbm">
                                 <rect key="frame" x="175" y="401" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="special1.png">
@@ -1041,8 +1041,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rjb-Da-inw"/>
-        <segue reference="qWt-cL-Pgc"/>
+        <segue reference="oM4-i9-W4f"/>
         <segue reference="FsR-Dq-Cwg"/>
+        <segue reference="Rjb-Da-inw"/>
     </inferredMetricsTieBreakers>
 </document>
