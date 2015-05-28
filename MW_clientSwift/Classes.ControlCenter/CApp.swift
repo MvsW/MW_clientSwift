@@ -271,7 +271,7 @@ public class CApp{
         var intll: Double = Double(intelligence_points)
         
         
-        life = 100.0 + str * LIFE_INTEL_PERCENT
+        life = 200.0 + str * LIFE_INTEL_PERCENT
         energy = 100.0 + intll * LIFE_INTEL_PERCENT
         eReg = Double(energy) * 0.1
         
@@ -280,8 +280,31 @@ public class CApp{
         return arrayInt
     }
     
+    // Managing NSUserDefaults
+    func saveDataSession(usernameOrMail: String) {
+        
+        NSUserDefaults.standardUserDefaults().setObject(usernameOrMail, forKey: "UsernameOrMail")
+        
+    }
     
-    // DECLARACIO VARIABLES I METODES USATS PER REPRODUIR MUSICA
+    func dataSessionStateIsNotNil()-> Bool {
+        var isNotNil = false
+        
+        var userOrEmail = NSUserDefaults.standardUserDefaults().stringForKey("UsernameOrMail")
+        
+        if (userOrEmail != nil) {
+            
+            NSDefaultUsernameOrEmail = userOrEmail!
+            isNotNil = true
+            
+        }
+        
+        return isNotNil
+        
+    }
+    
+    
+    // VARIABLES AND METHODS FOR MUSIC
     var audioPlayer = AVAudioPlayer()
     
     func precarregarMusica(nameSong: String){
@@ -305,7 +328,7 @@ public class CApp{
         audioPlayer.stop()
     }
     
-    func changeMusic(newMusic: String){
+    func changeMusic(newMusic: String) {
         self.stopMusic()
         self.precarregarMusica(newMusic)
         self.startMusic()
