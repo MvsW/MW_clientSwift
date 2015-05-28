@@ -9,7 +9,6 @@
 import UIKit
 
 class VCMy_data: UIViewController {
-    @IBOutlet weak var lblTypeCharacter: UILabel!
     @IBOutlet weak var lblCharacterName: UILabel!
     @IBOutlet weak var lblLife: UILabel!
     @IBOutlet weak var lblEnergy: UILabel!
@@ -24,16 +23,17 @@ class VCMy_data: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
+        // Put the backround image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "bg_generic3.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
 
         
-        //Llegim la informació del servidor
-        var info:String = application.myController.readMessage() as String
-        var dates = info.componentsSeparatedByString(SEPARATOR)
+        // Reading the server
+        var info: String = application.myController.readMessage() as String
         
+        var dates = info.componentsSeparatedByString(SEPARATOR)
+
         var playerName = dates[0]
         var classType = dates[1]
         var life = dates[2]
@@ -66,11 +66,12 @@ class VCMy_data: UIViewController {
         lblTotalPoints.text = currentPoints
         lblTotalWins.text = wonGames
         if(classType == MAGE.description){
-            lblTypeCharacter.text = "MAGE"
             imgIconPlayer.image = UIImage(named: "mage.png")
+            lblCharacterName.textColor = UIColor(red: 31/255, green: 0/255, blue: 186/255, alpha: 1)
+            
         }else{
-            lblTypeCharacter.text = "WARLOCK"
             imgIconPlayer.image = UIImage(named: "warlock.png")
+            lblCharacterName.textColor = UIColor(red: 151/255, green: 7/255, blue: 25/255, alpha: 1)
         }
         
         // Do any additional setup after loading the view.
@@ -85,15 +86,5 @@ class VCMy_data: UIViewController {
         self.performSegueWithIdentifier("goto_menu", sender: self)
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

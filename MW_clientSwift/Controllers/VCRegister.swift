@@ -36,9 +36,14 @@ class VCRegister: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func cancelTapped(sender: UIButton) {
+        application.myController.sendMessage(CANCEL)
+        self.performSegueWithIdentifier("goto_login", sender: self)
+    }
+    
     @IBAction func registerTapped(sender: UIButton) {
-        //Validar camps i enviar al servidor 
+        //Validar camps i enviar al servidor
         let validarMail: Bool = application.isValidEmail(txtMail.text)
         let validarPassword: Bool = application.isValidPassword(txtPassword.text)
         let validarUsuari: Bool = application.validateUserName(txtUserName.text)
@@ -69,7 +74,7 @@ class VCRegister: UIViewController {
             // Si el server diu OK pasem a menu
             var serverResponse = application.myController.readMessage()
             var serverResponseSplit = serverResponse.componentsSeparatedByString(SEPARATOR)
-
+            
             if (serverResponseSplit[0] as! String == SUCCES){
                 self.performSegueWithIdentifier("goto_register_player", sender: self)
             }
@@ -85,11 +90,12 @@ class VCRegister: UIViewController {
                 }
                 application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
             }
-
+            
         }
         else{
             //Implementar mostrar per pantalla errors de control LOCAL
-            application.showAlert(self, titles: "ERROR!", messages: "Mail: " + validarMail.description + ". \n" + "Password: " + validarPassword.description + ". \n" + "Usuari: " + validarUsuari.description + ".")
+            application.showAlert(self, titles: "ERROR!", messages: "Mail: " + application.getErrorTrueFalse(validarMail) + ". \n" + "Password: " + application.getErrorTrueFalse(validarPassword) + ". \n" + "Usuari: " + application.getErrorTrueFalse(validarUsuari) + ".")
+            
         }
     }
     @IBAction func clicUserName(sender: UITextField) {
@@ -120,4 +126,73 @@ class VCRegister: UIViewController {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
+    
+    @IBOutlet weak var lblUserNameCounter: UILabel!
+    @IBAction func editingUserName(sender: UITextField) {
+        if(count(txtUserName.text) <= 12){
+            lblUserNameCounter.text = String(12 - count(txtUserName.text))
+        }else{
+            var contador = 0
+            var textFinal = ""
+            for character in txtUserName.text{
+                contador++
+                textFinal = textFinal + String(character)
+                if(contador == 12){
+                    txtUserName.text = textFinal
+                }
+            }
+        }
+    }
+    
+    @IBOutlet weak var lblEmailCounter: UILabel!
+    @IBAction func editingEmail(sender: UITextField) {
+        if(count(txtMail.text) <= 50){
+            lblEmailCounter.text = String(50 - count(txtMail.text))
+        }else{
+            var contador = 0
+            var textFinal = ""
+            for character in txtMail.text{
+                contador++
+                textFinal = textFinal + String(character)
+                if(contador == 50){
+                    txtMail.text = textFinal
+                }
+            }
+        }
+    }
+    
+    @IBOutlet weak var lblPassword1Counter: UILabel!
+    @IBAction func editingPassword1(sender: UITextField) {
+        if(count(txtPassword.text) <= 20){
+            lblPassword1Counter.text = String(20 - count(txtPassword.text))
+        }else{
+            var contador = 0
+            var textFinal = ""
+            for character in txtPassword.text{
+                contador++
+                textFinal = textFinal + String(character)
+                if(contador == 20){
+                    txtPassword.text = textFinal
+                }
+            }
+        }    }
+    
+    @IBOutlet weak var lblPassword2Counter: UILabel!
+    @IBAction func editingPassword2(sender: UITextField) {
+        if(count(txtConfirmPassword.text) <= 20){
+            lblPassword2Counter.text = String(20 - count(txtConfirmPassword.text))
+        }else{
+            var contador = 0
+            var textFinal = ""
+            for character in txtConfirmPassword.text{
+                contador++
+                textFinal = textFinal + String(character)
+                if(contador == 20){
+                    txtConfirmPassword.text = textFinal
+                }
+            }
+        }
+    }
+    
+    
 }

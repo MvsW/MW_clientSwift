@@ -8,6 +8,7 @@
 
 import Foundation
 
+var test = "*"
 
 var serverAddress: CFString = "kintoncloud.com"
 //var serverAddress: CFString = "192.168.1.11"
@@ -36,12 +37,12 @@ let ERROR_PlayerNameExist = "112"
 
 // CONSTANTS FIL
 let REGISTER = "register" // valor per enviar al servidor i entrar en el fil de registre
-let MAX_UNASIGNED_POINTS: Int = 14
 
 
 // Op menu TYPES aqui o a CMenu??
 let SHOW_DATA = "showData"
 let START_BATTLE = "startBattle"
+let CANCEL = "cancel";
 
 // CONSTANTS CLASS TYPES
 let MAGE = 1
@@ -55,19 +56,18 @@ let DRAW = "11"
 
 
 // CREATE PLAYER CONSTANTS
-let TOTAL_POINTS: Int = 200
-let TOTAL_BASE_LIFE: Int = 100
-let BASE_PERCENT: Int = 76
-let RAND_PERCENT: Int = 4
-let CUSTOM_PERCENT: Int = 20
-let LIFE_INTEL_PERCENT: Int = 80
-let REGEN_ENERGY_BASE_PERCENT: Int = 10;
-
+let TOTAL_POINTS: Double = 200
+let TOTAL_BASE_LIFE: Double = 100
+let BASE_PERCENT: Double = 0.76
+let RAND_PERCENT: Double = 0.04
+let CUSTOM_PERCENT: Double = 0.2
+let LIFE_INTEL_PERCENT: Double = 0.7
+let REGEN_ENERGY_BASE_PERCENT: Double = 0.1;
 
 //Calcs
-let BASE_CALC: Int = TOTAL_POINTS * BASE_PERCENT / 100
-let RAND_CALC: Int = TOTAL_POINTS * RAND_PERCENT / 100
-let CUSTOM_CALC: Int = TOTAL_POINTS * CUSTOM_PERCENT / 100
+let BASE_CALC: Int = Int(TOTAL_POINTS * BASE_PERCENT)
+let RAND_CALC: Int = Int(TOTAL_POINTS * RAND_PERCENT)
+let CUSTOM_CALC: Int = Int(TOTAL_POINTS * CUSTOM_PERCENT)
 
-
+var freePass = false
 

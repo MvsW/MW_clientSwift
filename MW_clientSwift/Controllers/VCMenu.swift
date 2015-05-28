@@ -11,9 +11,14 @@ import UIKit
 class VCMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // POSAR IMATGE FONS ADAPTADA A LA PANTALLA
-        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        
+        test = "*"
+        
+        // Put the background image
+        var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size
+        
+        // Getting main screen size of iPhone
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "wallpapper_mvw_2.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
     }
     
@@ -23,8 +28,9 @@ class VCMenu: UIViewController {
     }
     
     @IBAction func battleTapped(sender: UIButton) {
-        if(application.comprovarConexion()){
+        if(application.checkConnection()){
             self.performSegueWithIdentifier("goto_searching", sender: self)
+            freePass = false
         }else{
             application.noConnectionAlertAndGoToLogin(self)
         }
@@ -32,16 +38,17 @@ class VCMenu: UIViewController {
     }
     
     @IBAction func myDataTapped(sender: UIButton) {
-        if(application.comprovarConexion()){
+        if(application.checkConnection()){
             application.myController.sendMessage(SHOW_DATA)
             self.performSegueWithIdentifier("goto_my_data", sender: self)
         }else{
             application.noConnectionAlertAndGoToLogin(self)
         }
     }
+    
     @IBAction func gotoBattle(sender: UIButton) {
+        freePass = true
         self.performSegueWithIdentifier("goto_battle", sender: self)
-
     }
     
     

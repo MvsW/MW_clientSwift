@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 class CSpell {
     
     var name: String!
