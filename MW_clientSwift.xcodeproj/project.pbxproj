@@ -57,6 +57,8 @@
 		C05D83341B0B220D002C4AA5 /* pergamino.png in Resources */ = {isa = PBXBuildFile; fileRef = C05D83231B0B220D002C4AA5 /* pergamino.png */; };
 		C07212671AF8FFA60010F1C5 /* menu_button_no_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */; };
 		C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */; };
+		C0817AB31B14AD060067E241 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = C0817AB21B14AD060067E241 /* Music */; };
+		C0817AB51B14BAB50067E241 /* separador.png in Resources */ = {isa = PBXBuildFile; fileRef = C0817AB41B14BAB50067E241 /* separador.png */; };
 		C084204D1B125A0600D2A878 /* nobasic2.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420441B125A0600D2A878 /* nobasic2.png */; };
 		C084204E1B125A0600D2A878 /* nobasic1.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420451B125A0600D2A878 /* nobasic1.png */; };
 		C084204F1B125A0600D2A878 /* noblockbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C08420461B125A0600D2A878 /* noblockbutton.png */; };
@@ -68,6 +70,12 @@
 		C0BF54061AB09F9D0066E027 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BF54051AB09F9D0066E027 /* CoreLocation.framework */; };
 		C0C7D1431B0CE90900AF5470 /* separatorvs.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C7D1421B0CE90900AF5470 /* separatorvs.png */; };
 		C0CE11F81B062CBF00C2960A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE11F61B062CBF00C2960A /* Main.storyboard */; };
+		C0D2481E1B14C6C40007CAF3 /* pg_avatar_warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */; };
+		C0D2481F1B14C6C40007CAF3 /* pg_avatar_mage.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */; };
+		C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248201B14CFC10007CAF3 /* battle_display.jpg */; };
+		C0D248231B14DE290007CAF3 /* guiabattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248221B14DE290007CAF3 /* guiabattle.jpg */; };
+		C0DEFFC61B1621A700EC5125 /* wallpapper_mvw_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */; };
+		C0DEFFC71B1621A700EC5125 /* bg_generic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */; };
 		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
 		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
 		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
@@ -141,6 +149,8 @@
 		C05D83231B0B220D002C4AA5 /* pergamino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pergamino.png; path = MW_clientSwift/Imatges/pergamino.png; sourceTree = SOURCE_ROOT; };
 		C07212651AF8FFA60010F1C5 /* menu_button_no_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_no_focus.jpg; path = MW_clientSwift/Imatges/menu_button_no_focus.jpg; sourceTree = SOURCE_ROOT; };
 		C07212661AF8FFA60010F1C5 /* menu_button_focus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = menu_button_focus.jpg; path = MW_clientSwift/Imatges/menu_button_focus.jpg; sourceTree = SOURCE_ROOT; };
+		C0817AB21B14AD060067E241 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = MW_clientSwift/Music; sourceTree = "<group>"; };
+		C0817AB41B14BAB50067E241 /* separador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = separador.png; path = MW_clientSwift/Imatges/separador.png; sourceTree = SOURCE_ROOT; };
 		C08420441B125A0600D2A878 /* nobasic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nobasic2.png; path = MW_clientSwift/Imatges/nobasic2.png; sourceTree = SOURCE_ROOT; };
 		C08420451B125A0600D2A878 /* nobasic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nobasic1.png; path = MW_clientSwift/Imatges/nobasic1.png; sourceTree = SOURCE_ROOT; };
 		C08420461B125A0600D2A878 /* noblockbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noblockbutton.png; path = MW_clientSwift/Imatges/noblockbutton.png; sourceTree = SOURCE_ROOT; };
@@ -153,6 +163,12 @@
 		C0BF54051AB09F9D0066E027 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C0C7D1421B0CE90900AF5470 /* separatorvs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = separatorvs.png; path = MW_clientSwift/Imatges/separatorvs.png; sourceTree = SOURCE_ROOT; };
 		C0CE11F71B062CBF00C2960A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_warlock.png; path = MW_clientSwift/Imatges/pg_avatar_warlock.png; sourceTree = SOURCE_ROOT; };
+		C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pg_avatar_mage.png; path = MW_clientSwift/Imatges/pg_avatar_mage.png; sourceTree = SOURCE_ROOT; };
+		C0D248201B14CFC10007CAF3 /* battle_display.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battle_display.jpg; path = MW_clientSwift/Imatges/battle_display.jpg; sourceTree = SOURCE_ROOT; };
+		C0D248221B14DE290007CAF3 /* guiabattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = guiabattle.jpg; path = MW_clientSwift/Imatges/guiabattle.jpg; sourceTree = SOURCE_ROOT; };
+		C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpapper_mvw_2.jpg; path = MW_clientSwift/Imatges/wallpapper_mvw_2.jpg; sourceTree = SOURCE_ROOT; };
+		C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_generic3.jpg; path = MW_clientSwift/Imatges/bg_generic3.jpg; sourceTree = SOURCE_ROOT; };
 		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
@@ -183,6 +199,7 @@
 		41B1D2381A6991A600962647 = {
 			isa = PBXGroup;
 			children = (
+				C0817AB21B14AD060067E241 /* Music */,
 				C04161341AD576E70004BC46 /* Fonts */,
 				C0BF54051AB09F9D0066E027 /* CoreLocation.framework */,
 				41E58D861A90BBA1009A2D0F /* Imatges */,
@@ -243,6 +260,13 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */,
+				C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */,
+				C0D248221B14DE290007CAF3 /* guiabattle.jpg */,
+				C0D248201B14CFC10007CAF3 /* battle_display.jpg */,
+				C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */,
+				C0D2481D1B14C6C40007CAF3 /* pg_avatar_mage.png */,
+				C0817AB41B14BAB50067E241 /* separador.png */,
 				410B65761B13B17900464785 /* warlock_point_up_focus.png */,
 				410B65741B13B17000464785 /* warlock_point_down_focus.png */,
 				410B65721B13B16100464785 /* mage_point_up_focus.png */,
@@ -412,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C084204F1B125A0600D2A878 /* noblockbutton.png in Resources */,
+				C0D2481F1B14C6C40007CAF3 /* pg_avatar_mage.png in Resources */,
 				C07212681AF8FFA60010F1C5 /* menu_button_focus.jpg in Resources */,
 				41B1D2511A6991A600962647 /* LaunchScreen.xib in Resources */,
 				C05D832A1B0B220D002C4AA5 /* progressBarr GUIA.png in Resources */,
@@ -423,12 +448,15 @@
 				41C82B131A91056600235D61 /* fondo.png in Resources */,
 				C05D83311B0B220D002C4AA5 /* basic1.png in Resources */,
 				410B65711B13AA9000464785 /* mage_point_down_focus.png in Resources */,
+				C0817AB51B14BAB50067E241 /* separador.png in Resources */,
 				C05D83341B0B220D002C4AA5 /* pergamino.png in Resources */,
 				C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */,
 				C041613A1AD580780004BC46 /* no_focus.png in Resources */,
 				C05D83241B0B220D002C4AA5 /* baseprogressbar1.png in Resources */,
+				C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */,
 				410B65731B13B16100464785 /* mage_point_up_focus.png in Resources */,
 				C05D832B1B0B220D002C4AA5 /* specialbutton.png in Resources */,
+				C0D248231B14DE290007CAF3 /* guiabattle.jpg in Resources */,
 				C08420551B125A0600D2A878 /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
@@ -437,6 +465,7 @@
 				C05D832D1B0B220D002C4AA5 /* special1.png in Resources */,
 				C05D832C1B0B220D002C4AA5 /* special2.png in Resources */,
 				C05D83251B0B220D002C4AA5 /* bluebar1.png in Resources */,
+				C0D2481E1B14C6C40007CAF3 /* pg_avatar_warlock.png in Resources */,
 				C0E65DDD1AD56EA400C689BF /* logo.png in Resources */,
 				54315D5A1AFBBED900BDDCE2 /* tittle_login.png in Resources */,
 				410B65771B13B17900464785 /* warlock_point_up_focus.png in Resources */,
@@ -449,6 +478,7 @@
 				C08420521B125A0600D2A878 /* nospecial2.png in Resources */,
 				C084204D1B125A0600D2A878 /* nobasic2.png in Resources */,
 				C08420511B125A0600D2A878 /* nospecial1.png in Resources */,
+				C0DEFFC61B1621A700EC5125 /* wallpapper_mvw_2.jpg in Resources */,
 				C041613C1AD583ED0004BC46 /* focus.png in Resources */,
 				C05D832F1B0B220D002C4AA5 /* blockbutton.png in Resources */,
 				41C82B121A91056600235D61 /* anterior.png in Resources */,
@@ -461,6 +491,8 @@
 				C05D83281B0B220D002C4AA5 /* bluebar2.png in Resources */,
 				C05D83261B0B220D002C4AA5 /* redbar1.png in Resources */,
 				C05D83301B0B220D002C4AA5 /* basic2.png in Resources */,
+				C0817AB31B14AD060067E241 /* Music in Resources */,
+				C0DEFFC71B1621A700EC5125 /* bg_generic3.jpg in Resources */,
 				C05D832E1B0B220D002C4AA5 /* dodgebutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,13 +42,22 @@ class VCBattle: UIViewController {
     var opponentOriginalLife = "0"
     var opponentOriginalEnergy = "0"
     
+    var originalLifeFrameWidth:CGFloat = 0
+    var originalmYEnergyFrameWidth:CGFloat = 0
+    var originalOpponentLifeFrameWidth:CGFloat = 0
+    var originalOpponentEnergyFrameWidth:CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
+        originalLifeFrameWidth = myLife.frame.width
+        originalmYEnergyFrameWidth = mYEnergy.frame.width
+        originalOpponentLifeFrameWidth = opponentLife.frame.width
+        originalOpponentEnergyFrameWidth = opponentEnergy.frame.width
+        
         // Set the background image
         var mainScreenSize : CGSize = UIScreen.mainScreen().bounds.size // Getting main screen size of iPhone
-        var imageObbj:UIImage! = application.imageResize(UIImage(named: "login_background.png")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
+        var imageObbj:UIImage! = application.imageResize(UIImage(named: "battle_display.jpg")!, sizeChange: CGSizeMake(mainScreenSize.width, mainScreenSize.height))
         self.view.backgroundColor = UIColor(patternImage:imageObbj!)
         
         
@@ -59,11 +68,11 @@ class VCBattle: UIViewController {
             
             myName.text = self.dataArray[0]
             if(self.dataArray[1].toInt() == MAGE){
-                myImageView.image = UIImage(named: "mage.png")
+                myImageView.image = UIImage(named: "pg_avatar_mage.png")
                 btnBasicAtt.setBackgroundImage(UIImage(named: "basic2.png"), forState: UIControlState.Normal)
 
             }else{
-                myImageView.image = UIImage(named: "warlock.png")
+                myImageView.image = UIImage(named: "pg_avatar_warlock.png")
                 btnBasicAtt.setBackgroundImage(UIImage(named: "basic1.png"), forState: UIControlState.Normal)
 
             }
@@ -72,9 +81,9 @@ class VCBattle: UIViewController {
             
             opponentName.text = self.dataArray[4]
             if(self.dataArray[5].toInt() == MAGE){
-                opponentImageView.image = UIImage(named: "mage.png")
+                opponentImageView.image = UIImage(named: "pg_avatar_mage.png")
             }else{
-                opponentImageView.image = UIImage(named: "warlock.png")
+                opponentImageView.image = UIImage(named: "pg_avatar_warlock.png")
             }
             opponentOriginalLife = self.dataArray[6]
             opponentOriginalEnergy = self.dataArray[7]
@@ -95,6 +104,37 @@ class VCBattle: UIViewController {
         
         // Get the tag
         var tag: Int = sender.tag
+    
+        // 1 basic
+        // 2 spell 1
+        // 3 spell 2
+        // 4 ulti
+        // 6 dodge
+        // 5 shield
+        
+        switch(String(tag)){
+            case "1":
+                application.precarregarEfect("basico")
+                application.startEfect()
+            case "2":
+                application.precarregarEfect("spell1")
+                application.startEfect()
+            case "3":
+                application.precarregarEfect("spell2")
+                application.startEfect()
+            case "4":
+                application.precarregarEfect("ua")
+                application.startEfect()
+            case "5":
+                application.precarregarEfect("shield")
+                application.startEfect()
+            case "6":
+                application.precarregarEfect("dodge")
+                application.startEfect()
+        default:
+            println("default music! WTF?")
+        }
+       
         
         // Attention! Take care that the tags are between actions number of.
         if (tag >= 0 && tag <= MAX_ACTIONS) {
@@ -108,7 +148,6 @@ class VCBattle: UIViewController {
             // Always receive my data, and then the other player (myLife, myEnergy, hisLife, hisEnergy)
             dataArray = messageReceived.componentsSeparatedByString(",") as! [String]
             
-            refreshInterfaceLabels()
             println(self.dataArray[0])
             var array1ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
             var oginalmyLifeToFloat: CGFloat = CGFloat((myOriginalLife as NSString).floatValue)
@@ -127,7 +166,12 @@ class VCBattle: UIViewController {
             var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
             var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
             
-            if(calcul2 < 0.8 && calcul2 > 0.4){
+            println(calcul1)
+            println(calcul2)
+            println(calcul3)
+            println(calcul4)
+            
+            if(calcul2 < 0.89 && calcul2 > 0.34){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png"), forState: UIControlState.Normal)
                 
@@ -137,7 +181,7 @@ class VCBattle: UIViewController {
                 btnSpell1.enabled = true
                 btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
-            if(calcul2 < 0.4){
+            if(calcul2 < 0.34){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
@@ -147,7 +191,7 @@ class VCBattle: UIViewController {
                 btnSpell1.enabled = true
                 btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
-            if(calcul2 < 0.15){
+            if(calcul2 < 0.21){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
@@ -159,18 +203,25 @@ class VCBattle: UIViewController {
             }
             
             self.refreshInterfaceProgressBar(calcul1, forMyEnergy: calcul2, forOpponentLife: calcul3, forOpponentEnergy: calcul4)
-            
+            refreshInterfaceLabels()
+
             if(dataArray.count == 9){
                 guanyaPartida = dataArray[8]
             }
             
             if(guanyaPartida == WIN){
+                application.precarregarEfect("victory")
+                application.startEfect()
                 application.showAlertWin(self, titles: "You WIN!", messages: "")
             }
             if(guanyaPartida == DRAW){
+                application.precarregarEfect("derrota")
+                application.startEfect()
                 application.showAlertDraw(self, titles: "Draw!", messages: "")
             }
             if(guanyaPartida == LOSE){
+                application.precarregarEfect("derrota")
+                application.startEfect()
                 application.showAlertDefeated(self, titles: "Defeated!", messages: "")
             }
         }
@@ -187,11 +238,11 @@ class VCBattle: UIViewController {
     
     func refreshInterfaceProgressBar(forMyLife:CGFloat, forMyEnergy:CGFloat, forOpponentLife:CGFloat, forOpponentEnergy:CGFloat){
         
-        myLife.frame = CGRectMake(myLife.frame.minX, myLife.frame.minY, myLife.frame.width*forMyLife, myLife.frame.height)
-        mYEnergy.frame = CGRectMake(mYEnergy.frame.minX, mYEnergy.frame.minY, mYEnergy.frame.width*forMyEnergy, mYEnergy.frame.height)
+        myLife.frame = CGRectMake(myLife.frame.minX, myLife.frame.minY, originalLifeFrameWidth*forMyLife, myLife.frame.height)
+        mYEnergy.frame = CGRectMake(mYEnergy.frame.minX, mYEnergy.frame.minY, originalmYEnergyFrameWidth*forMyEnergy, mYEnergy.frame.height)
         
-        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, opponentLife.frame.width*forOpponentLife, opponentLife.frame.height)
-        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, opponentEnergy.frame.width*forOpponentEnergy, opponentEnergy.frame.height)
+        opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, originalOpponentLifeFrameWidth*forOpponentLife, opponentLife.frame.height)
+        opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, originalOpponentEnergyFrameWidth*forOpponentEnergy, opponentEnergy.frame.height)
     }
     
 }

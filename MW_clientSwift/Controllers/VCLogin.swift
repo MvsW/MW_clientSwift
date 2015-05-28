@@ -25,6 +25,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     var latitude = 37.33233141
     var longitude = -122.0312186
     
+    
     // METODES PER LOGALITZACIO
     func findMyLocation() {
         println("Inside of VCLogin > findMyLocation")
@@ -126,12 +127,14 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
         
         // Speed testing. Omplint els camps
-        txtUserOrMail.text = "ios2015"
-        txtPassword.text = "Ios2015"
+        //txtUserOrMail.text = "ios2015"
+        //txtPassword.text = "Ios2015"
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        application.precarregarMusica("main theme")
+        application.startMusic()
 //        application.myController.startLoading(self.view, text: "Loading...", size2: 12.5,viewController: self,areInBattle: false)
         if (application.checkConnection()){
             application.myController.connect()
