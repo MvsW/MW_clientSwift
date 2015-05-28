@@ -112,24 +112,15 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //START LOADING AND STOP THESE
-        
-        /* TODO Es pot esborrar?! SERGI=?!!??!!!!!!
-        
-        var views = application.startLoading(self.view, text: "Loading...", size2: 12.5)
-        application.stopLoading(views) */
-        
         // Set the images
         setupControllerImages();
         
-        // Set the typography
-        /*btn_register.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)
-        btn_login.titleLabel?.font = UIFont(name: "Augusta.ttf", size: 50)*/
-        
-        // Speed testing. Omplint els camps
-        //txtUserOrMail.text = "ios2015"
-        //txtPassword.text = "Ios2015"
-        
+        // Trying to get NSUserDefaults
+        if (application.dataSessionStateIsNotNil()) {
+            
+            txtUserOrMail.text = NSDefaultUsernameOrEmail
+            
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -153,7 +144,9 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
     
     // BUTTONS METHODS
     @IBAction func loginTapped(sender: UIButton) {
-        if(connected){
+        
+        if (connected) {
+            
             let validateMail: Bool = application.isValidEmail(txtUserOrMail.text)
             let validatePassword: Bool = application.isValidPassword(txtPassword.text)
             let validateUser: Bool = application.validateUserName(txtUserOrMail.text)
@@ -191,8 +184,11 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                     
                     if (serverResponseSplit[0] as! String == SUCCES) {
                         
-                        // Everything is correct. Go to menu view
+                        // Everything is correct. Saving data session into the NSUserDefaults and GO to menu screen
+                        application.saveDataSession(txtUserOrMail.text)
+                        
                         self.performSegueWithIdentifier("goto_menu", sender: self)
+                        
                     } else {
                         print("Server response = ")
                         var errorsMessage = ""
@@ -200,6 +196,7 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
                             println((application.getErrorName(serverResponseSplit[i] as! String)))
                             errorsMessage = errorsMessage + application.getErrorName(serverResponseSplit[i] as! String) + ". \n"
                         }
+                        
                         application.showAlert(self, titles: "ERROR!", messages: errorsMessage)
                     }
                 }
@@ -280,6 +277,13 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    
+    func loadSessionDataInNSUserDefaults()-> String {
+        return "falta implementar este método o bórrarme también"
+    }
+    
+    
     @IBAction func goToMenu(sender: UIButton) {
         self.performSegueWithIdentifier("goto_menu", sender: self)
     }
@@ -288,6 +292,8 @@ class VCLogin: UIViewController, CLLocationManagerDelegate {
         self.performSegueWithIdentifier("goto_register", sender: self)
 
     }
+    
+    
     
     
     

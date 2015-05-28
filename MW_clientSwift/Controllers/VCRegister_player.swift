@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate {
     /*
     TODO: IMPLEMENTAR LA RECULLIDA DE DADES PER ENVIARLES AL SERVIDOR!!!!
     */
@@ -200,6 +200,10 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         self.randomStats()
         self.resetStats()
         
+//        scrollView.delegate = self  // doesn't work
+        self.tfCharacterName.delegate = self
+        
+        
         lblCount_life.enabled = false
         lblCount_energy.enabled = false
         lblCount_eRegen.enabled = false
@@ -238,12 +242,15 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = 1.0
         
+        scrollView.userInteractionEnabled = true
+        
         centerScrollViewContents()
         
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
+        println("On touches began method: YES")
+        self.scrollView.endEditing(true)
     }
     
     func allPointsHasBeenAssignedProperly()->Bool {
@@ -253,7 +260,6 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
             return false
         }
     }
-    
     
     func centerScrollViewContents() {
         let boundsSize = scrollView.bounds.size
@@ -352,6 +358,12 @@ class VCRegister_player: UIViewController, UIScrollViewDelegate, UIGestureRecogn
         default:
             break
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        return textField.resignFirstResponder()
+        
     }
     
     @IBOutlet weak var lblPlayerNameCount: UILabel!

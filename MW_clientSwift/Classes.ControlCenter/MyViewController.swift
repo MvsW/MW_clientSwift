@@ -273,63 +273,10 @@ class MyViewController: UIViewController, NSStreamDelegate , CLLocationManagerDe
         
         stopLoading(views)
         
-        if(battle){
+        if (battle) {
+            
             test = "cancel"
-            // CAN BE DELETED???? by: Ferran
             
-            // no cal fer res mes ;-) by: Ro
-            /*
-            application.myController.sendMessage(CANCEL)
-            println("preWhile")
-            while(!application.myController.readMessage2()){
-                println("inWhile")
-            }
-            println("postWhile")
-            //actualViewController.performSegueWithIdentifier("goto_menu", sender: self)
-
-            */
         }
     }
-    
-    // xapuza no serveix per res, pero por si, de moment cal testejar mes la nova solucio
-    /*
-    func readMessage2() -> Bool{
-        var output:NSString!
-        let bufferSize = 1024
-        var buffer = Array<UInt8>(count: bufferSize, repeatedValue: 0)
-        var bytesRead: Int = inputStream.read(&buffer, maxLength: bufferSize)
-        
-        //println(bytesRead)
-        var textt = ""
-        if bytesRead >= 0 {
-            lastReceivedMessageID++
-            output = NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-            println("output is")
-            
-            println("Server say: \(output)")
-            println("hola?")
-            textt = "Server say: \(output)" //farem alguna cosa amb la variable?? es possible
-            println("Text: " + textt)
-            
-            if(output == SUCCES){
-                println("return true")
-            }
-            else{
-                println("return false")
-            }
-            println("ME CAGO EN LA PUTA MADRE QUE PARIO ESTO")
-        } else {
-            // Handle error -> falta implementar...
-            output = NO_SERVER
-            println("ERROR => " + output.description)
-        }
-        if(output == "0"){
-            println("segon return true")
-            return true
-        }else{
-            println("segon return false")
-            return false
-        }
-    }
-    */
 }

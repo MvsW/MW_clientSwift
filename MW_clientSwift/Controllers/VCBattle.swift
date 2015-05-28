@@ -34,6 +34,9 @@ class VCBattle: UIViewController {
     @IBOutlet weak var myName: UILabel!
     @IBOutlet weak var opponentName: UILabel!
     
+    @IBOutlet weak var lbl_actionName: UILabel!
+    @IBOutlet weak var lbl_actionDescription: UITextView!
+    
     var dataArray: [String]!
     var messageReceived: NSString!
     
@@ -100,41 +103,72 @@ class VCBattle: UIViewController {
     }
     
     @IBAction func actionBtnTapped(sender: AnyObject) {
-        var guanyaPartida = "9"
+        var gameWon = "9"
         
         // Get the tag
         var tag: Int = sender.tag
+        
+        // Variables for printing the correct title and description on the info box
+        var actionName = "Action name"
+        var actionDescription = "Any action pressed yet."
     
         // 1 basic
-        // 2 spell 1
-        // 3 spell 2
+        // 2 spell_1
+        // 3 spell_2
         // 4 ulti
         // 6 dodge
         // 5 shield
         
         switch(String(tag)){
-            case "1":
-                application.precarregarEfect("basico")
-                application.startEfect()
-            case "2":
-                application.precarregarEfect("spell1")
-                application.startEfect()
-            case "3":
-                application.precarregarEfect("spell2")
-                application.startEfect()
-            case "4":
-                application.precarregarEfect("ua")
-                application.startEfect()
-            case "5":
-                application.precarregarEfect("shield")
-                application.startEfect()
-            case "6":
-                application.precarregarEfect("dodge")
-                application.startEfect()
+        
+        case "1":
+            actionName = NAME_BASIC
+            actionDescription = TEXT_BASIC
+            application.precarregarEfect("basico")
+            application.startEfect()
+        
+        case "2":
+            actionName = NAME_SPELL1
+            actionDescription = TEXT_SPELL1
+            application.precarregarEfect("spell1")
+            application.startEfect()
+        
+        case "3":
+            actionName = NAME_SPELL2
+            actionDescription = TEXT_SPELL2
+            application.precarregarEfect("spell2")
+            application.startEfect()
+        
+        case "4":
+            actionName = NAME_ULTIMATE
+            actionDescription = TEXT_ULTIMATE
+            application.precarregarEfect("ua")
+            application.startEfect()
+        
+        case "5":
+            actionName = NAME_SHIELD
+            actionDescription = TEXT_SHIELD
+            application.precarregarEfect("shield")
+            application.startEfect()
+            
+        case "6":
+            actionName = NAME_DODGE
+            actionDescription = TEXT_DODGE
+            application.precarregarEfect("dodge")
+            application.startEfect()
+        
         default:
-            println("default music! WTF?")
+            
+            println("Inside of the music switch on action tapped > The tag \(String(tag)) given is incorrect.")
+        
         }
-       
+        
+        // Printing information
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.printNameAndActionDescription(actionName, description: actionDescription)
+            
+        }
         
         // Attention! Take care that the tags are between actions number of.
         if (tag >= 0 && tag <= MAX_ACTIONS) {
@@ -150,21 +184,21 @@ class VCBattle: UIViewController {
             
             println(self.dataArray[0])
             var array1ToFloat:CGFloat = CGFloat((self.dataArray[2] as NSString).floatValue)
-            var oginalmyLifeToFloat: CGFloat = CGFloat((myOriginalLife as NSString).floatValue)
+            var originalmyLifeToFloat: CGFloat = CGFloat((myOriginalLife as NSString).floatValue)
             
             var array2ToFloat:CGFloat = CGFloat((self.dataArray[3] as NSString).floatValue)
-            var oginalmYEnergyToFloat: CGFloat = CGFloat((myOriginalEnergy as NSString).floatValue)
+            var originalmYEnergyToFloat: CGFloat = CGFloat((myOriginalEnergy as NSString).floatValue)
             
             var array3ToFloat:CGFloat = CGFloat((self.dataArray[6] as NSString).floatValue)
-            var oginalOpponentLifeToFloat: CGFloat = CGFloat((opponentOriginalLife as NSString).floatValue)
+            var originalOpponentLifeToFloat: CGFloat = CGFloat((opponentOriginalLife as NSString).floatValue)
         
             var array4ToFloat:CGFloat = CGFloat((self.dataArray[7] as NSString).floatValue)
-            var oginalOpponentEnergyToFloat: CGFloat = CGFloat((opponentOriginalEnergy as NSString).floatValue)
+            var originalOpponentEnergyToFloat: CGFloat = CGFloat((opponentOriginalEnergy as NSString).floatValue)
             
-            var calcul1 = (array1ToFloat * 100 / oginalmyLifeToFloat)/100
-            var calcul2 = (array2ToFloat * 100 / oginalmYEnergyToFloat)/100
-            var calcul3 = (array3ToFloat * 100 /  oginalOpponentLifeToFloat)/100
-            var calcul4 = (array4ToFloat  * 100 / oginalOpponentEnergyToFloat)/100
+            var calcul1 = (array1ToFloat * 100 / originalmyLifeToFloat)/100
+            var calcul2 = (array2ToFloat * 100 / originalmYEnergyToFloat)/100
+            var calcul3 = (array3ToFloat * 100 /  originalOpponentLifeToFloat)/100
+            var calcul4 = (array4ToFloat  * 100 / originalOpponentEnergyToFloat)/100
             
             println(calcul1)
             println(calcul2)
@@ -206,25 +240,26 @@ class VCBattle: UIViewController {
             refreshInterfaceLabels()
 
             if(dataArray.count == 9){
-                guanyaPartida = dataArray[8]
+                gameWon = dataArray[8]
             }
             
-            if(guanyaPartida == WIN){
+            if(gameWon == WIN){
                 application.precarregarEfect("victory")
                 application.startEfect()
                 application.showAlertWin(self, titles: "You WIN!", messages: "")
             }
-            if(guanyaPartida == DRAW){
+            if(gameWon == DRAW){
                 application.precarregarEfect("derrota")
                 application.startEfect()
                 application.showAlertDraw(self, titles: "Draw!", messages: "")
             }
-            if(guanyaPartida == LOSE){
+            if(gameWon == LOSE){
                 application.precarregarEfect("derrota")
                 application.startEfect()
                 application.showAlertDefeated(self, titles: "Defeated!", messages: "")
             }
         }
+        
     }
     
     func refreshInterfaceLabels() {
@@ -243,6 +278,13 @@ class VCBattle: UIViewController {
         
         opponentLife.frame = CGRectMake(opponentLife.frame.minX, opponentLife.frame.minY, originalOpponentLifeFrameWidth*forOpponentLife, opponentLife.frame.height)
         opponentEnergy.frame = CGRectMake(opponentEnergy.frame.minX, opponentEnergy.frame.minY, originalOpponentEnergyFrameWidth*forOpponentEnergy, opponentEnergy.frame.height)
+    }
+    
+    func printNameAndActionDescription(actionName: String, description: String) {
+        
+        self.lbl_actionName.text = actionName
+        self.lbl_actionDescription.text = description
+        
     }
     
 }
