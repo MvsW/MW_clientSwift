@@ -104,11 +104,11 @@ class VCBattle: UIViewController {
         
         // Get the tag
         var tag: Int = sender.tag
-        
-        // 4 ulti
+    
         // 1 basic
         // 2 spell 1
         // 3 spell 2
+        // 4 ulti
         // 6 dodge
         // 5 shield
         
@@ -171,7 +171,7 @@ class VCBattle: UIViewController {
             println(calcul3)
             println(calcul4)
             
-            if(calcul2 < 0.8 && calcul2 > 0.4){
+            if(calcul2 < 0.89 && calcul2 > 0.34){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png"), forState: UIControlState.Normal)
                 
@@ -181,7 +181,7 @@ class VCBattle: UIViewController {
                 btnSpell1.enabled = true
                 btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
-            if(calcul2 < 0.4){
+            if(calcul2 < 0.34){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
@@ -191,7 +191,7 @@ class VCBattle: UIViewController {
                 btnSpell1.enabled = true
                 btnSpell1.setBackgroundImage(UIImage(named: "special1.png"), forState: UIControlState.Normal)
             }
-            if(calcul2 < 0.15){
+            if(calcul2 < 0.21){
                 btnUltimate.enabled = false
                 btnUltimate.setBackgroundImage(UIImage(named: "nospecialbutton.png.png"), forState: UIControlState.Normal)
                 
