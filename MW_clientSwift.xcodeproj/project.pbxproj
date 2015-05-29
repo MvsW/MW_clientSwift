@@ -100,7 +100,7 @@
 		410B65741B13B17000464785 /* warlock_point_down_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock_point_down_focus.png; path = MW_clientSwift/Imatges/warlock_point_down_focus.png; sourceTree = SOURCE_ROOT; };
 		410B65761B13B17900464785 /* warlock_point_up_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock_point_up_focus.png; path = MW_clientSwift/Imatges/warlock_point_up_focus.png; sourceTree = SOURCE_ROOT; };
 		413E87271B1238F100D299D3 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage.png; path = MW_clientSwift/Imatges/mage.png; sourceTree = SOURCE_ROOT; };
-		41B1D2411A6991A600962647 /* MW_clientSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MW_clientSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B1D2411A6991A600962647 /* MvsW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvsW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B1D2451A6991A600962647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41B1D2461A6991A600962647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41B1D24D1A6991A600962647 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		41B1D2421A6991A600962647 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41B1D2411A6991A600962647 /* MW_clientSwift.app */,
+				41B1D2411A6991A600962647 /* MvsW.app */,
 				41B1D2561A6991A600962647 /* MW_clientSwiftTests.xctest */,
 			);
 			name = Products;
@@ -372,7 +372,7 @@
 			);
 			name = MW_clientSwift;
 			productName = MW_clientSwift;
-			productReference = 41B1D2411A6991A600962647 /* MW_clientSwift.app */;
+			productReference = 41B1D2411A6991A600962647 /* MvsW.app */;
 			productType = "com.apple.product-type.application";
 		};
 		41B1D2551A6991A600962647 /* MW_clientSwiftTests */ = {
@@ -652,7 +652,7 @@
 				INFOPLIST_FILE = MW_clientSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MvsW;
 			};
 			name = Debug;
 		};
@@ -663,7 +663,7 @@
 				INFOPLIST_FILE = MW_clientSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MvsW;
 			};
 			name = Release;
 		};

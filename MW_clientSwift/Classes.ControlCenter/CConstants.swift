@@ -11,9 +11,6 @@ import Foundation
 var test = "*"
 
 var serverAddress: CFString = "kintoncloud.com"
-//var serverAddress: CFString = "192.168.1.11"
-//var serverAddress: CFString = "172.16.253.63"
-//let serverPort: UInt32 = 49157
 let serverPort: UInt32 = 4444
 
 var application = CApp()
@@ -29,6 +26,10 @@ let ERROR_UserAlreadyLogged = "101"
 let ERROR_PasswordIncorrect = "102"
 let ERROR_EmailNotExist = "103"
 let ERROR_UserNotExist = "104"
+
+// NSUSERDEFAULTS
+var NSDefaultUsernameOrEmail = ""
+
 
 //RESISTER
 let ERROR_UserExist = "110"
@@ -74,4 +75,26 @@ let RAND_CALC: Int = Int(TOTAL_POINTS * RAND_PERCENT)
 let CUSTOM_CALC: Int = Int(TOTAL_POINTS * CUSTOM_PERCENT)
 
 var freePass = false
+
+// Titles and actions descriptions
+    let NAME_BASIC = "Basic Attack"
+    let TEXT_BASIC = "No energy consumption damages the opponent based on your strength."
+    
+    let NAME_SPELL1 = "Spell 1"
+    let TEXT_SPELL1 = "In exchange for a small amount of power you damage your opponent depending on your intelligence."
+    
+    let NAME_SPELL2 = "Spell 2"
+    let TEXT_SPELL2 = "Cause considerable damage to the enemy according to your intelligence and your strength half."
+    
+    let NAME_ULTIMATE = "Ultimate Spell"
+    let TEXT_ULTIMATE = "In exchange for almost all your energy you can exercise more than considerable damage on your opponent. This spell takes into account both your strengths as intelligence."
+    
+    let NAME_SHIELD = "Shield"
+    let TEXT_SHIELD = "It allows you to reduce all or part of the damage taken according to your strengths."
+    
+    let NAME_DODGE = "Dodge"
+    let TEXT_DODGE = "Depending on your intelligence you have the possibility to avoid all or part of the damage taken."
+
+
+
 
