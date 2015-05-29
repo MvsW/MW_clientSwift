@@ -1036,8 +1036,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oM4-i9-W4f"/>
         <segue reference="Cjy-ng-Xgh"/>
+        <segue reference="oM4-i9-W4f"/>
         <segue reference="DzS-wd-EXU"/>
     </inferredMetricsTieBreakers>
 </document>
