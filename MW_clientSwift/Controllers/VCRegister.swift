@@ -28,8 +28,8 @@ class VCRegister: UIViewController {
         let attributesDictionary = [NSForegroundColorAttributeName: UIColor.grayColor()]
         txtUserName.attributedPlaceholder = NSAttributedString(string: "User or Email", attributes: attributesDictionary)
         txtPassword.attributedPlaceholder = NSAttributedString(string: "Choose the password", attributes: attributesDictionary)
-        txtMail.attributedPlaceholder = NSAttributedString(string: "Type the real email", attributes: attributesDictionary)
-        txtConfirmPassword.attributedPlaceholder = NSAttributedString(string: "Repeat this password", attributes: attributesDictionary)
+        txtMail.attributedPlaceholder = NSAttributedString(string: "Type a real email", attributes: attributesDictionary)
+        txtConfirmPassword.attributedPlaceholder = NSAttributedString(string: "Repeat the password", attributes: attributesDictionary)
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143321681B18B15600DA0C01 /* bg_generic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143321671B18B15600DA0C01 /* bg_generic3.jpg */; };
 		410B65711B13AA9000464785 /* mage_point_down_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 410B65701B13AA9000464785 /* mage_point_down_focus.png */; };
 		410B65731B13B16100464785 /* mage_point_up_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 410B65721B13B16100464785 /* mage_point_up_focus.png */; };
 		410B65751B13B17000464785 /* warlock_point_down_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 410B65741B13B17000464785 /* warlock_point_down_focus.png */; };
@@ -25,7 +26,6 @@
 		41C82B0B1A91054B00235D61 /* VCSearchBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C82B051A91054B00235D61 /* VCSearchBattle.swift */; };
 		41C82B121A91056600235D61 /* anterior.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0C1A91056600235D61 /* anterior.png */; };
 		41C82B131A91056600235D61 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B0D1A91056600235D61 /* fondo.png */; };
-		41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B101A91056600235D61 /* rayitaSeparadora.png */; };
 		41C82B171A91056600235D61 /* siguiente.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C82B111A91056600235D61 /* siguiente.png */; };
 		41EDC0871A8BD97C00394712 /* CApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC07F1A8BD97C00394712 /* CApp.swift */; };
 		41EDC0891A8BD97C00394712 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDC0811A8BD97C00394712 /* CConstants.swift */; };
@@ -75,7 +75,6 @@
 		C0D248211B14CFC10007CAF3 /* battle_display.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248201B14CFC10007CAF3 /* battle_display.jpg */; };
 		C0D248231B14DE290007CAF3 /* guiabattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0D248221B14DE290007CAF3 /* guiabattle.jpg */; };
 		C0DEFFC61B1621A700EC5125 /* wallpapper_mvw_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */; };
-		C0DEFFC71B1621A700EC5125 /* bg_generic3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */; };
 		C0E108B91B04F189003E0DE1 /* bluebarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B61B04F189003E0DE1 /* bluebarr.png */; };
 		C0E108BA1B04F189003E0DE1 /* redbarr.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B71B04F189003E0DE1 /* redbarr.png */; };
 		C0E108BB1B04F189003E0DE1 /* barrbase.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E108B81B04F189003E0DE1 /* barrbase.png */; };
@@ -95,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143321671B18B15600DA0C01 /* bg_generic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_generic3.jpg; path = MW_clientSwift/Imatges/bg_generic3.jpg; sourceTree = SOURCE_ROOT; };
 		410B65701B13AA9000464785 /* mage_point_down_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage_point_down_focus.png; path = MW_clientSwift/Imatges/mage_point_down_focus.png; sourceTree = SOURCE_ROOT; };
 		410B65721B13B16100464785 /* mage_point_up_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mage_point_up_focus.png; path = MW_clientSwift/Imatges/mage_point_up_focus.png; sourceTree = SOURCE_ROOT; };
 		410B65741B13B17000464785 /* warlock_point_down_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warlock_point_down_focus.png; path = MW_clientSwift/Imatges/warlock_point_down_focus.png; sourceTree = SOURCE_ROOT; };
@@ -117,7 +117,6 @@
 		41C82B051A91054B00235D61 /* VCSearchBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCSearchBattle.swift; path = MW_clientSwift/Controllers/VCSearchBattle.swift; sourceTree = SOURCE_ROOT; };
 		41C82B0C1A91056600235D61 /* anterior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anterior.png; path = MW_clientSwift/Imatges/anterior.png; sourceTree = SOURCE_ROOT; };
 		41C82B0D1A91056600235D61 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fondo.png; path = MW_clientSwift/Imatges/fondo.png; sourceTree = SOURCE_ROOT; };
-		41C82B101A91056600235D61 /* rayitaSeparadora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rayitaSeparadora.png; path = MW_clientSwift/Imatges/rayitaSeparadora.png; sourceTree = SOURCE_ROOT; };
 		41C82B111A91056600235D61 /* siguiente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = siguiente.png; path = MW_clientSwift/Imatges/siguiente.png; sourceTree = SOURCE_ROOT; };
 		41EDC07F1A8BD97C00394712 /* CApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CApp.swift; sourceTree = "<group>"; };
 		41EDC0811A8BD97C00394712 /* CConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
@@ -168,7 +167,6 @@
 		C0D248201B14CFC10007CAF3 /* battle_display.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = battle_display.jpg; path = MW_clientSwift/Imatges/battle_display.jpg; sourceTree = SOURCE_ROOT; };
 		C0D248221B14DE290007CAF3 /* guiabattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = guiabattle.jpg; path = MW_clientSwift/Imatges/guiabattle.jpg; sourceTree = SOURCE_ROOT; };
 		C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpapper_mvw_2.jpg; path = MW_clientSwift/Imatges/wallpapper_mvw_2.jpg; sourceTree = SOURCE_ROOT; };
-		C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_generic3.jpg; path = MW_clientSwift/Imatges/bg_generic3.jpg; sourceTree = SOURCE_ROOT; };
 		C0E108B61B04F189003E0DE1 /* bluebarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluebarr.png; path = MW_clientSwift/Imatges/bluebarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B71B04F189003E0DE1 /* redbarr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redbarr.png; path = MW_clientSwift/Imatges/redbarr.png; sourceTree = SOURCE_ROOT; };
 		C0E108B81B04F189003E0DE1 /* barrbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barrbase.png; path = MW_clientSwift/Imatges/barrbase.png; sourceTree = SOURCE_ROOT; };
@@ -260,8 +258,8 @@
 		41E58D861A90BBA1009A2D0F /* Imatges */ = {
 			isa = PBXGroup;
 			children = (
+				143321671B18B15600DA0C01 /* bg_generic3.jpg */,
 				C0DEFFC41B1621A700EC5125 /* wallpapper_mvw_2.jpg */,
-				C0DEFFC51B1621A700EC5125 /* bg_generic3.jpg */,
 				C0D248221B14DE290007CAF3 /* guiabattle.jpg */,
 				C0D248201B14CFC10007CAF3 /* battle_display.jpg */,
 				C0D2481C1B14C6C40007CAF3 /* pg_avatar_warlock.png */,
@@ -311,7 +309,6 @@
 				C0E65DDA1AD5630800C689BF /* login_background.png */,
 				41C82B0C1A91056600235D61 /* anterior.png */,
 				41C82B0D1A91056600235D61 /* fondo.png */,
-				41C82B101A91056600235D61 /* rayitaSeparadora.png */,
 				41C82B111A91056600235D61 /* siguiente.png */,
 			);
 			path = Imatges;
@@ -460,7 +457,6 @@
 				C08420551B125A0600D2A878 /* warlock.png in Resources */,
 				C0E65DDB1AD5630800C689BF /* login_background.png in Resources */,
 				C05D83271B0B220D002C4AA5 /* redbar2.png in Resources */,
-				41C82B161A91056600235D61 /* rayitaSeparadora.png in Resources */,
 				C05D83291B0B220D002C4AA5 /* baseprogressbar2.png in Resources */,
 				C05D832D1B0B220D002C4AA5 /* special1.png in Resources */,
 				C05D832C1B0B220D002C4AA5 /* special2.png in Resources */,
@@ -492,7 +488,7 @@
 				C05D83261B0B220D002C4AA5 /* redbar1.png in Resources */,
 				C05D83301B0B220D002C4AA5 /* basic2.png in Resources */,
 				C0817AB31B14AD060067E241 /* Music in Resources */,
-				C0DEFFC71B1621A700EC5125 /* bg_generic3.jpg in Resources */,
+				143321681B18B15600DA0C01 /* bg_generic3.jpg in Resources */,
 				C05D832E1B0B220D002C4AA5 /* dodgebutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
